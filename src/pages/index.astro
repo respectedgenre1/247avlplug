@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <!-- Auto-filled by script -->
     <title id="seo-title">Product | 247 AVL Plug</title>
     <meta name="description" id="seo-desc" content="">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link id="seo-canonical" rel="canonical" href="">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="product">
     <meta property="og:title" id="og-title" content="">
     <meta property="og:description" id="og-desc" content="">
@@ -19,57 +17,33 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <style>
-        :root {
-            /* PRIMARY COLOR - Change this to any color you want */
-            --primary-color: #25D366;
-            
-            /* BACKGROUND COLOR - Single solid color (Orange example) */
-            --bg-color: #FF9500;
-            
-            /* BLEND LEVEL - Adjust 0.0 to 1.0 (0.65 = 65% opacity) */
-            /* Lower = more transparent, Higher = more solid white */
-            --blend-level: 0.65;
-            
-            /* GLASS EFFECT CALCULATIONS */
-            --glass-bg: rgba(255, 255, 255, var(--blend-level));
-            --glass-border: rgba(255, 255, 255, calc(var(--blend-level) * 0.6));
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, calc(0.1 * var(--blend-level)));
-            
-            /* TEXT COLORS */
-            --text-main: #1d1d1f;
-            --text-muted: #6e6e73;
-        }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg-color);
-            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #FF9500;
+            color: #1d1d1f;
             line-height: 1.6;
             min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* GLASS HEADER */
+        /* HEADER */
         header {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 16px 24px;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .back-btn {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            color: #1d1d1f;
             padding: 10px 18px;
             border-radius: 24px;
             text-decoration: none;
@@ -78,31 +52,25 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
         }
         .back-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f5f5f5;
+            transform: translateY(-1px);
         }
-        .back-btn:active { transform: scale(0.95); }
 
         .header-title {
             font-size: 17px;
             font-weight: 600;
             margin-left: 16px;
-            color: var(--text-muted);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            color: #6e6e73;
         }
 
         /* MAIN CONTENT */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 20px 120px;
+            padding: 30px 20px 60px;
         }
 
         article {
@@ -111,18 +79,14 @@
             gap: 24px;
         }
 
-        /* GLASS CARDS */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            box-shadow: var(--glass-shadow);
-            overflow: hidden;
+        /* CARDS */
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* IMAGE SECTION */
         .product-image-container {
             padding: 20px;
         }
@@ -130,16 +94,9 @@
             width: 100%;
             height: auto;
             display: block;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-        }
-        .product-image:hover {
-            transform: scale(1.02);
+            border-radius: 12px;
         }
 
-        /* DETAILS SECTION */
         .product-details {
             padding: 32px 28px;
         }
@@ -149,125 +106,106 @@
             font-weight: 700;
             margin-bottom: 16px;
             line-height: 1.2;
-            letter-spacing: -0.5px;
         }
 
-        /* DESCRIPTION - NOW RIGHT AFTER TITLE */
         .product-description {
-            color: var(--text-muted);
+            color: #6e6e73;
             font-size: 16px;
-            margin-bottom: 28px;
-            white-space: pre-line;
+            margin-bottom: 32px;
             line-height: 1.7;
             padding-bottom: 24px;
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 2px solid #f0f0f0;
         }
 
-        /* PRICING SECTION */
-        .pricing-section-title {
+        /* SECTION TITLES */
+        .section-title {
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--text-muted);
+            color: #6e6e73;
             margin-bottom: 16px;
         }
 
-        /* PRICING TIERS - GLASS BUTTONS */
+        /* PRICING BUTTONS */
         .pricing-tiers {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
         .tier-option {
-            background: rgba(255, 255, 255, calc(var(--blend-level) * 0.7));
-            backdrop-filter: blur(10px);
-            border: 2px solid var(--glass-border);
-            border-radius: 16px;
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
             padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
         .tier-option:hover {
-            background: rgba(255, 255, 255, calc(var(--blend-level) * 0.9));
+            border-color: #25D366;
+            background-color: #f0fff4;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
         }
-        .tier-option:active { transform: scale(0.98); }
         .tier-option.selected {
-            border-color: var(--primary-color);
-            background: rgba(37, 211, 102, calc(var(--blend-level) * 0.2));
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.2);
+            border-color: #25D366;
+            background-color: #e8f8ee;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
         .tier-label {
             font-weight: 600;
             font-size: 15px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: #1d1d1f;
         }
         .tier-price {
             font-weight: 700;
             font-size: 17px;
-            color: var(--primary-color);
+            color: #25D366;
         }
         .tier-badge {
             font-size: 11px;
-            background: var(--primary-color);
+            background-color: #25D366;
             color: white;
             padding: 4px 10px;
             border-radius: 12px;
             font-weight: 700;
-            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+            margin-left: 8px;
         }
 
-        /* FEATURES AS BUTTONS */
-        .features-section-title {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
+        /* FEATURE BUTTONS */
         .features-list {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
         .features-list li {
-            background: rgba(255, 255, 255, calc(var(--blend-level) * 0.7));
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 14px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
             padding: 14px 18px;
             display: flex;
             align-items: center;
             gap: 12px;
             font-size: 15px;
             font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
         .features-list li:hover {
-            background: rgba(255, 255, 255, calc(var(--blend-level) * 0.9));
+            background-color: #f9f9f9;
             transform: translateX(4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            border-color: #25D366;
         }
-        .features-list li::before {
-            content: "✓";
-            color: var(--primary-color);
+        .feature-icon {
+            color: #25D366;
             font-weight: 900;
             font-size: 18px;
-            background: rgba(37, 211, 102, calc(var(--blend-level) * 0.2));
+            background-color: #e8f8ee;
             width: 28px;
             height: 28px;
             border-radius: 50%;
@@ -277,16 +215,15 @@
             flex-shrink: 0;
         }
 
-        /* BUY NOW BUTTONS */
-        .sticky-footer {
+        /* BUY BUTTONS */
+        .buy-buttons {
             display: flex;
             gap: 12px;
-            margin-top: 8px;
         }
         .contact-btn {
             flex: 1;
             padding: 18px;
-            border-radius: 16px;
+            border-radius: 12px;
             text-align: center;
             text-decoration: none;
             font-weight: 700;
@@ -295,34 +232,31 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border: none;
             cursor: pointer;
         }
         .contact-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
-        .contact-btn:active { transform: scale(0.97); }
         
         .btn-whatsapp {
-            background: var(--primary-color);
+            background-color: #25D366;
             color: white;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
         }
         .btn-whatsapp:hover {
-            background: #20bd5a;
-            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+            background-color: #20bd5a;
         }
         
         .btn-email {
-            background: rgba(255, 255, 255, var(--blend-level));
-            backdrop-filter: blur(10px);
-            color: var(--text-main);
-            border: 1px solid var(--glass-border);
+            background-color: #ffffff;
+            color: #1d1d1f;
+            border: 2px solid #e0e0e0;
         }
         .btn-email:hover {
-            background: rgba(255, 255, 255, calc(var(--blend-level) * 1.1));
+            background-color: #f5f5f5;
+            border-color: #25D366;
         }
 
         /* DESKTOP LAYOUT */
@@ -339,26 +273,13 @@
             .product-image-container {
                 position: sticky;
                 top: 100px;
-                padding: 24px;
             }
             
-            .product-image {
-                aspect-ratio: auto;
-            }
-
             .product-details {
                 padding: 40px 36px;
             }
             .product-title { font-size: 38px; }
             .product-description { font-size: 17px; }
-
-            .sticky-footer {
-                margin-top: 32px;
-            }
-            .contact-btn {
-                padding: 20px;
-                font-size: 17px;
-            }
         }
 
         @media (min-width: 1200px) {
@@ -368,7 +289,6 @@
         }
     </style>
 
-    <!-- JSON-LD Schema -->
     <script id="json-ld" type="application/ld+json"></script>
 </head>
 <body>
@@ -380,38 +300,28 @@
 
     <main>
         <article>
-            <!-- IMAGE SECTION -->
-            <div class="product-image-container glass-card">
-                <img id="p-img" src="" alt="" class="product-image" width="600" height="600" fetchpriority="high" loading="eager">
+            <div class="card product-image-container">
+                <img id="p-img" src="" alt="" class="product-image" width="600" height="600">
             </div>
 
-            <!-- DETAILS SECTION -->
-            <section class="product-details glass-card">
+            <section class="card product-details">
                 <h2 id="p-name" class="product-title"></h2>
-                
-                <!-- DESCRIPTION - NOW RIGHT AFTER TITLE -->
                 <p id="p-desc" class="product-description"></p>
 
-                <!-- PRICING SECTION -->
-                <div class="pricing-section-title">Choose Your Package</div>
+                <div class="section-title">Choose Your Package</div>
                 <div id="pricing-tiers" class="pricing-tiers"></div>
 
-                <!-- FEATURES AS BUTTONS -->
-                <div class="features-section-title">Key Features</div>
+                <div class="section-title">Key Features</div>
                 <ul id="p-features" class="features-list"></ul>
 
-                <!-- BUY NOW BUTTONS -->
-                <footer class="sticky-footer">
+                <div class="buy-buttons">
                     <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
                     <a id="btn-email" href="#" class="contact-btn btn-email">✉️ Email</a>
-                </footer>
+                </div>
             </section>
         </article>
     </main>
 
-    <!-- ================================================================= -->
-    <!-- 🎯 SINGLE SOURCE OF TRUTH: EDIT ONLY THIS SECTION -->
-    <!-- ================================================================= -->
     <script>
         const PRODUCT_CONFIG = {
             name: "Premium GPS Tracker",
@@ -441,27 +351,22 @@
 
             whatsappNumber: "1234567890", 
             email: "sales@247avlplug.com",
-            
-            /* THEME COLORS */
-            themeColor: "#25D366",        // Primary accent color (buttons, badges, checkmarks)
-            backgroundColor: "#FF9500",   // Background color (Orange - change to any hex)
-            blendLevel: 0.65              // 0.0 to 1.0 - Controls glass transparency (lower = more see-through)
+            themeColor: "#25D366",
+            backgroundColor: "#FF9500"
         };
 
-        // =================================================================
-        // ️ ENGINE: DO NOT TOUCH BELOW
-        // =================================================================
-        document.addEventListener("DOMContentLoaded", () => {
+        // Initialize page
+        (function() {
             const p = PRODUCT_CONFIG;
             const baseUrl = "https://247avlplug.com";
-            const productUrl = `${baseUrl}/products/${p.urlSlug}`;
-            const imageUrl = p.imageSrc.startsWith('http') ? p.imageSrc : `${baseUrl}${p.imageSrc}`;
+            const productUrl = baseUrl + "/products/" + p.urlSlug;
+            const imageUrl = p.imageSrc.startsWith('http') ? p.imageSrc : baseUrl + p.imageSrc;
 
-            /* APPLY THEME COLORS */
+            // Set colors
+            document.body.style.backgroundColor = p.backgroundColor;
             document.documentElement.style.setProperty('--primary-color', p.themeColor);
-            document.documentElement.style.setProperty('--bg-color', p.backgroundColor);
-            document.documentElement.style.setProperty('--blend-level', p.blendLevel);
 
+            // SEO
             document.title = p.seoTitle;
             document.getElementById('seo-desc').content = p.seoDescription;
             document.getElementById('seo-canonical').href = productUrl;
@@ -470,6 +375,7 @@
             document.getElementById('og-image').content = imageUrl;
             document.getElementById('og-url').content = productUrl;
 
+            // Content
             document.getElementById('header-title').textContent = p.name;
             document.getElementById('p-name').textContent = p.name;
             document.getElementById('p-desc').textContent = p.description;
@@ -478,29 +384,31 @@
             imgEl.src = imageUrl;
             imgEl.alt = p.imageAlt;
 
+            // Features
             const featuresList = document.getElementById('p-features');
-            p.features.forEach(feature => {
+            p.features.forEach(function(feature) {
                 const li = document.createElement('li');
-                li.textContent = feature;
+                li.innerHTML = '<span class="feature-icon">✓</span>' + feature;
                 featuresList.appendChild(li);
             });
 
+            // Pricing
             const tiersContainer = document.getElementById('pricing-tiers');
             let currentTier = p.pricingTiers[p.defaultTierIndex];
 
-            p.pricingTiers.forEach((tier, index) => {
+            p.pricingTiers.forEach(function(tier, index) {
                 const div = document.createElement('div');
-                div.className = `tier-option ${index === p.defaultTierIndex ? 'selected' : ''}`;
+                div.className = 'tier-option' + (index === p.defaultTierIndex ? ' selected' : '');
                 
-                const badgeHtml = tier.badge ? `<span class="tier-badge">${tier.badge}</span>` : '';
+                const badgeHtml = tier.badge ? '<span class="tier-badge">' + tier.badge + '</span>' : '';
                 
-                div.innerHTML = `
-                    <span class="tier-label">${tier.label} ${badgeHtml}</span>
-                    <span class="tier-price">${tier.price}</span>
-                `;
+                div.innerHTML = '<span class="tier-label">' + tier.label + ' ' + badgeHtml + '</span><span class="tier-price">' + tier.price + '</span>';
 
-                div.addEventListener('click', () => {
-                    document.querySelectorAll('.tier-option').forEach(el => el.classList.remove('selected'));
+                div.addEventListener('click', function() {
+                    const allTiers = document.querySelectorAll('.tier-option');
+                    for (let i = 0; i < allTiers.length; i++) {
+                        allTiers[i].classList.remove('selected');
+                    }
                     div.classList.add('selected');
                     currentTier = tier;
                     updateContactLinks(currentTier);
@@ -510,16 +418,17 @@
             });
 
             function updateContactLinks(selectedTier) {
-                const waMessage = encodeURIComponent(`Hi! I want to buy the ${p.name} (${selectedTier.label} - ${selectedTier.price}) from 247avlplug.com`);
-                document.getElementById('btn-wa').href = `https://wa.me/${p.whatsappNumber}?text=${waMessage}`;
+                const waMessage = encodeURIComponent('Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com');
+                document.getElementById('btn-wa').href = 'https://wa.me/' + p.whatsappNumber + '?text=' + waMessage;
                 
-                const emailSubject = encodeURIComponent(`Inquiry: ${p.name} (${selectedTier.label})`);
-                const emailBody = encodeURIComponent(`Hi, I would like to purchase the ${p.name} - ${selectedTier.label} at ${selectedTier.price} from your store.`);
-                document.getElementById('btn-email').href = `mailto:${p.email}?subject=${emailSubject}&body=${emailBody}`;
+                const emailSubject = encodeURIComponent('Inquiry: ' + p.name + ' (' + selectedTier.label + ')');
+                const emailBody = encodeURIComponent('Hi, I would like to purchase the ' + p.name + ' - ' + selectedTier.label + ' at ' + selectedTier.price + ' from your store.');
+                document.getElementById('btn-email').href = 'mailto:' + p.email + '?subject=' + emailSubject + '&body=' + emailBody;
             }
 
             updateContactLinks(currentTier);
 
+            // Schema
             const cleanPrice = currentTier.price.replace(/[^0-9.]/g, '') || "0.00";
             const schema = {
                 "@context": "https://schema.org/",
@@ -539,7 +448,7 @@
                 }
             };
             document.getElementById('json-ld').textContent = JSON.stringify(schema);
-        });
+        })();
     </script>
 </body>
 </html>
