@@ -15,10 +15,10 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <style>
-        /* ================================================================ */
-        /*  RESET & BASE                                                    */
-        /* ================================================================ */
-        *, *::before, *::after {
+        /* ============================================================ */
+        /*  RESET                                                         */
+        /* ============================================================ */
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -31,12 +31,11 @@
             line-height: 1.6;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ================================================================ */
-        /*  HEADER                                                          */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  HEADER                                                        */
+        /* ============================================================ */
         header {
             background-color: rgba(255, 255, 255, 0.97);
             padding: 14px 20px;
@@ -82,9 +81,9 @@
             max-width: 50%;
         }
 
-        /* ================================================================ */
-        /*  MAIN LAYOUT                                                     */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  MAIN LAYOUT                                                   */
+        /* ============================================================ */
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -97,22 +96,22 @@
             gap: 24px;
         }
 
-        /* ================================================================ */
-        /*  CARDS                                                           */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  CARDS                                                         */
+        /* ============================================================ */
         .card {
-            background-color: #ffffff;
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            background-color: #ffffff !important;
+            border-radius: 24px !important;
+            padding: 28px !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
         }
 
-        /* ================================================================ */
-        /*  PRODUCT IMAGE                                                   */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  PRODUCT IMAGE                                                 */
+        /* ============================================================ */
         .product-image-container {
             padding: 20px;
-            background: linear-gradient(145deg, #f5f5f7 0%, #e8e8ed 100%);
+            background-color: #f5f5f7;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -152,9 +151,9 @@
             z-index: 2;
         }
 
-        /* ================================================================ */
-        /*  PRODUCT DETAILS                                                 */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  PRODUCT DETAILS                                               */
+        /* ============================================================ */
         .product-details {
             padding: 32px 28px;
         }
@@ -175,9 +174,9 @@
             font-weight: 500;
         }
 
-        /* ================================================================ */
-        /*  FEATURE BUBBLES — HIGH VISIBILITY                               */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  FEATURE BUBBLES                                               */
+        /* ============================================================ */
         .features-section {
             margin-bottom: 24px;
         }
@@ -238,9 +237,9 @@
             background-color: rgba(255,255,255,0.25);
         }
 
-        /* ================================================================ */
-        /*  DESCRIPTION BOX                                                 */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  DESCRIPTION                                                   */
+        /* ============================================================ */
         .product-description {
             color: #6e6e73;
             font-size: 16px;
@@ -252,9 +251,9 @@
             border-left: 4px solid #25D366;
         }
 
-        /* ================================================================ */
-        /*  PRICING TIERS — EXPLICIT BOXES                                  */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  PRICING TIERS — BULLETPROOF                                   */
+        /* ============================================================ */
         .pricing-section {
             margin-bottom: 28px;
         }
@@ -265,72 +264,75 @@
             gap: 10px;
         }
 
-        .tier-option {
-            background-color: #ffffff;
-            border: 2px solid #d1d1d6;
-            border-radius: 14px;
-            padding: 18px 20px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            display: block;
-            width: 100%;
+        /* Nuclear option: !important on everything visual */
+        div.tier-option {
+            background-color: #ffffff !important;
+            border: 2.5px solid #d1d1d6 !important;
+            border-radius: 14px !important;
+            padding: 18px 20px !important;
+            cursor: pointer !important;
+            display: block !important;
+            width: 100% !important;
+            margin-bottom: 10px !important;
+            box-sizing: border-box !important;
         }
 
-        .tier-option:hover {
-            border-color: #25D366;
-            background-color: #f0fff4;
-            transform: translateX(3px);
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.12);
+        div.tier-option:hover {
+            border-color: #25D366 !important;
+            background-color: #f0fff4 !important;
+            transform: translateX(3px) !important;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.12) !important;
         }
 
-        .tier-option.selected {
-            border-color: #25D366;
-            background-color: #e8f8ee;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2);
+        div.tier-option.selected {
+            border-color: #25D366 !important;
+            background-color: #e8f8ee !important;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2) !important;
         }
 
         .tier-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
         }
 
         .tier-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
         }
 
         .tier-label {
-            font-weight: 700;
-            font-size: 15px;
-            color: #1d1d1f;
+            font-weight: 700 !important;
+            font-size: 15px !important;
+            color: #1d1d1f !important;
         }
 
         .tier-badge {
-            font-size: 11px;
-            background-color: #25D366;
-            color: #ffffff;
-            padding: 4px 10px;
-            border-radius: 50px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-block;
+            font-size: 11px !important;
+            background-color: #25D366 !important;
+            color: #ffffff !important;
+            padding: 4px 10px !important;
+            border-radius: 50px !important;
+            font-weight: 800 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            display: inline-block !important;
         }
 
         .tier-price {
-            font-weight: 800;
-            font-size: 17px;
-            color: #1faa52;
-            text-align: right;
-            white-space: nowrap;
+            font-weight: 800 !important;
+            font-size: 17px !important;
+            color: #1faa52 !important;
+            text-align: right !important;
+            white-space: nowrap !important;
+            margin-left: 10px !important;
         }
 
-        /* ================================================================ */
-        /*  CONTACT BUTTONS                                                 */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  CONTACT BUTTONS                                               */
+        /* ============================================================ */
         .buy-buttons {
             display: flex;
             gap: 12px;
@@ -381,9 +383,9 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
         }
 
-        /* ================================================================ */
-        /*  TRUST BADGES                                                    */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  TRUST BADGES                                                  */
+        /* ============================================================ */
         .trust-badges {
             display: flex;
             justify-content: center;
@@ -403,9 +405,9 @@
             color: #86868b;
         }
 
-        /* ================================================================ */
-        /*  DESKTOP LAYOUT                                                  */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  DESKTOP                                                       */
+        /* ============================================================ */
         @media (min-width: 768px) {
             main {
                 padding: 40px 28px 80px;
@@ -431,10 +433,10 @@
                 padding: 12px 20px;
             }
             .tier-label {
-                font-size: 16px;
+                font-size: 16px !important;
             }
             .tier-price {
-                font-size: 18px;
+                font-size: 18px !important;
             }
         }
 
@@ -460,14 +462,14 @@
                 padding: 24px 20px;
             }
             .card {
-                padding: 20px;
-                border-radius: 20px;
+                padding: 20px !important;
+                border-radius: 20px !important;
             }
-            .tier-option {
-                padding: 14px 16px;
+            div.tier-option {
+                padding: 14px 16px !important;
             }
             .tier-price {
-                font-size: 15px;
+                font-size: 15px !important;
             }
             .buy-buttons {
                 flex-direction: column;
@@ -541,9 +543,9 @@
         </article>
     </main>
 
-    <!-- ================================================================ -->
-    <!--  EDIT ONLY THIS SECTION FOR NEW PRODUCTS                         -->
-    <!-- ================================================================ -->
+    <!-- ============================================================ -->
+    <!--  EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                       -->
+    <!-- ============================================================ -->
     <script>
         const PRODUCT_CONFIG = {
 
@@ -552,19 +554,16 @@
             subtitle: "Real-Time Vehicle Security & Fleet Monitoring",
 
             /* --- 2. IMAGES --- */
-            // Upload image to your repo's /images/ folder, or use a full URL
-            imageSrc: "/images/gps-tracker.jpg", 
+            imageSrc: "/images/gps-tracker.jpg",
             imageAlt: "Premium compact GPS tracker for vehicles",
-            imageBadge: "In Stock",  // Set to "" to hide the badge
+            imageBadge: "In Stock",
 
             /* --- 3. SEO & META --- */
             seoTitle: "Buy Premium GPS Tracker Online | 247 AVL Plug",
             seoDescription: "Buy Premium GPS Tracker. Real-time tracking, long battery life. Choose from single units or wholesale packs. Fast shipping at 247 AVL Plug!",
-            urlSlug: "premium-gps-tracker.html",  // Must match the actual filename
+            urlSlug: "premium-gps-tracker.html",
 
             /* --- 4. PRICING TIERS --- */
-            // Add up to 5 options. Use badge for "Best Value", "Save 10%", etc.
-            // Leave badge as "" if not needed.
             pricingTiers: [
                 { label: "Single Unit",     price: "$49.99",              badge: "" },
                 { label: "5-Pack",          price: "$224.99",            badge: "Save 10%" },
@@ -572,43 +571,39 @@
                 { label: "Wholesale (50+)", price: "Contact for Quote",  badge: "Bulk" },
                 { label: "Custom Bundle",   price: "Contact for Quote",  badge: "" }
             ],
-            defaultTierIndex: 0,  // Which option is pre-selected (0 = first)
+            defaultTierIndex: 0,
 
             /* --- 5. DESCRIPTION & FEATURES --- */
             description: "Keep your vehicle secure with our Premium GPS Tracker. Features real-time location updates, geofencing alerts, and a 30-day battery life. Perfect for personal cars, fleets, and motorcycles.",
 
-            // Features appear as green bubbles. Add or remove items freely.
+            /* Only 3 features shown as bubbles */
             features: [
                 "Real-time live tracking",
                 "30-day battery life",
-                "Geofencing alerts",
-                "Plug-and-play install",
-                "Waterproof design"
+                "Geofencing alerts"
             ],
 
-            /* --- 6. CONTACT & BRANDING --- */
-            whatsappNumber: "1234567890",   // Country code + number, NO '+' or spaces
+            /* --- 6. CONTACT --- */
+            whatsappNumber: "1234567890",
             email: "sales@247avlplug.com",
 
-            /* --- 7. THEME COLORS --- */
-            // Change these to re-theme the entire page instantly
-            themeColor: "#25D366",          // Accent color (buttons, badges, bubbles)
-            backgroundColor: "#FF9500"      // Page background color
+            /* --- 7. THEME --- */
+            themeColor: "#25D366",
+            backgroundColor: "#FF9500"
         };
 
-        /* ================================================================ */
-        /*  ENGINE — DO NOT EDIT BELOW THIS LINE                            */
-        /* ================================================================ */
+        /* ============================================================ */
+        /*  ENGINE — DO NOT EDIT BELOW                                  */
+        /* ============================================================ */
         document.addEventListener('DOMContentLoaded', function() {
             var p = PRODUCT_CONFIG;
             var baseUrl = "https://247avlplug.com";
             var productUrl = baseUrl + "/products/" + p.urlSlug;
             var imageUrl = p.imageSrc.startsWith('http') ? p.imageSrc : baseUrl + p.imageSrc;
 
-            // Apply background color
             document.body.style.backgroundColor = p.backgroundColor;
 
-            // 1. Update SEO Tags
+            // SEO
             document.title = p.seoTitle;
             document.getElementById('seo-desc').content = p.seoDescription;
             document.getElementById('seo-canonical').href = productUrl;
@@ -617,7 +612,7 @@
             document.getElementById('og-image').content = imageUrl;
             document.getElementById('og-url').content = productUrl;
 
-            // 2. Update Page Content
+            // Content
             document.getElementById('header-title').textContent = p.name;
             document.getElementById('p-name').textContent = p.name;
             document.getElementById('p-subtitle').textContent = p.subtitle;
@@ -635,7 +630,7 @@
                 badgeEl.style.display = "none";
             }
 
-            // 3. Build Feature Bubbles
+            // Feature Bubbles
             var featuresContainer = document.getElementById('feature-bubbles');
             featuresContainer.innerHTML = '';
 
@@ -648,7 +643,7 @@
                 }
             }
 
-            // 4. Build Pricing Tiers
+            // Pricing Tiers
             var tiersContainer = document.getElementById('pricing-tiers');
             tiersContainer.innerHTML = '';
             var currentTier = p.pricingTiers[p.defaultTierIndex];
@@ -663,7 +658,6 @@
                         badgeHtml = '<span class="tier-badge">' + tier.badge + '</span>';
                     }
 
-                    // Explicit structure: label + badge on left, price on right
                     div.innerHTML = 
                         '<div class="tier-row">' +
                             '<div class="tier-left">' +
@@ -686,7 +680,7 @@
                 })(p.pricingTiers[i], i);
             }
 
-            // 5. Update Contact Links
+            // Contact Links
             function updateLinks(selectedTier) {
                 var waMessage = encodeURIComponent(
                     'Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com'
@@ -700,7 +694,6 @@
                 document.getElementById('btn-email').href = 'mailto:' + p.email + '?subject=' + emailSubject + '&body=' + emailBody;
             }
 
-            // Initialize with default tier
             updateLinks(currentTier);
         });
     </script>
