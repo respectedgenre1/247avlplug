@@ -1,50 +1,357 @@
----
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Auto-filled by script -->
+    <title id="seo-title">Product | 247 AVL Plug</title>
+    <meta name="description" id="seo-desc" content="">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link id="seo-canonical" rel="canonical" href="">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-desc" content="">
+    <meta property="og:image" id="og-image" content="">
+    <meta property="og:url" id="og-url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --primary-color: #25D366; 
+            --bg-color: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text-main: #212529;
+            --text-muted: #6C757D;
+            --border-color: #E9ECEF;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 100px; /* Extra space for sticky footer */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: var(--card-bg);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .back-btn {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:active { transform: scale(0.95); background: var(--border-color); }
+
+        main { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+        .product-image-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .product-image {
+            width: 100%; height: auto; display: block; aspect-ratio: 1/1; object-fit: cover;
+        }
+
+        .product-details {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .product-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
+        
+        /* Variable Pricing Styles */
+        .pricing-tiers {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .tier-option {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: var(--card-bg);
+        }
+        .tier-option:active { transform: scale(0.98); }
+        .tier-option.selected {
+            border-color: var(--primary-color);
+            background-color: color-mix(in srgb, var(--primary-color) 8%, transparent);
+        }
+        .tier-label { font-weight: 600; font-size: 15px; color: var(--text-main); }
+        .tier-price { font-weight: 800; font-size: 16px; color: var(--primary-color); }
+        .tier-badge {
+            font-size: 11px;
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+            font-weight: 700;
+        }
+
+        .product-description { color: var(--text-muted); font-size: 16px; margin-bottom: 24px; white-space: pre-line; }
+
+        .features-list { list-style: none; margin-bottom: 20px; }
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+        .features-list li:last-child { border-bottom: none; }
+        .features-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: var(--card-bg);
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+            z-index: 100;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.1s ease;
+        }
+        .contact-btn:active { transform: scale(0.97); }
+        .btn-whatsapp { background: var(--primary-color); color: white; }
+        .btn-email { background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); }
+    </style>
+
+    <!-- JSON-LD Schema (Auto-populated) -->
+    <script id="json-ld" type="application/ld+json"></script>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="back-btn">← Back to Shop</a>
+        <h1 id="header-title" style="font-size:16px; margin-left:15px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></h1>
+    </header>
+
+    <main>
+        <article>
+            <div class="product-image-container">
+                <img id="p-img" src="" alt="" class="product-image" width="600" height="600" fetchpriority="high" loading="eager">
+            </div>
+
+            <section class="product-details">
+                <h2 id="p-name" class="product-title"></h2>
+                
+                <!-- Variable Pricing Section -->
+                <div id="pricing-tiers" class="pricing-tiers"></div>
+
+                <p id="p-desc" class="product-description"></p>
+                <ul id="p-features" class="features-list"></ul>
+            </section>
+        </article>
+    </main>
+
+    <footer class="sticky-footer">
+        <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a id="btn-email" href="#" class="contact-btn btn-email">✉️ Email</a>
+    </footer>
+
+    <!-- ================================================================= -->
+    <!-- 🎯 SINGLE SOURCE OF TRUTH: EDIT ONLY THIS SECTION FOR NEW PRODUCTS -->
+    <!-- ================================================================= -->
+    <script>
+        const PRODUCT_CONFIG = {
+            // 1. BASIC INFO
+            name: "Premium GPS Tracker",
+            sku: "GPS-001",
+
+            // 2. IMAGES
+            imageSrc: "/images/gps-tracker.jpg", 
+            imageAlt: "Premium compact GPS tracker for vehicles",
+
+            // 3. SEO & META
+            seoTitle: "Buy Premium GPS Tracker Online | 247 AVL Plug",
+            seoDescription: "Buy Premium GPS Tracker. Real-time tracking, long battery life. Choose from single units or wholesale packs. Fast shipping at 247 AVL Plug!",
+            urlSlug: "premium-gps-tracker.html", // MUST match the actual file name
+
+            // 4. VARIABLE PRICING (Up to 5 options)
+            // Use 'badge' for things like "Best Value" or "Save 20%". Leave as "" if not needed.
+            pricingTiers: [
+                { label: "Single Unit", price: "$49.99", badge: "" },
+                { label: "5-Pack", price: "$224.99", badge: "Save 10%" },
+                { label: "10-Pack", price: "$399.99", badge: "Best Value" },
+                { label: "Wholesale (50+)", price: "Contact for Quote", badge: "Bulk" },
+                { label: "Custom Bundle", price: "Contact for Quote", badge: "" }
+            ],
+            defaultTierIndex: 0, // Which option is selected by default (0 = first one)
+
+            // 5. DESCRIPTION & FEATURES
+            description: "Keep your vehicle secure with our Premium GPS Tracker. Features real-time location updates, geofencing alerts, and a 30-day battery life. Perfect for personal cars, fleets, and motorcycles.",
+            features: [
+                "Real-time live tracking via mobile app",
+                "30-day rechargeable battery life",
+                "Instant geofencing and speed alerts",
+                "Easy plug-and-play installation"
+            ],
+
+            // 6. CONTACT & BRANDING
+            whatsappNumber: "1234567890", // Country code + number, NO '+' or spaces
+            email: "sales@247avlplug.com",
+            themeColor: "#25D366" 
+        };
+
+        // =================================================================
+        // ⚙️ ENGINE: DO NOT TOUCH BELOW THIS LINE
+        // =================================================================
+        document.addEventListener("DOMContentLoaded", () => {
+            const p = PRODUCT_CONFIG;
+            const baseUrl = "https://247avlplug.com";
+            const productUrl = `${baseUrl}/products/${p.urlSlug}`;
+            const imageUrl = p.imageSrc.startsWith('http') ? p.imageSrc : `${baseUrl}${p.imageSrc}`;
+
+            // 1. SEO & Meta
+            document.title = p.seoTitle;
+            document.getElementById('seo-desc').content = p.seoDescription;
+            document.getElementById('seo-canonical').href = productUrl;
+            document.getElementById('og-title').content = p.seoTitle;
+            document.getElementById('og-desc').content = p.seoDescription;
+            document.getElementById('og-image').content = imageUrl;
+            document.getElementById('og-url').content = productUrl;
+
+            // 2. Theme Color
+            document.documentElement.style.setProperty('--primary-color', p.themeColor);
+
+            // 3. Page Content
+            document.getElementById('header-title').textContent = p.name;
+            document.getElementById('p-name').textContent = p.name;
+            document.getElementById('p-desc').textContent = p.description;
+            
+            const imgEl = document.getElementById('p-img');
+            imgEl.src = imageUrl;
+            imgEl.alt = p.imageAlt;
+
+            // 4. Build Features List
+            const featuresList = document.getElementById('p-features');
+            p.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            // 5. Build Variable Pricing Tiers
+            const tiersContainer = document.getElementById('pricing-tiers');
+            let currentTier = p.pricingTiers[p.defaultTierIndex];
+
+            p.pricingTiers.forEach((tier, index) => {
+                const div = document.createElement('div');
+                div.className = `tier-option ${index === p.defaultTierIndex ? 'selected' : ''}`;
+                
+                const badgeHtml = tier.badge ? `<span class="tier-badge">${tier.badge}</span>` : '';
+                
+                div.innerHTML = `
+                    <span class="tier-label">${tier.label} ${badgeHtml}</span>
+                    <span class="tier-price">${tier.price}</span>
+                `;
+
+                div.addEventListener('click', () => {
+                    // Remove selected class from all
+                    document.querySelectorAll('.tier-option').forEach(el => el.classList.remove('selected'));
+                    // Add to clicked
+                    div.classList.add('selected');
+                    // Update current tier and refresh contact links
+                    currentTier = tier;
+                    updateContactLinks(currentTier);
+                });
+
+                tiersContainer.appendChild(div);
+            });
+
+            // 6. Contact Links Generator Function
+            function updateContactLinks(selectedTier) {
+                const waMessage = encodeURIComponent(`Hi! I want to buy the ${p.name} (${selectedTier.label} - ${selectedTier.price}) from 247avlplug.com`);
+                document.getElementById('btn-wa').href = `https://wa.me/${p.whatsappNumber}?text=${waMessage}`;
+                
+                const emailSubject = encodeURIComponent(`Inquiry: ${p.name} (${selectedTier.label})`);
+                const emailBody = encodeURIComponent(`Hi, I would like to purchase the ${p.name} - ${selectedTier.label} at ${selectedTier.price} from your store.`);
+                document.getElementById('btn-email').href = `mailto:${p.email}?subject=${emailSubject}&body=${emailBody}`;
+            }
+
+            // Initialize contact links with default tier
+            updateContactLinks(currentTier);
+
+            // 7. JSON-LD Schema (Uses the first/default tier price for Google)
+            // Clean price string for schema (remove $ and commas)
+            const cleanPrice = currentTier.price.replace(/[^0-9.]/g, '') || "0.00";
+            
+            const schema = {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "name": p.name,
+                "image": [imageUrl],
+                "description": p.seoDescription,
+                "sku": p.sku,
+                "brand": { "@type": "Brand", "name": "247 AVL Plug" },
+                "offers": {
+                    "@type": "Offer",
+                    "url": productUrl,
+                    "priceCurrency": "USD",
+                    "price": cleanPrice,
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/NewCondition"
+                }
+            };
+            document.getElementById('json-ld').textContent = JSON.stringify(schema);
+        });
+    </script>
+</body>
 </html>
