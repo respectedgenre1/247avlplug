@@ -15,15 +15,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <style>
-        /* ============================================================ */
-        /*  RESET                                                         */
-        /* ============================================================ */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #FF9500;
@@ -32,12 +24,8 @@
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* ============================================================ */
-        /*  HEADER                                                        */
-        /* ============================================================ */
         header {
-            background-color: rgba(255, 255, 255, 0.97);
+            background-color: rgba(255,255,255,0.97);
             padding: 14px 20px;
             display: flex;
             align-items: center;
@@ -48,9 +36,8 @@
             z-index: 100;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-
         .back-btn {
-            background-color: #ffffff;
+            background-color: #fff;
             border: 1.5px solid #d1d1d6;
             color: #1d1d1f;
             padding: 10px 20px;
@@ -61,16 +48,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.25s ease;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
         }
-        .back-btn:hover {
-            border-color: #25D366;
-            color: #25D366;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
         .header-title {
             font-size: 15px;
             font-weight: 600;
@@ -80,35 +58,22 @@
             text-overflow: ellipsis;
             max-width: 50%;
         }
-
-        /* ============================================================ */
-        /*  MAIN LAYOUT                                                   */
-        /* ============================================================ */
         main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 28px 16px 60px;
         }
-
         article {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
-
-        /* ============================================================ */
-        /*  CARDS                                                         */
-        /* ============================================================ */
         .card {
-            background-color: #ffffff !important;
-            border-radius: 24px !important;
-            padding: 28px !important;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
         }
-
-        /* ============================================================ */
-        /*  PRODUCT IMAGE                                                 */
-        /* ============================================================ */
         .product-image-container {
             padding: 20px;
             background-color: #f5f5f7;
@@ -116,7 +81,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .image-wrapper {
             position: relative;
             width: 100%;
@@ -126,7 +90,6 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.15);
             background-color: #e5e5e7;
         }
-
         .product-image {
             width: 100%;
             height: auto;
@@ -134,112 +97,37 @@
             object-fit: cover;
             aspect-ratio: 1 / 1;
         }
-
         .image-badge {
             position: absolute;
             top: 14px;
             left: 14px;
             background-color: #25D366;
-            color: #ffffff;
+            color: #fff;
             font-size: 12px;
             font-weight: 800;
             padding: 7px 16px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 12px rgba(37,211,102,0.4);
             z-index: 2;
         }
-
-        /* ============================================================ */
-        /*  PRODUCT DETAILS                                               */
-        /* ============================================================ */
         .product-details {
             padding: 32px 28px;
         }
-
         .product-title {
             font-size: 34px;
             font-weight: 800;
             margin-bottom: 6px;
             line-height: 1.15;
-            letter-spacing: -0.5px;
             color: #1d1d1f;
         }
-
         .product-subtitle {
             font-size: 15px;
             color: #6e6e73;
             margin-bottom: 24px;
             font-weight: 500;
         }
-
-        /* ============================================================ */
-        /*  FEATURE BUBBLES                                               */
-        /* ============================================================ */
-        .features-section {
-            margin-bottom: 24px;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #86868b;
-            margin-bottom: 12px;
-        }
-
-        .feature-bubbles {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .feature-bubble {
-            background-color: #ffffff;
-            border: 2px solid #25D366;
-            color: #1d1d1f;
-            border-radius: 50px;
-            padding: 10px 18px;
-            font-size: 14px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.15);
-            transition: all 0.25s ease;
-            white-space: nowrap;
-        }
-
-        .feature-bubble:hover {
-            background-color: #25D366;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
-        }
-
-        .feature-bubble-icon {
-            width: 24px;
-            height: 24px;
-            background-color: #25D366;
-            color: #ffffff;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 900;
-            flex-shrink: 0;
-        }
-
-        .feature-bubble:hover .feature-bubble-icon {
-            background-color: rgba(255,255,255,0.25);
-        }
-
-        /* ============================================================ */
-        /*  DESCRIPTION                                                   */
-        /* ============================================================ */
         .product-description {
             color: #6e6e73;
             font-size: 16px;
@@ -250,95 +138,19 @@
             border-radius: 16px;
             border-left: 4px solid #25D366;
         }
-
-        /* ============================================================ */
-        /*  PRICING TIERS — BULLETPROOF                                   */
-        /* ============================================================ */
-        .pricing-section {
-            margin-bottom: 28px;
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86868b;
+            margin-bottom: 14px;
         }
-
-        .pricing-tiers {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        /* Nuclear option: !important on everything visual */
-        div.tier-option {
-            background-color: #ffffff !important;
-            border: 2.5px solid #d1d1d6 !important;
-            border-radius: 14px !important;
-            padding: 18px 20px !important;
-            cursor: pointer !important;
-            display: block !important;
-            width: 100% !important;
-            margin-bottom: 10px !important;
-            box-sizing: border-box !important;
-        }
-
-        div.tier-option:hover {
-            border-color: #25D366 !important;
-            background-color: #f0fff4 !important;
-            transform: translateX(3px) !important;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.12) !important;
-        }
-
-        div.tier-option.selected {
-            border-color: #25D366 !important;
-            background-color: #e8f8ee !important;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2) !important;
-        }
-
-        .tier-row {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            width: 100% !important;
-        }
-
-        .tier-left {
-            display: flex !important;
-            align-items: center !important;
-            gap: 10px !important;
-        }
-
-        .tier-label {
-            font-weight: 700 !important;
-            font-size: 15px !important;
-            color: #1d1d1f !important;
-        }
-
-        .tier-badge {
-            font-size: 11px !important;
-            background-color: #25D366 !important;
-            color: #ffffff !important;
-            padding: 4px 10px !important;
-            border-radius: 50px !important;
-            font-weight: 800 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.5px !important;
-            display: inline-block !important;
-        }
-
-        .tier-price {
-            font-weight: 800 !important;
-            font-size: 17px !important;
-            color: #1faa52 !important;
-            text-align: right !important;
-            white-space: nowrap !important;
-            margin-left: 10px !important;
-        }
-
-        /* ============================================================ */
-        /*  CONTACT BUTTONS                                               */
-        /* ============================================================ */
         .buy-buttons {
             display: flex;
             gap: 12px;
             margin-top: 4px;
         }
-
         .contact-btn {
             flex: 1;
             padding: 18px 20px;
@@ -351,41 +163,18 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: all 0.25s ease;
             border: none;
             cursor: pointer;
         }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
-
         .btn-whatsapp {
             background-color: #25D366;
-            color: #ffffff;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+            color: #fff;
         }
-        .btn-whatsapp:hover {
-            background-color: #20bd5a;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-        }
-
         .btn-email {
-            background-color: #ffffff;
+            background-color: #fff;
             color: #1d1d1f;
             border: 2px solid #d1d1d6;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .btn-email:hover {
-            border-color: #25D366;
-            color: #25D366;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-        }
-
-        /* ============================================================ */
-        /*  TRUST BADGES                                                  */
-        /* ============================================================ */
         .trust-badges {
             display: flex;
             justify-content: center;
@@ -395,7 +184,6 @@
             border-top: 1px solid #e5e5e7;
             flex-wrap: wrap;
         }
-
         .trust-item {
             display: flex;
             align-items: center;
@@ -404,90 +192,30 @@
             font-weight: 600;
             color: #86868b;
         }
-
-        /* ============================================================ */
-        /*  DESKTOP                                                       */
-        /* ============================================================ */
         @media (min-width: 768px) {
-            main {
-                padding: 40px 28px 80px;
-            }
-            article {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 32px;
-                align-items: start;
-            }
-            .product-image-container {
-                position: sticky;
-                top: 80px;
-            }
-            .product-details {
-                padding: 40px 36px;
-            }
-            .product-title {
-                font-size: 40px;
-            }
-            .feature-bubble {
-                font-size: 15px;
-                padding: 12px 20px;
-            }
-            .tier-label {
-                font-size: 16px !important;
-            }
-            .tier-price {
-                font-size: 18px !important;
-            }
+            main { padding: 40px 28px 80px; }
+            article { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+            .product-image-container { position: sticky; top: 80px; }
+            .product-details { padding: 40px 36px; }
+            .product-title { font-size: 40px; }
         }
-
         @media (min-width: 1200px) {
-            main {
-                max-width: 1280px;
-                padding: 48px 40px 100px;
-            }
-            article {
-                gap: 40px;
-            }
-            .product-title {
-                font-size: 44px;
-            }
+            main { max-width: 1280px; padding: 48px 40px 100px; }
+            article { gap: 40px; }
+            .product-title { font-size: 44px; }
         }
-
-        /* Mobile */
         @media (max-width: 480px) {
-            .product-title {
-                font-size: 26px;
-            }
-            .product-details {
-                padding: 24px 20px;
-            }
-            .card {
-                padding: 20px !important;
-                border-radius: 20px !important;
-            }
-            div.tier-option {
-                padding: 14px 16px !important;
-            }
-            .tier-price {
-                font-size: 15px !important;
-            }
-            .buy-buttons {
-                flex-direction: column;
-            }
-            .contact-btn {
-                width: 100%;
-            }
-            .feature-bubble {
-                font-size: 13px;
-                padding: 8px 14px;
-            }
+            .product-title { font-size: 26px; }
+            .product-details { padding: 24px 20px; }
+            .card { padding: 20px; border-radius: 20px; }
+            .buy-buttons { flex-direction: column; }
+            .contact-btn { width: 100%; }
         }
     </style>
 <base target="_blank">
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <a href="/" class="back-btn">&#8592; Back to Shop</a>
         <h1 id="header-title" class="header-title"></h1>
@@ -495,7 +223,6 @@
 
     <main>
         <article>
-            <!-- IMAGE CARD -->
             <div class="card product-image-container">
                 <div class="image-wrapper">
                     <span class="image-badge" id="img-badge">In Stock</span>
@@ -503,27 +230,18 @@
                 </div>
             </div>
 
-            <!-- DETAILS CARD -->
             <section class="card product-details">
                 <h2 id="p-name" class="product-title"></h2>
                 <p id="p-subtitle" class="product-subtitle"></p>
 
-                <!-- FEATURE BUBBLES -->
-                <div class="features-section">
-                    <div class="section-label">Key Features</div>
-                    <div id="feature-bubbles" class="feature-bubbles"></div>
-                </div>
+                <div class="section-label">Key Features</div>
+                <div id="feature-bubbles"></div>
 
-                <!-- DESCRIPTION -->
                 <p id="p-desc" class="product-description"></p>
 
-                <!-- PRICING TIERS -->
-                <div class="pricing-section">
-                    <div class="section-label">Choose Your Package</div>
-                    <div id="pricing-tiers" class="pricing-tiers"></div>
-                </div>
+                <div class="section-label">Choose Your Package</div>
+                <div id="pricing-tiers"></div>
 
-                <!-- CONTACT BUTTONS -->
                 <div class="buy-buttons">
                     <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">
                         <span style="font-size:20px;">&#128172;</span> Order on WhatsApp
@@ -533,7 +251,6 @@
                     </a>
                 </div>
 
-                <!-- TRUST BADGES -->
                 <div class="trust-badges">
                     <div class="trust-item"><span>&#128666;</span> Fast Shipping</div>
                     <div class="trust-item"><span>&#128274;</span> Secure Payment</div>
@@ -543,27 +260,19 @@
         </article>
     </main>
 
-    <!-- ============================================================ -->
-    <!--  EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                       -->
-    <!-- ============================================================ -->
+    <!-- ================================================================ -->
+    <!--  EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                           -->
+    <!-- ================================================================ -->
     <script>
         const PRODUCT_CONFIG = {
-
-            /* --- 1. BASIC INFO --- */
             name: "Premium GPS Tracker",
             subtitle: "Real-Time Vehicle Security & Fleet Monitoring",
-
-            /* --- 2. IMAGES --- */
             imageSrc: "/images/gps-tracker.jpg",
             imageAlt: "Premium compact GPS tracker for vehicles",
             imageBadge: "In Stock",
-
-            /* --- 3. SEO & META --- */
             seoTitle: "Buy Premium GPS Tracker Online | 247 AVL Plug",
             seoDescription: "Buy Premium GPS Tracker. Real-time tracking, long battery life. Choose from single units or wholesale packs. Fast shipping at 247 AVL Plug!",
             urlSlug: "premium-gps-tracker.html",
-
-            /* --- 4. PRICING TIERS --- */
             pricingTiers: [
                 { label: "Single Unit",     price: "$49.99",              badge: "" },
                 { label: "5-Pack",          price: "$224.99",            badge: "Save 10%" },
@@ -572,29 +281,21 @@
                 { label: "Custom Bundle",   price: "Contact for Quote",  badge: "" }
             ],
             defaultTierIndex: 0,
-
-            /* --- 5. DESCRIPTION & FEATURES --- */
             description: "Keep your vehicle secure with our Premium GPS Tracker. Features real-time location updates, geofencing alerts, and a 30-day battery life. Perfect for personal cars, fleets, and motorcycles.",
-
-            /* Only 3 features shown as bubbles */
             features: [
                 "Real-time live tracking",
                 "30-day battery life",
                 "Geofencing alerts"
             ],
-
-            /* --- 6. CONTACT --- */
             whatsappNumber: "1234567890",
             email: "sales@247avlplug.com",
-
-            /* --- 7. THEME --- */
             themeColor: "#25D366",
             backgroundColor: "#FF9500"
         };
 
-        /* ============================================================ */
-        /*  ENGINE — DO NOT EDIT BELOW                                  */
-        /* ============================================================ */
+        /* ================================================================ */
+        /*  ENGINE — ALL STYLES APPLIED INLINE VIA JS                       */
+        /* ================================================================ */
         document.addEventListener('DOMContentLoaded', function() {
             var p = PRODUCT_CONFIG;
             var baseUrl = "https://247avlplug.com";
@@ -630,53 +331,129 @@
                 badgeEl.style.display = "none";
             }
 
-            // Feature Bubbles
+            /* ========================================================= */
+            /*  FEATURE CARDS — 3 mini cards with green top border       */
+            /* ========================================================= */
             var featuresContainer = document.getElementById('feature-bubbles');
             featuresContainer.innerHTML = '';
 
+            // Container styles
+            featuresContainer.style.display = 'flex';
+            featuresContainer.style.flexWrap = 'wrap';
+            featuresContainer.style.gap = '12px';
+            featuresContainer.style.marginBottom = '28px';
+
+            var featureIcons = ["&#128308;", "&#128267;", "&#128205;"];
+
             if (p.features && p.features.length > 0) {
                 for (var i = 0; i < p.features.length; i++) {
-                    var bubble = document.createElement('div');
-                    bubble.className = 'feature-bubble';
-                    bubble.innerHTML = '<span class="feature-bubble-icon">&#10003;</span><span>' + p.features[i] + '</span>';
-                    featuresContainer.appendChild(bubble);
+                    var card = document.createElement('div');
+
+                    // Inline styles for each feature card
+                    card.style.backgroundColor = '#ffffff';
+                    card.style.border = '1.5px solid #e5e5e7';
+                    card.style.borderTop = '4px solid #25D366';
+                    card.style.borderRadius = '14px';
+                    card.style.padding = '18px 16px';
+                    card.style.flex = '1 1 140px';
+                    card.style.minWidth = '140px';
+                    card.style.textAlign = 'center';
+                    card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+                    card.style.transition = 'all 0.25s ease';
+                    card.style.cursor = 'default';
+
+                    card.innerHTML = 
+                        '<div style="font-size:28px;margin-bottom:8px;">' + featureIcons[i] + '</div>' +
+                        '<div style="font-size:13px;font-weight:700;color:#1d1d1f;line-height:1.4;">' + p.features[i] + '</div>';
+
+                    featuresContainer.appendChild(card);
                 }
             }
 
-            // Pricing Tiers
+            /* ========================================================= */
+            /*  PRICING TIERS — Clean rows with radio circle + accent    */
+            /* ========================================================= */
             var tiersContainer = document.getElementById('pricing-tiers');
             tiersContainer.innerHTML = '';
+            tiersContainer.style.display = 'flex';
+            tiersContainer.style.flexDirection = 'column';
+            tiersContainer.style.gap = '10px';
+            tiersContainer.style.marginBottom = '28px';
+
             var currentTier = p.pricingTiers[p.defaultTierIndex];
 
             for (var i = 0; i < p.pricingTiers.length; i++) {
                 (function(tier, index) {
-                    var div = document.createElement('div');
-                    div.className = 'tier-option' + (index === p.defaultTierIndex ? ' selected' : '');
+                    var row = document.createElement('div');
+
+                    var isSelected = (index === p.defaultTierIndex);
+
+                    // Base inline styles for each pricing row
+                    row.style.backgroundColor = isSelected ? '#e8f8ee' : '#ffffff';
+                    row.style.border = isSelected ? '2px solid #25D366' : '2px solid #d1d1d6';
+                    row.style.borderLeft = isSelected ? '5px solid #25D366' : '2px solid #d1d1d6';
+                    row.style.borderRadius = '12px';
+                    row.style.padding = '16px 18px';
+                    row.style.cursor = 'pointer';
+                    row.style.display = 'flex';
+                    row.style.alignItems = 'center';
+                    row.style.justifyContent = 'space-between';
+                    row.style.gap = '12px';
+                    row.style.boxShadow = isSelected ? '0 4px 12px rgba(37,211,102,0.15)' : '0 1px 4px rgba(0,0,0,0.04)';
+                    row.style.transition = 'all 0.2s ease';
+
+                    // Radio circle
+                    var radioColor = isSelected ? '#25D366' : '#d1d1d6';
+                    var radioInner = isSelected ? '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>' : '';
 
                     var badgeHtml = '';
                     if (tier.badge && tier.badge.trim() !== '') {
-                        badgeHtml = '<span class="tier-badge">' + tier.badge + '</span>';
+                        badgeHtml = '<span style="font-size:11px;background:#25D366;color:#fff;padding:3px 10px;border-radius:50px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;">' + tier.badge + '</span>';
                     }
 
-                    div.innerHTML = 
-                        '<div class="tier-row">' +
-                            '<div class="tier-left">' +
-                                '<span class="tier-label">' + tier.label + '</span>' +
+                    row.innerHTML = 
+                        '<div style="display:flex;align-items:center;gap:12px;flex:1;">' +
+                            '<div style="width:22px;height:22px;border-radius:50%;border:3px solid ' + radioColor + ';background:' + radioColor + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + radioInner + '</div>' +
+                            '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">' +
+                                '<span style="font-weight:700;font-size:15px;color:#1d1d1f;white-space:nowrap;">' + tier.label + '</span>' +
                                 badgeHtml +
                             '</div>' +
-                            '<span class="tier-price">' + tier.price + '</span>' +
-                        '</div>';
+                        '</div>' +
+                        '<span style="font-weight:800;font-size:17px;color:#1faa52;white-space:nowrap;flex-shrink:0;">' + tier.price + '</span>';
 
-                    div.addEventListener('click', function() {
-                        var allTiers = document.querySelectorAll('.tier-option');
-                        for (var j = 0; j < allTiers.length; j++) { 
-                            allTiers[j].classList.remove('selected'); 
+                    row.addEventListener('click', function() {
+                        // Reset all rows
+                        var allRows = tiersContainer.children;
+                        for (var j = 0; j < allRows.length; j++) {
+                            var r = allRows[j];
+                            r.style.backgroundColor = '#ffffff';
+                            r.style.border = '2px solid #d1d1d6';
+                            r.style.borderLeft = '2px solid #d1d1d6';
+                            r.style.boxShadow = '0 1px 4px rgba(0,0,0,0.04)';
+                            var radio = r.querySelector('div > div');
+                            if (radio) {
+                                radio.style.borderColor = '#d1d1d6';
+                                radio.style.background = '#d1d1d6';
+                                radio.innerHTML = '';
+                            }
                         }
-                        div.classList.add('selected');
+
+                        // Highlight clicked row
+                        row.style.backgroundColor = '#e8f8ee';
+                        row.style.border = '2px solid #25D366';
+                        row.style.borderLeft = '5px solid #25D366';
+                        row.style.boxShadow = '0 4px 12px rgba(37,211,102,0.15)';
+                        var activeRadio = row.querySelector('div > div');
+                        if (activeRadio) {
+                            activeRadio.style.borderColor = '#25D366';
+                            activeRadio.style.background = '#25D366';
+                            activeRadio.innerHTML = '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>';
+                        }
+
                         updateLinks(tier);
                     });
 
-                    tiersContainer.appendChild(div);
+                    tiersContainer.appendChild(row);
                 })(p.pricingTiers[i], i);
             }
 
