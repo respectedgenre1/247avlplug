@@ -34,10 +34,11 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 100px; /* Extra space for sticky footer */
+            padding-bottom: 100px; /* Space for sticky footer */
             -webkit-font-smoothing: antialiased;
         }
 
+        /* HEADER */
         header {
             background: var(--card-bg);
             padding: 15px 20px;
@@ -49,7 +50,6 @@
             z-index: 100;
             box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
-
         .back-btn {
             background: var(--bg-color);
             border: 1px solid var(--border-color);
@@ -65,8 +65,21 @@
             transition: all 0.2s ease;
         }
         .back-btn:active { transform: scale(0.95); background: var(--border-color); }
+        .header-title {
+            font-size: 16px;
+            margin-left: 15px;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-        main { max-width: 600px; margin: 0 auto; padding: 20px; }
+        /* MAIN CONTENT - MOBILE FIRST */
+        main {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
         .product-image-container {
             background: var(--card-bg);
@@ -87,7 +100,7 @@
         }
         .product-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
         
-        /* Variable Pricing Styles */
+        /* VARIABLE PRICING */
         .pricing-tiers {
             display: flex;
             flex-direction: column;
@@ -141,6 +154,7 @@
             font-size: 18px;
         }
 
+        /* STICKY FOOTER - MOBILE */
         .sticky-footer {
             position: fixed;
             bottom: 0; left: 0; right: 0;
@@ -171,6 +185,69 @@
         .contact-btn:active { transform: scale(0.97); }
         .btn-whatsapp { background: var(--primary-color); color: white; }
         .btn-email { background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); }
+
+        /* ========================================== */
+        /* TABLET & DESKTOP OPTIMIZATION (768px+)     */
+        /* ========================================== */
+        @media (min-width: 768px) {
+            body { padding-bottom: 0; } /* Remove bottom padding since footer isn't fixed on desktop */
+
+            header { padding: 20px 40px; }
+            .header-title { font-size: 18px; }
+
+            main {
+                max-width: 1100px;
+                padding: 40px;
+            }
+
+            /* Two Column Layout for Desktop */
+            article {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                align-items: start;
+            }
+
+            .product-image-container {
+                margin-bottom: 0;
+                position: sticky;
+                top: 100px; /* Sticks the image as you scroll down the details */
+            }
+            
+            .product-image {
+                aspect-ratio: auto; /* Let image dictate height on desktop */
+                border-radius: 16px;
+            }
+
+            .product-details {
+                padding: 32px;
+            }
+            .product-title { font-size: 32px; }
+            .product-description { font-size: 17px; }
+
+            /* Footer becomes a static bar at the bottom of the details on desktop */
+            .sticky-footer {
+                position: static;
+                max-width: 100%;
+                margin-top: 30px;
+                box-shadow: none;
+                border-top: 1px solid var(--border-color);
+                border-radius: 0 0 16px 16px;
+                padding: 20px 0 0 0;
+                background: transparent;
+            }
+            .contact-btn {
+                padding: 18px;
+                font-size: 17px;
+            }
+        }
+
+        /* LARGE DESKTOP (1200px+) */
+        @media (min-width: 1200px) {
+            main { max-width: 1200px; }
+            article { gap: 60px; }
+            .product-title { font-size: 36px; }
+        }
     </style>
 
     <!-- JSON-LD Schema (Auto-populated) -->
@@ -180,15 +257,17 @@
 
     <header>
         <a href="/" class="back-btn">← Back to Shop</a>
-        <h1 id="header-title" style="font-size:16px; margin-left:15px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></h1>
+        <h1 id="header-title" class="header-title"></h1>
     </header>
 
     <main>
         <article>
+            <!-- LEFT COLUMN: IMAGE -->
             <div class="product-image-container">
                 <img id="p-img" src="" alt="" class="product-image" width="600" height="600" fetchpriority="high" loading="eager">
             </div>
 
+            <!-- RIGHT COLUMN: DETAILS -->
             <section class="product-details">
                 <h2 id="p-name" class="product-title"></h2>
                 
@@ -197,14 +276,15 @@
 
                 <p id="p-desc" class="product-description"></p>
                 <ul id="p-features" class="features-list"></ul>
+
+                <!-- Contact Buttons (Static on desktop, sticky on mobile) -->
+                <footer class="sticky-footer">
+                    <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+                    <a id="btn-email" href="#" class="contact-btn btn-email">✉️ Email</a>
+                </footer>
             </section>
         </article>
     </main>
-
-    <footer class="sticky-footer">
-        <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
-        <a id="btn-email" href="#" class="contact-btn btn-email">✉️ Email</a>
-    </footer>
 
     <!-- ================================================================= -->
     <!-- 🎯 SINGLE SOURCE OF TRUTH: EDIT ONLY THIS SECTION FOR NEW PRODUCTS -->
@@ -225,7 +305,6 @@
             urlSlug: "premium-gps-tracker.html", // MUST match the actual file name
 
             // 4. VARIABLE PRICING (Up to 5 options)
-            // Use 'badge' for things like "Best Value" or "Save 20%". Leave as "" if not needed.
             pricingTiers: [
                 { label: "Single Unit", price: "$49.99", badge: "" },
                 { label: "5-Pack", price: "$224.99", badge: "Save 10%" },
@@ -233,7 +312,7 @@
                 { label: "Wholesale (50+)", price: "Contact for Quote", badge: "Bulk" },
                 { label: "Custom Bundle", price: "Contact for Quote", badge: "" }
             ],
-            defaultTierIndex: 0, // Which option is selected by default (0 = first one)
+            defaultTierIndex: 0, 
 
             // 5. DESCRIPTION & FEATURES
             description: "Keep your vehicle secure with our Premium GPS Tracker. Features real-time location updates, geofencing alerts, and a 30-day battery life. Perfect for personal cars, fleets, and motorcycles.",
@@ -245,7 +324,7 @@
             ],
 
             // 6. CONTACT & BRANDING
-            whatsappNumber: "1234567890", // Country code + number, NO '+' or spaces
+            whatsappNumber: "1234567890", 
             email: "sales@247avlplug.com",
             themeColor: "#25D366" 
         };
@@ -304,11 +383,8 @@
                 `;
 
                 div.addEventListener('click', () => {
-                    // Remove selected class from all
                     document.querySelectorAll('.tier-option').forEach(el => el.classList.remove('selected'));
-                    // Add to clicked
                     div.classList.add('selected');
-                    // Update current tier and refresh contact links
                     currentTier = tier;
                     updateContactLinks(currentTier);
                 });
@@ -316,7 +392,7 @@
                 tiersContainer.appendChild(div);
             });
 
-            // 6. Contact Links Generator Function
+            // 6. Contact Links Generator
             function updateContactLinks(selectedTier) {
                 const waMessage = encodeURIComponent(`Hi! I want to buy the ${p.name} (${selectedTier.label} - ${selectedTier.price}) from 247avlplug.com`);
                 document.getElementById('btn-wa').href = `https://wa.me/${p.whatsappNumber}?text=${waMessage}`;
@@ -326,13 +402,10 @@
                 document.getElementById('btn-email').href = `mailto:${p.email}?subject=${emailSubject}&body=${emailBody}`;
             }
 
-            // Initialize contact links with default tier
             updateContactLinks(currentTier);
 
-            // 7. JSON-LD Schema (Uses the first/default tier price for Google)
-            // Clean price string for schema (remove $ and commas)
+            // 7. JSON-LD Schema
             const cleanPrice = currentTier.price.replace(/[^0-9.]/g, '') || "0.00";
-            
             const schema = {
                 "@context": "https://schema.org/",
                 "@type": "Product",
