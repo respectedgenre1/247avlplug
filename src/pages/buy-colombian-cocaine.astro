@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO TAGS (Will be updated automatically by the script below) -->
     <title id="seo-title">Product | 247 AVL Plug</title>
     <meta name="description" id="seo-desc" content="">
@@ -19,13 +19,13 @@
 
     <style>
         /* ========================================== */
-        /* 1. VISUAL STYLES (DO NOT NEED TO CHANGE)   */
+        /* 1. VISUAL STYLES                           */
         /* ========================================== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #FF9500; /* Solid Orange Background */
+            background-color: #FF9500;
             color: #1d1d1f;
             line-height: 1.6;
             min-height: 100vh;
@@ -56,9 +56,10 @@
             align-items: center;
             gap: 6px;
             transition: all 0.2s ease;
+            flex-shrink: 0;
         }
         .back-btn:hover { background-color: #f5f5f5; transform: translateY(-1px); }
-        .header-title { font-size: 17px; font-weight: 600; margin-left: 16px; color: #6e6e73; }
+        .header-title { font-size: 17px; font-weight: 600; margin-left: 16px; color: #6e6e73; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         /* MAIN LAYOUT */
         main { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px; }
@@ -80,33 +81,64 @@
         .product-description { color: #6e6e73; font-size: 16px; margin-bottom: 32px; line-height: 1.7; padding-bottom: 24px; border-bottom: 2px solid #f0f0f0; }
         .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6e6e73; margin-bottom: 16px; }
 
-        /* FLOATING CLOUD BUBBLES (FEATURES) */
-        .feature-bubbles { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+        /* ========================================== */
+        /* FEATURE BUBBLES - REDESIGNED FOR CLARITY   */
+        /* ========================================== */
+        .feature-bubbles { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            margin-bottom: 28px;
+        }
         .feature-bubble {
-            background-color: #ffffff;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff9 100%);
             border: 2px solid #25D366;
             border-radius: 50px;
             padding: 10px 18px;
             font-size: 14px;
             font-weight: 600;
             color: #1d1d1f;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
             transition: all 0.2s ease;
+            cursor: default;
+            white-space: nowrap;
         }
         .feature-bubble:hover {
-            background-color: #25D366;
+            background: linear-gradient(135deg, #25D366 0%, #20bd5a 100%);
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
         }
-        .feature-bubble-icon { color: #25D366; font-weight: 900; font-size: 16px; }
-        .feature-bubble:hover .feature-bubble-icon { color: #ffffff; }
+        .feature-bubble-icon { 
+            color: #25D366; 
+            font-weight: 900; 
+            font-size: 16px; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: rgba(37, 211, 102, 0.1);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .feature-bubble:hover .feature-bubble-icon { 
+            color: #ffffff; 
+            background: rgba(255, 255, 255, 0.2);
+        }
 
-        /* PRICING TIERS */
-        .pricing-tiers { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+        /* ========================================== */
+        /* PRICING TIERS - FIXED LAYOUT               */
+        /* ========================================== */
+        .pricing-tiers { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            margin-bottom: 32px; 
+        }
         .tier-option {
             background-color: #ffffff;
             border: 2px solid #e0e0e0;
@@ -117,12 +149,46 @@
             align-items: center;
             cursor: pointer;
             transition: all 0.2s ease;
+            gap: 12px;
         }
-        .tier-option:hover { border-color: #25D366; background-color: #f0fff4; transform: translateY(-2px); }
-        .tier-option.selected { border-color: #25D366; background-color: #e8f8ee; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
-        .tier-label { font-weight: 600; font-size: 15px; color: #1d1d1f; display: flex; align-items: center; gap: 10px; }
-        .tier-price { font-weight: 700; font-size: 17px; color: #25D366; }
-        .tier-badge { font-size: 11px; background-color: #25D366; color: white; padding: 4px 10px; border-radius: 12px; font-weight: 700; }
+        .tier-option:hover { 
+            border-color: #25D366; 
+            background-color: #f0fff4; 
+            transform: translateY(-2px); 
+        }
+        .tier-option.selected { 
+            border-color: #25D366; 
+            background-color: #e8f8ee; 
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); 
+        }
+        .tier-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+        .tier-label { 
+            font-weight: 600; 
+            font-size: 15px; 
+            color: #1d1d1f; 
+        }
+        .tier-badge { 
+            font-size: 11px; 
+            background-color: #25D366; 
+            color: white; 
+            padding: 4px 10px; 
+            border-radius: 12px; 
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .tier-price { 
+            font-weight: 700; 
+            font-size: 17px; 
+            color: #25D366; 
+            flex-shrink: 0;
+            text-align: right;
+        }
 
         /* BUY BUTTONS */
         .buy-buttons { display: flex; gap: 12px; }
@@ -161,13 +227,23 @@
             article { gap: 40px; }
             .product-title { font-size: 42px; }
         }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .product-title { font-size: 26px; }
+            .product-details { padding: 24px 20px; }
+            .tier-option { padding: 14px 16px; }
+            .tier-price { font-size: 15px; }
+            .feature-bubble { font-size: 13px; padding: 8px 14px; }
+        }
     </style>
+<base target="_blank">
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <a href="/" class="back-btn">← Back to Shop</a>
+        <a href="/" class="back-btn">&#8592; Back to Shop</a>
         <h1 id="header-title" class="header-title"></h1>
     </header>
 
@@ -181,7 +257,7 @@
             <!-- DETAILS CARD -->
             <section class="card product-details">
                 <h2 id="p-name" class="product-title"></h2>
-                
+
                 <!-- Features will be injected here as Cloud Bubbles -->
                 <div id="feature-bubbles" class="feature-bubbles"></div>
 
@@ -192,32 +268,31 @@
                 <div id="pricing-tiers" class="pricing-tiers"></div>
 
                 <div class="buy-buttons">
-                    <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
-                    <a id="btn-email" href="#" class="contact-btn btn-email">✉️ Email</a>
+                    <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">&#128172; WhatsApp</a>
+                    <a id="btn-email" href="#" class="contact-btn btn-email">&#9993; Email</a>
                 </div>
             </section>
         </article>
     </main>
 
     <!-- ================================================================= -->
-    <!-- 🎯 SINGLE SOURCE OF TRUTH: EDIT ONLY THIS SECTION FOR NEW PRODUCTS -->
+    <!-- SINGLE SOURCE OF TRUTH: EDIT ONLY THIS SECTION FOR NEW PRODUCTS -->
     <!-- ================================================================= -->
     <script>
         const PRODUCT_CONFIG = {
             // 1. BASIC INFO
             name: "Premium GPS Tracker",
-            
+
             // 2. IMAGES (Upload to your GitHub 'images' folder)
-            imageSrc: "https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20colombian%20cocaine.jpeg?raw=true", 
+            imageSrc: "/images/gps-tracker.jpg", 
             imageAlt: "Premium compact GPS tracker for vehicles",
 
             // 3. SEO & META (Keep "247 AVL Plug" for branding)
             seoTitle: "Buy Premium GPS Tracker Online | 247 AVL Plug",
             seoDescription: "Buy Premium GPS Tracker. Real-time tracking, long battery life. Choose from single units or wholesale packs. Fast shipping at 247 AVL Plug!",
-            urlSlug: "premium-gps-tracker.html", // MUST match the actual file name in GitHub
+            urlSlug: "premium-gps-tracker.html",
 
             // 4. VARIABLE PRICING (Up to 5 options)
-            // Use 'badge' for things like "Best Value". Leave as "" if not needed.
             pricingTiers: [
                 { label: "Single Unit", price: "$49.99", badge: "" },
                 { label: "5-Pack", price: "$224.99", badge: "Save 10%" },
@@ -225,7 +300,7 @@
                 { label: "Wholesale (50+)", price: "Contact for Quote", badge: "Bulk" },
                 { label: "Custom Bundle", price: "Contact for Quote", badge: "" }
             ],
-            defaultTierIndex: 0, // Which option is selected by default (0 = first one)
+            defaultTierIndex: 0,
 
             // 5. DESCRIPTION & FEATURES
             description: "Keep your vehicle secure with our Premium GPS Tracker. Features real-time location updates, geofencing alerts, and a 30-day battery life. Perfect for personal cars, fleets, and motorcycles.",
@@ -237,14 +312,14 @@
             ],
 
             // 6. CONTACT & BRANDING
-            whatsappNumber: "1234567890", // Country code + number, NO '+' or spaces
+            whatsappNumber: "1234567890",
             email: "sales@247avlplug.com",
-            themeColor: "#25D366",        // Accent color (buttons, badges)
-            backgroundColor: "#FF9500"    // Background color (Orange)
+            themeColor: "#25D366",
+            backgroundColor: "#FF9500"
         };
 
         // =================================================================
-        // ⚙️ ENGINE: DO NOT TOUCH BELOW THIS LINE
+        // ENGINE: DO NOT TOUCH BELOW THIS LINE
         // =================================================================
         document.addEventListener('DOMContentLoaded', function() {
             var p = PRODUCT_CONFIG;
@@ -268,50 +343,58 @@
             document.getElementById('header-title').textContent = p.name;
             document.getElementById('p-name').textContent = p.name;
             document.getElementById('p-desc').textContent = p.description;
-            
+
             var imgEl = document.getElementById('p-img');
             imgEl.src = imageUrl;
             imgEl.alt = p.imageAlt;
 
             // 3. Build Feature Cloud Bubbles
             var featuresContainer = document.getElementById('feature-bubbles');
+            featuresContainer.innerHTML = '';
             for (var i = 0; i < p.features.length; i++) {
                 var bubble = document.createElement('div');
                 bubble.className = 'feature-bubble';
-                bubble.innerHTML = '<span class="feature-bubble-icon">✓</span><span>' + p.features[i] + '</span>';
+                bubble.innerHTML = '<span class="feature-bubble-icon">&#10003;</span><span>' + p.features[i] + '</span>';
                 featuresContainer.appendChild(bubble);
             }
 
             // 4. Build Pricing Tiers
             var tiersContainer = document.getElementById('pricing-tiers');
+            tiersContainer.innerHTML = '';
             var currentTier = p.pricingTiers[p.defaultTierIndex];
 
             for (var i = 0; i < p.pricingTiers.length; i++) {
-                var tier = p.pricingTiers[i];
-                var div = document.createElement('div');
-                div.className = 'tier-option' + (i === p.defaultTierIndex ? ' selected' : '');
-                
-                var badgeHtml = tier.badge ? '<span class="tier-badge">' + tier.badge + '</span>' : '';
-                
-                div.innerHTML = '<span class="tier-label">' + tier.label + ' ' + badgeHtml + '</span><span class="tier-price">' + tier.price + '</span>';
+                (function(tier, index) {
+                    var div = document.createElement('div');
+                    div.className = 'tier-option' + (index === p.defaultTierIndex ? ' selected' : '');
 
-                div.addEventListener('click', function(tierData, element) {
-                    return function() {
+                    var badgeHtml = tier.badge ? '<span class="tier-badge">' + tier.badge + '</span>' : '';
+
+                    div.innerHTML = 
+                        '<div class="tier-left">' +
+                            '<span class="tier-label">' + tier.label + '</span>' +
+                            badgeHtml +
+                        '</div>' +
+                        '<span class="tier-price">' + tier.price + '</span>';
+
+                    div.addEventListener('click', function() {
                         var allTiers = document.querySelectorAll('.tier-option');
-                        for (var j = 0; j < allTiers.length; j++) { allTiers[j].classList.remove('selected'); }
-                        element.classList.add('selected');
-                        updateLinks(tierData);
-                    };
-                }(tier, div));
+                        for (var j = 0; j < allTiers.length; j++) { 
+                            allTiers[j].classList.remove('selected'); 
+                        }
+                        div.classList.add('selected');
+                        updateLinks(tier);
+                    });
 
-                tiersContainer.appendChild(div);
+                    tiersContainer.appendChild(div);
+                })(p.pricingTiers[i], i);
             }
 
             // 5. Update Contact Links
             function updateLinks(selectedTier) {
                 var waMessage = encodeURIComponent('Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com');
                 document.getElementById('btn-wa').href = 'https://wa.me/' + p.whatsappNumber + '?text=' + waMessage;
-                
+
                 var emailSubject = encodeURIComponent('Inquiry: ' + p.name + ' (' + selectedTier.label + ')');
                 var emailBody = encodeURIComponent('Hi, I would like to purchase the ' + p.name + ' - ' + selectedTier.label + ' at ' + selectedTier.price + ' from your store.');
                 document.getElementById('btn-email').href = 'mailto:' + p.email + '?subject=' + emailSubject + '&body=' + emailBody;
