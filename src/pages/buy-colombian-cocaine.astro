@@ -170,10 +170,9 @@
             background-color: #25D366;
             color: #fff;
         }
-        .btn-email {
-            background-color: #fff;
-            color: #1d1d1f;
-            border: 2px solid #d1d1d6;
+        .btn-telegram {
+            background-color: #0088cc;
+            color: #fff;
         }
         .trust-badges {
             display: flex;
@@ -244,10 +243,10 @@
 
                 <div class="buy-buttons">
                     <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">
-                        <span style="font-size:20px;">&#128172;</span> Order on WhatsApp
+                        <span style="font-size:20px;">&#128172;</span> WhatsApp
                     </a>
-                    <a id="btn-email" href="#" class="contact-btn btn-email">
-                        <span style="font-size:20px;">&#9993;</span> Email Inquiry
+                    <a id="btn-tg" href="#" class="contact-btn btn-telegram" target="_blank" rel="noopener">
+                        <span style="font-size:20px;">&#9992;</span> Telegram
                     </a>
                 </div>
 
@@ -261,40 +260,83 @@
     </main>
 
     <!-- ================================================================ -->
-    <!--  EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                           -->
+    <!--                                                                  -->
+    <!--   EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                          -->
+    -->
+    <!--   Each section is labeled. Change the values inside quotes.      -->
+    -->
     <!-- ================================================================ -->
     <script>
         const PRODUCT_CONFIG = {
-            name: "Premium GPS Tracker",
-            subtitle: "Real-Time Vehicle Security & Fleet Monitoring",
-            imageSrc: "/images/gps-tracker.jpg",
-            imageAlt: "Premium compact GPS tracker for vehicles",
+
+            /* ========================================================= */
+            /*  1. BASIC INFO                                            */
+            /* ========================================================= */
+            name: "Premium Research Chemical",
+            subtitle: "Lab-Grade Purity | Discreet Worldwide Delivery",
+
+            /* ========================================================= */
+            /*  2. IMAGES                                                */
+            /* ========================================================= */
+            imageSrc: "/images/product.jpg",
+            imageAlt: "Premium research chemical product",
             imageBadge: "In Stock",
-            seoTitle: "Buy Premium GPS Tracker Online | 247 AVL Plug",
-            seoDescription: "Buy Premium GPS Tracker. Real-time tracking, long battery life. Choose from single units or wholesale packs. Fast shipping at 247 AVL Plug!",
-            urlSlug: "premium-gps-tracker.html",
+
+            /* ========================================================= */
+            /*  3. SEO & META                                            */
+            /* ========================================================= */
+            seoTitle: "Buy Premium Research Chemical | 247 AVL Plug",
+            seoDescription: "Premium research chemical with lab-grade purity. Discreet packaging, worldwide delivery. Order now at 247 AVL Plug!",
+            urlSlug: "premium-research-chemical.html",
+
+            /* ========================================================= */
+            /*  4. PRICING TIERS                                         */
+            /* ========================================================= */
             pricingTiers: [
-                { label: "Single Unit",     price: "$49.99",              badge: "" },
-                { label: "5-Pack",          price: "$224.99",            badge: "Save 10%" },
-                { label: "10-Pack",         price: "$399.99",            badge: "Best Value" },
-                { label: "Wholesale (50+)", price: "Contact for Quote",  badge: "Bulk" },
-                { label: "Custom Bundle",   price: "Contact for Quote",  badge: "" }
+                { label: "1 Gram",    price: "$49.99",              badge: "" },
+                { label: "5 Grams",   price: "$199.99",            badge: "Save 20%" },
+                { label: "10 Grams",  price: "$349.99",            badge: "Best Value" },
+                { label: "25 Grams",  price: "$749.99",            badge: "Bulk" },
+                { label: "50+ Grams", price: "Contact for Quote",  badge: "Wholesale" }
             ],
             defaultTierIndex: 0,
-            description: "Keep your vehicle secure with our Premium GPS Tracker. Features real-time location updates, geofencing alerts, and a 30-day battery life. Perfect for personal cars, fleets, and motorcycles.",
+
+            /* ========================================================= */
+            /*  5. DESCRIPTION                                           */
+            /* ========================================================= */
+            description: "Premium research chemical sourced for maximum purity and consistency. Every batch is lab-tested, vacuum-sealed in discreet packaging, and shipped to any address worldwide with full tracking.",
+
+            /* ========================================================= */
+            /*  6. FEATURES (3 items max)                                */
+            /*     Emojis: 💎 = High Purity                              */
+            /*             📦 = Discreet Packaging                       */
+            /*             🚚 = Any Address Delivery                     */
+            /* ========================================================= */
             features: [
-                "Real-time live tracking",
-                "30-day battery life",
-                "Geofencing alerts"
+                "High Purity",
+                "Discreet Packaging",
+                "Any Address Delivery"
             ],
-            whatsappNumber: "1234567890",
-            email: "sales@247avlplug.com",
+            featureEmojis: ["&#128142;", "&#128230;", "&#128666;"],
+
+            /* ========================================================= */
+            /*  7. CONTACT — EDIT THESE FOR YOUR ACCOUNTS                */
+            /* ========================================================= */
+            // WhatsApp: digits only, NO plus (+) and NO spaces
+            whatsappNumber: "13254365583",
+
+            // Telegram: username WITHOUT the @ symbol
+            telegramHandle: "datplugg",
+
+            /* ========================================================= */
+            /*  8. THEME COLORS                                          */
+            /* ========================================================= */
             themeColor: "#25D366",
             backgroundColor: "#FF9500"
         };
 
         /* ================================================================ */
-        /*  ENGINE — ALL STYLES APPLIED INLINE VIA JS                       */
+        /*  ENGINE — DO NOT EDIT BELOW THIS LINE                            */
         /* ================================================================ */
         document.addEventListener('DOMContentLoaded', function() {
             var p = PRODUCT_CONFIG;
@@ -332,24 +374,20 @@
             }
 
             /* ========================================================= */
-            /*  FEATURE CARDS — 3 mini cards with green top border       */
+            /*  FEATURE CARDS                                            */
             /* ========================================================= */
             var featuresContainer = document.getElementById('feature-bubbles');
             featuresContainer.innerHTML = '';
-
-            // Container styles
             featuresContainer.style.display = 'flex';
             featuresContainer.style.flexWrap = 'wrap';
             featuresContainer.style.gap = '12px';
             featuresContainer.style.marginBottom = '28px';
 
-            var featureIcons = ["&#128308;", "&#128267;", "&#128205;"];
+            var emojis = p.featureEmojis || ["&#10003;", "&#10003;", "&#10003;"];
 
             if (p.features && p.features.length > 0) {
                 for (var i = 0; i < p.features.length; i++) {
                     var card = document.createElement('div');
-
-                    // Inline styles for each feature card
                     card.style.backgroundColor = '#ffffff';
                     card.style.border = '1.5px solid #e5e5e7';
                     card.style.borderTop = '4px solid #25D366';
@@ -362,8 +400,8 @@
                     card.style.transition = 'all 0.25s ease';
                     card.style.cursor = 'default';
 
-                    card.innerHTML = 
-                        '<div style="font-size:28px;margin-bottom:8px;">' + featureIcons[i] + '</div>' +
+                    card.innerHTML =
+                        '<div style="font-size:28px;margin-bottom:8px;">' + emojis[i] + '</div>' +
                         '<div style="font-size:13px;font-weight:700;color:#1d1d1f;line-height:1.4;">' + p.features[i] + '</div>';
 
                     featuresContainer.appendChild(card);
@@ -371,7 +409,7 @@
             }
 
             /* ========================================================= */
-            /*  PRICING TIERS — Clean rows with radio circle + accent    */
+            /*  PRICING TIERS                                            */
             /* ========================================================= */
             var tiersContainer = document.getElementById('pricing-tiers');
             tiersContainer.innerHTML = '';
@@ -385,10 +423,8 @@
             for (var i = 0; i < p.pricingTiers.length; i++) {
                 (function(tier, index) {
                     var row = document.createElement('div');
-
                     var isSelected = (index === p.defaultTierIndex);
 
-                    // Base inline styles for each pricing row
                     row.style.backgroundColor = isSelected ? '#e8f8ee' : '#ffffff';
                     row.style.border = isSelected ? '2px solid #25D366' : '2px solid #d1d1d6';
                     row.style.borderLeft = isSelected ? '5px solid #25D366' : '2px solid #d1d1d6';
@@ -402,7 +438,6 @@
                     row.style.boxShadow = isSelected ? '0 4px 12px rgba(37,211,102,0.15)' : '0 1px 4px rgba(0,0,0,0.04)';
                     row.style.transition = 'all 0.2s ease';
 
-                    // Radio circle
                     var radioColor = isSelected ? '#25D366' : '#d1d1d6';
                     var radioInner = isSelected ? '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>' : '';
 
@@ -411,7 +446,7 @@
                         badgeHtml = '<span style="font-size:11px;background:#25D366;color:#fff;padding:3px 10px;border-radius:50px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;">' + tier.badge + '</span>';
                     }
 
-                    row.innerHTML = 
+                    row.innerHTML =
                         '<div style="display:flex;align-items:center;gap:12px;flex:1;">' +
                             '<div style="width:22px;height:22px;border-radius:50%;border:3px solid ' + radioColor + ';background:' + radioColor + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + radioInner + '</div>' +
                             '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">' +
@@ -422,7 +457,6 @@
                         '<span style="font-weight:800;font-size:17px;color:#1faa52;white-space:nowrap;flex-shrink:0;">' + tier.price + '</span>';
 
                     row.addEventListener('click', function() {
-                        // Reset all rows
                         var allRows = tiersContainer.children;
                         for (var j = 0; j < allRows.length; j++) {
                             var r = allRows[j];
@@ -438,7 +472,6 @@
                             }
                         }
 
-                        // Highlight clicked row
                         row.style.backgroundColor = '#e8f8ee';
                         row.style.border = '2px solid #25D366';
                         row.style.borderLeft = '5px solid #25D366';
@@ -457,18 +490,21 @@
                 })(p.pricingTiers[i], i);
             }
 
-            // Contact Links
+            /* ========================================================= */
+            /*  CONTACT LINKS                                            */
+            /* ========================================================= */
             function updateLinks(selectedTier) {
+                // WhatsApp
                 var waMessage = encodeURIComponent(
                     'Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com'
                 );
                 document.getElementById('btn-wa').href = 'https://wa.me/' + p.whatsappNumber + '?text=' + waMessage;
 
-                var emailSubject = encodeURIComponent('Inquiry: ' + p.name + ' (' + selectedTier.label + ')');
-                var emailBody = encodeURIComponent(
-                    'Hi, I would like to purchase the ' + p.name + ' - ' + selectedTier.label + ' at ' + selectedTier.price + ' from your store.'
+                // Telegram
+                var tgMessage = encodeURIComponent(
+                    'Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com'
                 );
-                document.getElementById('btn-email').href = 'mailto:' + p.email + '?subject=' + emailSubject + '&body=' + emailBody;
+                document.getElementById('btn-tg').href = 'https://t.me/' + p.telegramHandle + '?text=' + tgMessage;
             }
 
             updateLinks(currentTier);
