@@ -20,158 +20,261 @@
 
     <style>
         :root {
-            --primary-color: #25D366; 
-            --bg-color: #F8F9FA;
-            --card-bg: #FFFFFF;
-            --text-main: #212529;
-            --text-muted: #6C757D;
-            --border-color: #E9ECEF;
+            --primary-color: #25D366;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --text-main: #1d1d1f;
+            --text-muted: #6e6e73;
+            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--accent-gradient);
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 100px; /* Space for sticky footer */
+            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            position: relative;
         }
 
-        /* HEADER */
+        /* Animated background mesh for glass effect visibility */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+            z-index: -1;
+            animation: meshMove 20s ease infinite;
+        }
+
+        @keyframes meshMove {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-20px, 20px); }
+        }
+
+        /* GLASS HEADER */
         header {
-            background: var(--card-bg);
-            padding: 15px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 16px 24px;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--glass-border);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
+
         .back-btn {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--glass-border);
             color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 18px;
+            border-radius: 24px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
-        .back-btn:active { transform: scale(0.95); background: var(--border-color); }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .back-btn:active { transform: scale(0.95); }
+
         .header-title {
-            font-size: 16px;
-            margin-left: 15px;
+            font-size: 17px;
+            font-weight: 600;
+            margin-left: 16px;
             color: var(--text-muted);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        /* MAIN CONTENT - MOBILE FIRST */
+        /* MAIN CONTENT */
         main {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 30px 20px 120px;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* GLASS CARDS */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+        }
+
+        /* IMAGE SECTION */
+        .product-image-container {
             padding: 20px;
         }
-
-        .product-image-container {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
         .product-image {
-            width: 100%; height: auto; display: block; aspect-ratio: 1/1; object-fit: cover;
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+        .product-image:hover {
+            transform: scale(1.02);
         }
 
+        /* DETAILS SECTION */
         .product-details {
-            background: var(--card-bg);
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            padding: 32px 28px;
         }
-        .product-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
-        
-        /* VARIABLE PRICING */
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        /* PRICING TIERS - GLASS BUTTONS */
         .pricing-tiers {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 24px;
+            gap: 12px;
+            margin-bottom: 28px;
         }
         .tier-option {
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: all 0.2s ease;
-            background: var(--card-bg);
+            transition: all 0.3s ease;
+        }
+        .tier-option:hover {
+            background: rgba(255, 255, 255, 0.75);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
         .tier-option:active { transform: scale(0.98); }
         .tier-option.selected {
             border-color: var(--primary-color);
-            background-color: color-mix(in srgb, var(--primary-color) 8%, transparent);
+            background: rgba(37, 211, 102, 0.15);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.2);
         }
-        .tier-label { font-weight: 600; font-size: 15px; color: var(--text-main); }
-        .tier-price { font-weight: 800; font-size: 16px; color: var(--primary-color); }
+        .tier-label {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tier-price {
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--primary-color);
+        }
         .tier-badge {
             font-size: 11px;
             background: var(--primary-color);
             color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            margin-left: 8px;
+            padding: 4px 10px;
+            border-radius: 12px;
             font-weight: 700;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
         }
 
-        .product-description { color: var(--text-muted); font-size: 16px; margin-bottom: 24px; white-space: pre-line; }
+        /* DESCRIPTION */
+        .product-description {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 28px;
+            white-space: pre-line;
+            line-height: 1.7;
+        }
 
-        .features-list { list-style: none; margin-bottom: 20px; }
+        /* FEATURES AS BUTTONS */
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
         .features-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 14px 18px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        .features-list li:last-child { border-bottom: none; }
+        .features-list li:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
         .features-list li::before {
             content: "✓";
             color: var(--primary-color);
             font-weight: 900;
             font-size: 18px;
+            background: rgba(37, 211, 102, 0.15);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
-        /* STICKY FOOTER - MOBILE */
+        /* BUY NOW BUTTONS */
         .sticky-footer {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: var(--card-bg);
-            padding: 16px 20px;
             display: flex;
             gap: 12px;
-            border-top: 1px solid var(--border-color);
-            box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
-            z-index: 100;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-top: 8px;
         }
         .contact-btn {
             flex: 1;
-            padding: 16px;
-            border-radius: 12px;
+            padding: 18px;
+            border-radius: 16px;
             text-align: center;
             text-decoration: none;
             font-weight: 700;
@@ -180,77 +283,80 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: transform 0.1s ease;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
         .contact-btn:active { transform: scale(0.97); }
-        .btn-whatsapp { background: var(--primary-color); color: white; }
-        .btn-email { background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); }
+        
+        .btn-whatsapp {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-email {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+        }
+        .btn-email:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
 
-        /* ========================================== */
-        /* TABLET & DESKTOP OPTIMIZATION (768px+)     */
-        /* ========================================== */
+        /* DESKTOP LAYOUT */
         @media (min-width: 768px) {
-            body { padding-bottom: 0; } /* Remove bottom padding since footer isn't fixed on desktop */
-
-            header { padding: 20px 40px; }
-            .header-title { font-size: 18px; }
-
-            main {
-                max-width: 1100px;
-                padding: 40px;
-            }
-
-            /* Two Column Layout for Desktop */
+            main { padding: 40px 30px 60px; }
+            
             article {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 40px;
+                gap: 30px;
                 align-items: start;
             }
 
             .product-image-container {
-                margin-bottom: 0;
                 position: sticky;
-                top: 100px; /* Sticks the image as you scroll down the details */
+                top: 100px;
+                padding: 24px;
             }
             
             .product-image {
-                aspect-ratio: auto; /* Let image dictate height on desktop */
-                border-radius: 16px;
+                aspect-ratio: auto;
             }
 
             .product-details {
-                padding: 32px;
+                padding: 40px 36px;
             }
-            .product-title { font-size: 32px; }
+            .product-title { font-size: 38px; }
             .product-description { font-size: 17px; }
 
-            /* Footer becomes a static bar at the bottom of the details on desktop */
             .sticky-footer {
-                position: static;
-                max-width: 100%;
-                margin-top: 30px;
-                box-shadow: none;
-                border-top: 1px solid var(--border-color);
-                border-radius: 0 0 16px 16px;
-                padding: 20px 0 0 0;
-                background: transparent;
+                margin-top: 32px;
             }
             .contact-btn {
-                padding: 18px;
+                padding: 20px;
                 font-size: 17px;
             }
         }
 
-        /* LARGE DESKTOP (1200px+) */
         @media (min-width: 1200px) {
-            main { max-width: 1200px; }
-            article { gap: 60px; }
-            .product-title { font-size: 36px; }
+            main { max-width: 1280px; padding: 50px 40px 80px; }
+            article { gap: 40px; }
+            .product-title { font-size: 42px; }
         }
     </style>
 
-    <!-- JSON-LD Schema (Auto-populated) -->
+    <!-- JSON-LD Schema -->
     <script id="json-ld" type="application/ld+json"></script>
 </head>
 <body>
@@ -262,22 +368,25 @@
 
     <main>
         <article>
-            <!-- LEFT COLUMN: IMAGE -->
-            <div class="product-image-container">
+            <!-- IMAGE SECTION -->
+            <div class="product-image-container glass-card">
                 <img id="p-img" src="" alt="" class="product-image" width="600" height="600" fetchpriority="high" loading="eager">
             </div>
 
-            <!-- RIGHT COLUMN: DETAILS -->
-            <section class="product-details">
+            <!-- DETAILS SECTION -->
+            <section class="product-details glass-card">
                 <h2 id="p-name" class="product-title"></h2>
                 
-                <!-- Variable Pricing Section -->
+                <!-- PRICING -->
                 <div id="pricing-tiers" class="pricing-tiers"></div>
 
+                <!-- DESCRIPTION -->
                 <p id="p-desc" class="product-description"></p>
+
+                <!-- FEATURES AS BUTTONS -->
                 <ul id="p-features" class="features-list"></ul>
 
-                <!-- Contact Buttons (Static on desktop, sticky on mobile) -->
+                <!-- BUY NOW BUTTONS -->
                 <footer class="sticky-footer">
                     <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
                     <a id="btn-email" href="#" class="contact-btn btn-email">✉️ Email</a>
@@ -287,24 +396,18 @@
     </main>
 
     <!-- ================================================================= -->
-    <!-- 🎯 SINGLE SOURCE OF TRUTH: EDIT ONLY THIS SECTION FOR NEW PRODUCTS -->
+    <!-- 🎯 SINGLE SOURCE OF TRUTH: EDIT ONLY THIS SECTION -->
     <!-- ================================================================= -->
     <script>
         const PRODUCT_CONFIG = {
-            // 1. BASIC INFO
             name: "Premium GPS Tracker",
             sku: "GPS-001",
-
-            // 2. IMAGES
             imageSrc: "/images/gps-tracker.jpg", 
             imageAlt: "Premium compact GPS tracker for vehicles",
-
-            // 3. SEO & META
             seoTitle: "Buy Premium GPS Tracker Online | 247 AVL Plug",
             seoDescription: "Buy Premium GPS Tracker. Real-time tracking, long battery life. Choose from single units or wholesale packs. Fast shipping at 247 AVL Plug!",
-            urlSlug: "premium-gps-tracker.html", // MUST match the actual file name
-
-            // 4. VARIABLE PRICING (Up to 5 options)
+            urlSlug: "premium-gps-tracker.html",
+            
             pricingTiers: [
                 { label: "Single Unit", price: "$49.99", badge: "" },
                 { label: "5-Pack", price: "$224.99", badge: "Save 10%" },
@@ -314,7 +417,6 @@
             ],
             defaultTierIndex: 0, 
 
-            // 5. DESCRIPTION & FEATURES
             description: "Keep your vehicle secure with our Premium GPS Tracker. Features real-time location updates, geofencing alerts, and a 30-day battery life. Perfect for personal cars, fleets, and motorcycles.",
             features: [
                 "Real-time live tracking via mobile app",
@@ -323,14 +425,13 @@
                 "Easy plug-and-play installation"
             ],
 
-            // 6. CONTACT & BRANDING
             whatsappNumber: "1234567890", 
             email: "sales@247avlplug.com",
             themeColor: "#25D366" 
         };
 
         // =================================================================
-        // ⚙️ ENGINE: DO NOT TOUCH BELOW THIS LINE
+        // ⚙️ ENGINE: DO NOT TOUCH BELOW
         // =================================================================
         document.addEventListener("DOMContentLoaded", () => {
             const p = PRODUCT_CONFIG;
@@ -338,7 +439,6 @@
             const productUrl = `${baseUrl}/products/${p.urlSlug}`;
             const imageUrl = p.imageSrc.startsWith('http') ? p.imageSrc : `${baseUrl}${p.imageSrc}`;
 
-            // 1. SEO & Meta
             document.title = p.seoTitle;
             document.getElementById('seo-desc').content = p.seoDescription;
             document.getElementById('seo-canonical').href = productUrl;
@@ -347,10 +447,8 @@
             document.getElementById('og-image').content = imageUrl;
             document.getElementById('og-url').content = productUrl;
 
-            // 2. Theme Color
             document.documentElement.style.setProperty('--primary-color', p.themeColor);
 
-            // 3. Page Content
             document.getElementById('header-title').textContent = p.name;
             document.getElementById('p-name').textContent = p.name;
             document.getElementById('p-desc').textContent = p.description;
@@ -359,7 +457,6 @@
             imgEl.src = imageUrl;
             imgEl.alt = p.imageAlt;
 
-            // 4. Build Features List
             const featuresList = document.getElementById('p-features');
             p.features.forEach(feature => {
                 const li = document.createElement('li');
@@ -367,7 +464,6 @@
                 featuresList.appendChild(li);
             });
 
-            // 5. Build Variable Pricing Tiers
             const tiersContainer = document.getElementById('pricing-tiers');
             let currentTier = p.pricingTiers[p.defaultTierIndex];
 
@@ -392,7 +488,6 @@
                 tiersContainer.appendChild(div);
             });
 
-            // 6. Contact Links Generator
             function updateContactLinks(selectedTier) {
                 const waMessage = encodeURIComponent(`Hi! I want to buy the ${p.name} (${selectedTier.label} - ${selectedTier.price}) from 247avlplug.com`);
                 document.getElementById('btn-wa').href = `https://wa.me/${p.whatsappNumber}?text=${waMessage}`;
@@ -404,7 +499,6 @@
 
             updateContactLinks(currentTier);
 
-            // 7. JSON-LD Schema
             const cleanPrice = currentTier.price.replace(/[^0-9.]/g, '') || "0.00";
             const schema = {
                 "@context": "https://schema.org/",
