@@ -61,7 +61,7 @@
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 28px 16px 60px;
+            padding: 28px 16px 20px;
         }
         article {
             display: flex;
@@ -176,7 +176,76 @@
         }
 
         /* ============================================================ */
-        /*  FEATURED PRODUCTS GRID                                      */
+        /*  ACCORDION STYLES                                            */
+        /* ============================================================ */
+        .accordion-section {
+            margin-top: 32px;
+        }
+        .accordion-main-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e5e7;
+        }
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .accordion-item {
+            border: 1.5px solid #e5e5e7;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        .accordion-header {
+            padding: 16px 20px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            color: #1d1d1f;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+        .accordion-header::-webkit-details-marker {
+            display: none;
+        }
+        .accordion-header::after {
+            content: '+';
+            font-size: 20px;
+            font-weight: 300;
+            color: #6e6e73;
+        }
+        details[open] .accordion-header {
+            background-color: #f0f0f2;
+        }
+        details[open] .accordion-header::after {
+            content: '−';
+        }
+        .accordion-content {
+            padding: 20px;
+            background-color: #ffffff;
+            color: #6e6e73;
+            font-size: 15px;
+            line-height: 1.6;
+            border-top: 1px solid #e5e5e7;
+        }
+        .accordion-content ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .accordion-content li {
+            margin-bottom: 8px;
+        }
+
+        /* ============================================================ */
+        /*  FEATURED PRODUCTS GRID & FRAMED IMAGES                      */
         /* ============================================================ */
         .featured-products-grid {
             display: flex;
@@ -207,7 +276,16 @@
             aspect-ratio: 1 / 1;
             object-fit: cover;
             display: block;
-            background-color: #f0f0f2;
+            background-color: #ffffff;
+            border: 4px solid #ffffff; /* Inner white frame */
+            outline: 2px solid #e5e5e7; /* Outer subtle border */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .featured-product-card:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         .featured-product-card h3 {
             font-size: 13px;
@@ -218,8 +296,38 @@
             line-height: 1.3;
         }
 
+        /* ============================================================ */
+        /*  ORANGE DISCLAIMER FOOTER                                    */
+        /* ============================================================ */
+        .orange-disclaimer-footer {
+            background-color: #FF9500;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .disclaimer-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .orange-disclaimer-footer p {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+        .orange-disclaimer-footer .copyright-text {
+            font-size: 14px;
+            font-weight: 700;
+            opacity: 1;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
         @media (min-width: 768px) {
-            main { padding: 40px 28px 80px; }
+            main { padding: 40px 28px 20px; }
             article { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
             .product-image-container { position: sticky; top: 80px; }
             .product-details { padding: 40px 36px; }
@@ -235,7 +343,7 @@
             }
         }
         @media (min-width: 1200px) {
-            main { max-width: 1280px; padding: 48px 40px 100px; }
+            main { max-width: 1280px; padding: 48px 40px 20px; }
             article { gap: 40px; }
             .product-title { font-size: 44px; }
         }
@@ -278,7 +386,13 @@
 
                 <p id="p-desc" class="product-description"></p>
 
-                <div class="section-label">Choose Your Package</div>
+                <!-- ACCORDION SECTION (Dynamically Populated) -->
+                <div class="accordion-section" id="accordion-container-wrapper">
+                    <h2 class="accordion-main-title" id="accordion-main-title"></h2>
+                    <div class="accordion-container" id="accordion-container"></div>
+                </div>
+
+                <div class="section-label" style="margin-top:32px;">Choose Your Package</div>
                 <div id="pricing-tiers"></div>
 
                 <div class="buy-buttons">
@@ -300,12 +414,17 @@
         </article>
     </main>
 
+    <!-- ORANGE DISCLAIMER FOOTER (Dynamically Populated) -->
+    <footer class="orange-disclaimer-footer">
+        <div class="disclaimer-wrapper">
+            <p id="disclaimer-text"></p>
+            <p class="copyright-text">&copy; <span id="current-year"></span> 247 AVL Plug. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <!-- ================================================================ -->
-    -->
     <!--   EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                          -->
-    -->
     <!--   Each section is labeled. Change the values inside quotes.      -->
-    -->
     <!-- ================================================================ -->
     <script>
         const PRODUCT_CONFIG = {
@@ -393,7 +512,37 @@
             ],
 
             /* ========================================================= */
-            /*  10. THEME COLORS                                         */
+            /*  10. ACCORDION ITEMS (EDITABLE)                           */
+            /*     Add as many items as needed. Content accepts HTML.    */
+            /*     Set isOpen: true to have it open by default.          */
+            /* ========================================================= */
+            accordionTitle: "Product Details & Information",
+            accordionItems: [
+                { 
+                    title: "Detailed Description", 
+                    content: "<p>Premium research chemical sourced for maximum purity and consistency. Every batch is lab-tested, vacuum-sealed in discreet packaging, and shipped to any address worldwide with full tracking.</p>",
+                    isOpen: true 
+                },
+                { 
+                    title: "Specifications", 
+                    content: "<ul><li><strong>Purity:</strong> Lab-Grade 99%+</li><li><strong>Packaging:</strong> Vacuum-sealed, completely discreet</li><li><strong>Shipping:</strong> Worldwide with full tracking provided</li></ul>",
+                    isOpen: false 
+                },
+                { 
+                    title: "Shipping & Returns", 
+                    content: "<p>Orders are dispatched within 24 hours. Discreet packaging is guaranteed on all shipments. For any return or refund inquiries, please refer to our Payment and Refund Policy or contact us directly via WhatsApp or Telegram.</p>",
+                    isOpen: false 
+                }
+            ],
+
+            /* ========================================================= */
+            /*  11. DISCLAIMER FOOTER (EDITABLE)                         */
+            /*     Edit the disclaimer text shown at the bottom          */
+            /* ========================================================= */
+            disclaimerText: "The products sold on this website are intended for laboratory and research purposes only. They are not intended for human or veterinary use, consumption, or diagnostic procedures. By purchasing, you agree that you are a qualified researcher and will handle all materials in accordance with applicable local, state, and federal laws. 247 AVL Plug assumes no liability for any misuse or mishandling of these products.",
+
+            /* ========================================================= */
+            /*  12. THEME COLORS                                         */
             /* ========================================================= */
             themeColor: "#25D366",
             backgroundColor: "#FF9500"
@@ -469,6 +618,40 @@
                         '<div style="font-size:13px;font-weight:700;color:#1d1d1f;line-height:1.4;">' + p.features[i] + '</div>';
 
                     featuresContainer.appendChild(card);
+                }
+            }
+
+            /* ========================================================= */
+            /*  ACCORDION                                                */
+            /* ========================================================= */
+            var accordionTitleEl = document.getElementById('accordion-main-title');
+            var accordionContainerEl = document.getElementById('accordion-container');
+            
+            if (accordionTitleEl && p.accordionTitle) {
+                accordionTitleEl.textContent = p.accordionTitle;
+            }
+
+            if (accordionContainerEl && p.accordionItems && p.accordionItems.length > 0) {
+                accordionContainerEl.innerHTML = '';
+                for (var i = 0; i < p.accordionItems.length; i++) {
+                    var item = p.accordionItems[i];
+                    var details = document.createElement('details');
+                    details.className = 'accordion-item';
+                    if (item.isOpen) {
+                        details.setAttribute('open', '');
+                    }
+                    
+                    var summary = document.createElement('summary');
+                    summary.className = 'accordion-header';
+                    summary.textContent = item.title;
+                    
+                    var content = document.createElement('div');
+                    content.className = 'accordion-content';
+                    content.innerHTML = item.content; // Allows HTML like <ul> or <p>
+                    
+                    details.appendChild(summary);
+                    details.appendChild(content);
+                    accordionContainerEl.appendChild(details);
                 }
             }
 
@@ -614,6 +797,14 @@
             }
 
             /* ========================================================= */
+            /*  DISCLAIMER FOOTER                                        */
+            /* ========================================================= */
+            var disclaimerTextEl = document.getElementById('disclaimer-text');
+            if (disclaimerTextEl && p.disclaimerText) {
+                disclaimerTextEl.innerHTML = '<strong>Disclaimer:</strong> ' + p.disclaimerText;
+            }
+
+            /* ========================================================= */
             /*  CONTACT LINKS                                            */
             /* ========================================================= */
             function updateLinks(selectedTier) {
@@ -629,6 +820,12 @@
             }
 
             updateLinks(currentTier);
+            
+            // Set current year in footer
+            var yearEl = document.getElementById('current-year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
         });
     </script>
 </body>
