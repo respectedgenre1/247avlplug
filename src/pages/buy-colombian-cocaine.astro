@@ -175,38 +175,71 @@
             color: #fff;
         }
 
-        /* FAQ CARDS */
+        /* ============================================================ */
+        /*  FAQ ACCORDION                                               */
+        /* ============================================================ */
         .faq-section {
             margin-bottom: 28px;
         }
-        .faq-card {
+        .faq-item {
             background-color: #ffffff;
             border: 1.5px solid #e5e5e7;
-            border-left: 4px solid #25D366;
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        .faq-item:hover {
+            border-color: #d1d1d6;
         }
         .faq-question {
-            font-size: 16px;
-            font-weight: 800;
+            width: 100%;
+            padding: 16px 20px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 700;
             color: #1d1d1f;
-            margin-bottom: 10px;
-            line-height: 1.4;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .faq-icon {
+            font-size: 18px;
+            font-weight: 800;
+            color: #86868b;
+            flex-shrink: 0;
+            transition: transform 0.25s ease;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            color: #25D366;
         }
         .faq-answer {
-            font-size: 14px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-answer-inner {
+            padding: 0 20px 16px;
             color: #6e6e73;
+            font-size: 14px;
             line-height: 1.7;
-            padding-top: 10px;
-            border-top: 1px solid #f0f0f2;
         }
 
-        /* Featured Products */
+        /* ============================================================ */
+        /*  FEATURED PRODUCTS — TEXT BUTTONS (NO IMAGES)                */
+        /* ============================================================ */
         .featured-products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
+            gap: 12px;
             margin-top: 16px;
         }
         .featured-product-btn {
@@ -232,7 +265,9 @@
             color: #1d1d1f;
         }
 
-        /* Disclaimer */
+        /* ============================================================ */
+        /*  DISCLAIMER BAR — BOTTOM OF PAGE                             */
+        /* ============================================================ */
         .disclaimer-bar {
             max-width: 1200px;
             margin: 0 auto;
@@ -264,8 +299,6 @@
             .product-title { font-size: 40px; }
             .featured-products-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
             .featured-product-btn { font-size: 14px; padding: 18px 16px; }
-            .faq-question { font-size: 17px; }
-            .faq-answer { font-size: 15px; }
         }
         @media (min-width: 1200px) {
             main { max-width: 1280px; padding: 48px 40px 0; }
@@ -279,11 +312,11 @@
             .buy-buttons { flex-direction: column; }
             .contact-btn { width: 100%; }
             .featured-product-btn { font-size: 12px; padding: 14px 10px; }
-            .faq-card { padding: 16px; }
-            .faq-question { font-size: 15px; }
-            .faq-answer { font-size: 13px; }
+            .faq-question { font-size: 14px; padding: 14px 16px; }
+            .faq-answer-inner { padding: 0 16px 14px; }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -304,13 +337,14 @@
             <section class="card product-details">
                 <h2 id="p-name" class="product-title"></h2>
                 <p id="p-subtitle" class="product-subtitle"></p>
-                
+
                 <div class="section-label">Key Features</div>
                 <div id="feature-bubbles"></div>
 
                 <p id="p-desc" class="product-description"></p>
 
-                <div class="section-label">Product Details and FAQ</div>
+                <!-- FAQ ACCORDION -->
+                <div class="section-label">Frequently Asked Questions</div>
                 <div id="faq-container" class="faq-section"></div>
 
                 <div class="section-label">Choose Your Package</div>
@@ -325,28 +359,54 @@
                     </a>
                 </div>
 
+                <!-- FEATURED PRODUCTS -->
                 <div class="section-label" style="margin-top:32px;">You May Also Like</div>
                 <div id="featured-products" class="featured-products-grid"></div>
 
+                <!-- FOOTER POLICY LINKS -->
                 <div id="footer-links"></div>
             </section>
         </article>
     </main>
 
+    <!-- DISCLAIMER — sits on the orange background at the very bottom -->
     <div class="disclaimer-bar">
         <p id="disclaimer-text"></p>
     </div>
 
-    <script data-cfasync="false">
+    <!-- ================================================================ -->
+    -->
+    <!--   EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                          -->
+    -->
+    <!--   Each section is labeled. Change the values inside quotes.      -->
+    -->
+    <!-- ================================================================ -->
+    <script>
         const PRODUCT_CONFIG = {
+
+            /* ========================================================= */
+            /*  1. BASIC INFO                                            */
+            /* ========================================================= */
             name: "Premium Research Chemical",
             subtitle: "Lab-Grade Purity | Discreet Worldwide Delivery",
+
+            /* ========================================================= */
+            /*  2. IMAGES                                                */
+            /* ========================================================= */
             imageSrc: "/images/product.jpg",
             imageAlt: "Premium research chemical product",
             imageBadge: "In Stock",
+
+            /* ========================================================= */
+            /*  3. SEO & META                                            */
+            /* ========================================================= */
             seoTitle: "Buy Premium Research Chemical | 247 AVL Plug",
             seoDescription: "Premium research chemical with lab-grade purity. Discreet packaging, worldwide delivery. Order now at 247 AVL Plug!",
             urlSlug: "premium-research-chemical.html",
+
+            /* ========================================================= */
+            /*  4. PRICING TIERS                                         */
+            /* ========================================================= */
             pricingTiers: [
                 { label: "1 Gram",    price: "$49.99",              badge: "" },
                 { label: "5 Grams",   price: "$199.99",            badge: "Save 20%" },
@@ -355,34 +415,86 @@
                 { label: "50+ Grams", price: "Contact for Quote",  badge: "Wholesale" }
             ],
             defaultTierIndex: 0,
+
+            /* ========================================================= */
+            /*  5. DESCRIPTION                                           */
+            /* ========================================================= */
             description: "Premium research chemical sourced for maximum purity and consistency. Every batch is lab-tested, vacuum-sealed in discreet packaging, and shipped to any address worldwide with full tracking.",
+
+            /* ========================================================= */
+            /*  6. FAQS — Add as many Q&A pairs as needed                */
+            /* ========================================================= */
             faqs: [
-                { question: "How discreet is the packaging?", answer: "All orders are shipped in plain, unmarked packaging with no indication of contents. We use vacuum-sealed bags inside standard boxes to ensure complete privacy and odor-proof delivery." },
-                { question: "How long does delivery take?", answer: "Domestic orders typically arrive within 3 to 5 business days. International shipping ranges from 7 to 14 business days depending on your location. Tracking is provided for every shipment." },
-                { question: "What payment methods do you accept?", answer: "We accept Bitcoin, Ethereum, and other major cryptocurrencies for maximum privacy. Contact us via WhatsApp or Telegram for payment instructions after selecting your package." },
-                { question: "Is this product legal in my country?", answer: "It is your responsibility to verify the legal status of research chemicals in your jurisdiction before ordering. We sell strictly for research purposes and comply with all applicable laws." }
+                {
+                    question: "How discreet is the packaging?",
+                    answer: "All orders are shipped in plain, unmarked packaging with no indication of contents. We use vacuum-sealed bags inside standard boxes to ensure complete privacy and odor-proof delivery."
+                },
+                {
+                    question: "How long does delivery take?",
+                    answer: "Domestic orders typically arrive within 3–5 business days. International shipping ranges from 7–14 business days depending on your location. Tracking is provided for every shipment."
+                },
+                {
+                    question: "What payment methods do you accept?",
+                    answer: "We accept Bitcoin, Ethereum, and other major cryptocurrencies for maximum privacy. Contact us via WhatsApp or Telegram for payment instructions after selecting your package."
+                },
+                {
+                    question: "Is this product legal in my country?",
+                    answer: "It is your responsibility to verify the legal status of research chemicals in your jurisdiction before ordering. We sell strictly for research purposes and comply with all applicable laws."
+                }
             ],
-            features: ["High Purity", "Discreet Packaging", "Any Address Delivery"],
+
+            /* ========================================================= */
+            /*  7. FEATURES (3 items max)                                */
+            /* ========================================================= */
+            features: [
+                "High Purity",
+                "Discreet Packaging",
+                "Any Address Delivery"
+            ],
             featureEmojis: ["&#128142;", "&#128230;", "&#128666;"],
+
+            /* ========================================================= */
+            /*  8. CONTACT — EDIT THESE FOR YOUR ACCOUNTS                */
+            /* ========================================================= */
             whatsappNumber: "13254365583",
             telegramHandle: "datplugg",
+
+            /* ========================================================= */
+            /*  9. FEATURED PRODUCTS                                     */
+            /*     4 products shown below contact buttons                */
+            /* ========================================================= */
             featuredProducts: [
                 { name: "Research Chem A", url: "/products/chem-a.html" },
                 { name: "Research Chem B", url: "/products/chem-b.html" },
                 { name: "Research Chem C", url: "/products/chem-c.html" },
                 { name: "Research Chem D", url: "/products/chem-d.html" }
             ],
+
+            /* ========================================================= */
+            /*  10. FOOTER POLICY LINKS                                  */
+            /* ========================================================= */
             footerLinks: [
-                { text: "Privacy Policy", url: "/privacy-policy.html" },
-                { text: "Payment and Refund Policy", url: "/payment-refund-policy.html" },
-                { text: "Terms and Conditions", url: "/terms-and-conditions.html" },
+                { text: "Privacy Policy",                 url: "/privacy-policy.html" },
+                { text: "Payment and Refund Policy",      url: "/payment-refund-policy.html" },
+                { text: "Terms and Conditions",           url: "/terms-and-conditions.html" },
                 { text: "Shipping and Delivery Policies", url: "/shipping-delivery-policy.html" }
             ],
+
+            /* ========================================================= */
+            /*  11. DISCLAIMER — Edit this text as needed                */
+            /* ========================================================= */
             disclaimer: "All products sold on this website are intended for research purposes only. By purchasing, you confirm that you are at least 18 years of age and will use these products strictly in accordance with all applicable local, state, and federal laws. We do not condone the misuse of any research chemicals. The vendor assumes no liability for the misuse of products.",
+
+            /* ========================================================= */
+            /*  12. THEME COLORS                                         */
+            /* ========================================================= */
             themeColor: "#25D366",
             backgroundColor: "#FF9500"
         };
 
+        /* ================================================================ */
+        /*  ENGINE — DO NOT EDIT BELOW THIS LINE                            */
+        /* ================================================================ */
         document.addEventListener('DOMContentLoaded', function() {
             var p = PRODUCT_CONFIG;
             var baseUrl = "https://247avlplug.com";
@@ -390,6 +502,8 @@
             var imageUrl = p.imageSrc.startsWith('http') ? p.imageSrc : baseUrl + p.imageSrc;
 
             document.body.style.backgroundColor = p.backgroundColor;
+
+            // SEO
             document.title = p.seoTitle;
             document.getElementById('seo-desc').content = p.seoDescription;
             document.getElementById('seo-canonical').href = productUrl;
@@ -397,6 +511,8 @@
             document.getElementById('og-desc').content = p.seoDescription;
             document.getElementById('og-image').content = imageUrl;
             document.getElementById('og-url').content = productUrl;
+
+            // Content
             document.getElementById('header-title').textContent = p.name;
             document.getElementById('p-name').textContent = p.name;
             document.getElementById('p-subtitle').textContent = p.subtitle;
@@ -414,9 +530,13 @@
                 badgeEl.style.display = "none";
             }
 
-            document.getElementById('disclaimer-text').innerHTML = '<strong>Disclaimer</strong>' + p.disclaimer;
+            // Disclaimer
+            var disclaimerEl = document.getElementById('disclaimer-text');
+            disclaimerEl.innerHTML = '<strong>Disclaimer</strong>' + p.disclaimer;
 
-            /* Feature Cards */
+            /* ========================================================= */
+            /*  FEATURE CARDS                                            */
+            /* ========================================================= */
             var featuresContainer = document.getElementById('feature-bubbles');
             featuresContainer.innerHTML = '';
             featuresContainer.style.display = 'flex';
@@ -425,32 +545,117 @@
             featuresContainer.style.marginBottom = '28px';
 
             var emojis = p.featureEmojis || ["&#10003;", "&#10003;", "&#10003;"];
-            for (var i = 0; i < p.features.length; i++) {
-                var card = document.createElement('div');
-                card.style.backgroundColor = '#ffffff';
-                card.style.border = '1.5px solid #e5e5e7';
-                card.style.borderTop = '4px solid #25D366';
-                card.style.borderRadius = '14px';
-                card.style.padding = '18px 16px';
-                card.style.flex = '1 1 140px';
-                card.style.minWidth = '140px';
-                card.style.textAlign = 'center';
-                card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
-                card.innerHTML = '<div style="font-size:28px;margin-bottom:8px;">' + emojis[i] + '</div><div style="font-size:13px;font-weight:700;color:#1d1d1f;line-height:1.4;">' + p.features[i] + '</div>';
-                featuresContainer.appendChild(card);
+
+            if (p.features && p.features.length > 0) {
+                for (var i = 0; i < p.features.length; i++) {
+                    var card = document.createElement('div');
+                    card.style.backgroundColor = '#ffffff';
+                    card.style.border = '1.5px solid #e5e5e7';
+                    card.style.borderTop = '4px solid #25D366';
+                    card.style.borderRadius = '14px';
+                    card.style.padding = '18px 16px';
+                    card.style.flex = '1 1 140px';
+                    card.style.minWidth = '140px';
+                    card.style.textAlign = 'center';
+                    card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+                    card.style.transition = 'all 0.25s ease';
+                    card.style.cursor = 'default';
+
+                    card.innerHTML =
+                        '<div style="font-size:28px;margin-bottom:8px;">' + emojis[i] + '</div>' +
+                        '<div style="font-size:13px;font-weight:700;color:#1d1d1f;line-height:1.4;">' + p.features[i] + '</div>';
+
+                    featuresContainer.appendChild(card);
+                }
             }
 
-            /* FAQ Cards */
+            /* ========================================================= */
+            /*  FAQ ACCORDION                                            */
+            /* ========================================================= */
             var faqContainer = document.getElementById('faq-container');
             faqContainer.innerHTML = '';
-            for (var q = 0; q < p.faqs.length; q++) {
-                var card = document.createElement('div');
-                card.className = 'faq-card';
-                card.innerHTML = '<div class="faq-question">' + p.faqs[q].question + '</div><div class="faq-answer">' + p.faqs[q].answer + '</div>';
-                faqContainer.appendChild(card);
+
+            if (p.faqs && p.faqs.length > 0) {
+                for (var q = 0; q < p.faqs.length; q++) {
+                    var faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item';
+                    faqItem.style.backgroundColor = '#ffffff';
+                    faqItem.style.border = '1.5px solid #e5e5e7';
+                    faqItem.style.borderRadius = '12px';
+                    faqItem.style.marginBottom = '10px';
+                    faqItem.style.overflow = 'hidden';
+                    faqItem.style.transition = 'all 0.2s ease';
+
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'faq-question';
+                    btn.style.width = '100%';
+                    btn.style.padding = '16px 20px';
+                    btn.style.background = 'none';
+                    btn.style.border = 'none';
+                    btn.style.textAlign = 'left';
+                    btn.style.fontSize = '15px';
+                    btn.style.fontWeight = '700';
+                    btn.style.color = '#1d1d1f';
+                    btn.style.cursor = 'pointer';
+                    btn.style.display = 'flex';
+                    btn.style.justifyContent = 'space-between';
+                    btn.style.alignItems = 'center';
+                    btn.style.gap = '12px';
+                    btn.innerHTML = '<span>' + p.faqs[q].question + '</span><span class="faq-icon" style="font-size:18px;font-weight:800;color:#86868b;flex-shrink:0;transition:transform 0.25s ease;">+</span>';
+
+                    var answerWrap = document.createElement('div');
+                    answerWrap.className = 'faq-answer';
+                    answerWrap.style.maxHeight = '0';
+                    answerWrap.style.overflow = 'hidden';
+                    answerWrap.style.transition = 'max-height 0.3s ease, padding 0.3s ease';
+
+                    var answerInner = document.createElement('div');
+                    answerInner.className = 'faq-answer-inner';
+                    answerInner.style.padding = '0 20px 16px';
+                    answerInner.style.color = '#6e6e73';
+                    answerInner.style.fontSize = '14px';
+                    answerInner.style.lineHeight = '1.7';
+                    answerInner.textContent = p.faqs[q].answer;
+
+                    answerWrap.appendChild(answerInner);
+                    faqItem.appendChild(btn);
+                    faqItem.appendChild(answerWrap);
+
+                    btn.addEventListener('click', function(item, ans, icon) {
+                        return function() {
+                            var isOpen = item.classList.contains('open');
+                            // Close all
+                            var allFaqs = faqContainer.querySelectorAll('.faq-item');
+                            for (var a = 0; a < allFaqs.length; a++) {
+                                allFaqs[a].classList.remove('open');
+                                allFaqs[a].style.borderColor = '#e5e5e7';
+                                var aAns = allFaqs[a].querySelector('.faq-answer');
+                                if (aAns) aAns.style.maxHeight = '0';
+                                var aIcon = allFaqs[a].querySelector('.faq-icon');
+                                if (aIcon) {
+                                    aIcon.style.transform = 'rotate(0deg)';
+                                    aIcon.style.color = '#86868b';
+                                }
+                            }
+                            // Toggle current
+                            if (!isOpen) {
+                                item.classList.add('open');
+                                item.style.borderColor = '#25D366';
+                                ans.style.maxHeight = '300px';
+                                icon.style.transform = 'rotate(45deg)';
+                                icon.style.color = '#25D366';
+                            }
+                        };
+                    }(faqItem, answerWrap, btn.querySelector('.faq-icon')));
+
+                    faqContainer.appendChild(faqItem);
+                }
             }
 
-            /* Pricing Tiers */
+            /* ========================================================= */
+            /*  PRICING TIERS                                            */
+            /* ========================================================= */
             var tiersContainer = document.getElementById('pricing-tiers');
             tiersContainer.innerHTML = '';
             tiersContainer.style.display = 'flex';
@@ -480,12 +685,21 @@
 
                     var radioColor = isSelected ? '#25D366' : '#d1d1d6';
                     var radioInner = isSelected ? '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>' : '';
+
                     var badgeHtml = '';
                     if (tier.badge && tier.badge.trim() !== '') {
                         badgeHtml = '<span style="font-size:11px;background:#25D366;color:#fff;padding:3px 10px;border-radius:50px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;">' + tier.badge + '</span>';
                     }
 
-                    row.innerHTML = '<div style="display:flex;align-items:center;gap:12px;flex:1;"><div style="width:22px;height:22px;border-radius:50%;border:3px solid ' + radioColor + ';background:' + radioColor + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + radioInner + '</div><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:#1d1d1f;white-space:nowrap;">' + tier.label + '</span>' + badgeHtml + '</div></div><span style="font-weight:800;font-size:17px;color:#1faa52;white-space:nowrap;flex-shrink:0;">' + tier.price + '</span>';
+                    row.innerHTML =
+                        '<div style="display:flex;align-items:center;gap:12px;flex:1;">' +
+                            '<div style="width:22px;height:22px;border-radius:50%;border:3px solid ' + radioColor + ';background:' + radioColor + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + radioInner + '</div>' +
+                            '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">' +
+                                '<span style="font-weight:700;font-size:15px;color:#1d1d1f;white-space:nowrap;">' + tier.label + '</span>' +
+                                badgeHtml +
+                            '</div>' +
+                        '</div>' +
+                        '<span style="font-weight:800;font-size:17px;color:#1faa52;white-space:nowrap;flex-shrink:0;">' + tier.price + '</span>';
 
                     row.addEventListener('click', function() {
                         var allRows = tiersContainer.children;
@@ -496,14 +710,24 @@
                             r.style.borderLeft = '2px solid #d1d1d6';
                             r.style.boxShadow = '0 1px 4px rgba(0,0,0,0.04)';
                             var radio = r.querySelector('div > div');
-                            if (radio) { radio.style.borderColor = '#d1d1d6'; radio.style.background = '#d1d1d6'; radio.innerHTML = ''; }
+                            if (radio) {
+                                radio.style.borderColor = '#d1d1d6';
+                                radio.style.background = '#d1d1d6';
+                                radio.innerHTML = '';
+                            }
                         }
+
                         row.style.backgroundColor = '#e8f8ee';
                         row.style.border = '2px solid #25D366';
                         row.style.borderLeft = '5px solid #25D366';
                         row.style.boxShadow = '0 4px 12px rgba(37,211,102,0.15)';
                         var activeRadio = row.querySelector('div > div');
-                        if (activeRadio) { activeRadio.style.borderColor = '#25D366'; activeRadio.style.background = '#25D366'; activeRadio.innerHTML = '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>'; }
+                        if (activeRadio) {
+                            activeRadio.style.borderColor = '#25D366';
+                            activeRadio.style.background = '#25D366';
+                            activeRadio.innerHTML = '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>';
+                        }
+
                         updateLinks(tier);
                     });
 
@@ -511,7 +735,9 @@
                 })(p.pricingTiers[i], i);
             }
 
-            /* Featured Products */
+            /* ========================================================= */
+            /*  FEATURED PRODUCTS — TEXT BUTTONS (NO IMAGES)             */
+            /* ========================================================= */
             var featuredContainer = document.getElementById('featured-products');
             featuredContainer.innerHTML = '';
 
@@ -526,7 +752,9 @@
                 featuredContainer.appendChild(link);
             }
 
-            /* Footer Policy Links */
+            /* ========================================================= */
+            /*  FOOTER POLICY LINKS                                      */
+            /* ========================================================= */
             var footerContainer = document.getElementById('footer-links');
             footerContainer.innerHTML = '';
             footerContainer.style.marginTop = '28px';
@@ -537,24 +765,41 @@
             footerContainer.style.justifyContent = 'center';
             footerContainer.style.gap = '8px 20px';
 
-            for (var k = 0; k < p.footerLinks.length; k++) {
-                var link = document.createElement('a');
-                link.href = p.footerLinks[k].url;
-                link.textContent = p.footerLinks[k].text;
-                link.style.color = '#86868b';
-                link.style.fontSize = '12px';
-                link.style.fontWeight = '600';
-                link.style.textDecoration = 'none';
-                link.style.whiteSpace = 'nowrap';
-                link.addEventListener('mouseenter', function() { this.style.color = '#25D366'; });
-                link.addEventListener('mouseleave', function() { this.style.color = '#86868b'; });
-                footerContainer.appendChild(link);
+            if (p.footerLinks && p.footerLinks.length > 0) {
+                for (var k = 0; k < p.footerLinks.length; k++) {
+                    var link = document.createElement('a');
+                    link.href = p.footerLinks[k].url;
+                    link.textContent = p.footerLinks[k].text;
+                    link.style.color = '#86868b';
+                    link.style.fontSize = '12px';
+                    link.style.fontWeight = '600';
+                    link.style.textDecoration = 'none';
+                    link.style.transition = 'color 0.2s ease';
+                    link.style.whiteSpace = 'nowrap';
+
+                    link.addEventListener('mouseenter', function() {
+                        this.style.color = '#25D366';
+                    });
+                    link.addEventListener('mouseleave', function() {
+                        this.style.color = '#86868b';
+                    });
+
+                    footerContainer.appendChild(link);
+                }
             }
 
+            /* ========================================================= */
+            /*  CONTACT LINKS                                            */
+            /* ========================================================= */
             function updateLinks(selectedTier) {
-                var waMessage = encodeURIComponent('Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com');
+                var waMessage = encodeURIComponent(
+                    'Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com'
+                );
                 document.getElementById('btn-wa').href = 'https://wa.me/' + p.whatsappNumber + '?text=' + waMessage;
-                var tgMessage = encodeURIComponent('Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com');
+
+                var tgMessage = encodeURIComponent(
+                    'Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com'
+                );
                 document.getElementById('btn-tg').href = 'https://t.me/' + p.telegramHandle + '?text=' + tgMessage;
             }
 
