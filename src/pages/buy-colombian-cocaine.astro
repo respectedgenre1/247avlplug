@@ -176,46 +176,32 @@
         }
 
         /* ============================================================ */
-        /*  PRODUCT DETAILS & FAQ — STATIC STYLED LIST                  */
+        /*  PRODUCT DETAILS & FAQ — ORGANIZED CARDS                     */
         /* ============================================================ */
-        .faq-static-section {
+        .faq-section {
             margin-bottom: 28px;
         }
-        .faq-static-item {
+        .faq-card {
             background-color: #ffffff;
             border: 1.5px solid #e5e5e7;
+            border-left: 4px solid #25D366;
             border-radius: 12px;
-            margin-bottom: 10px;
-            padding: 18px 20px;
+            padding: 20px;
+            margin-bottom: 12px;
         }
-        .faq-static-question {
-            font-size: 15px;
+        .faq-question {
+            font-size: 16px;
             font-weight: 800;
             color: #1d1d1f;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
-        .faq-static-question::before {
-            content: "Q";
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background-color: #25D366;
-            color: #fff;
-            font-size: 12px;
-            font-weight: 900;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .faq-static-answer {
+        .faq-answer {
             font-size: 14px;
             color: #6e6e73;
             line-height: 1.7;
-            padding-left: 34px;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f2;
         }
 
         /* Featured Products */
@@ -280,8 +266,8 @@
             .product-title { font-size: 40px; }
             .featured-products-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
             .featured-product-btn { font-size: 14px; padding: 18px 16px; }
-            .faq-static-question { font-size: 16px; }
-            .faq-static-answer { font-size: 15px; }
+            .faq-question { font-size: 17px; }
+            .faq-answer { font-size: 15px; }
         }
         @media (min-width: 1200px) {
             main { max-width: 1280px; padding: 48px 40px 0; }
@@ -295,9 +281,9 @@
             .buy-buttons { flex-direction: column; }
             .contact-btn { width: 100%; }
             .featured-product-btn { font-size: 12px; padding: 14px 10px; }
-            .faq-static-item { padding: 14px 16px; }
-            .faq-static-question { font-size: 14px; }
-            .faq-static-answer { font-size: 13px; padding-left: 0; margin-top: 6px; }
+            .faq-card { padding: 16px; }
+            .faq-question { font-size: 15px; }
+            .faq-answer { font-size: 13px; }
         }
     </style>
 <base target="_blank">
@@ -328,7 +314,7 @@
                 <p id="p-desc" class="product-description"></p>
 
                 <div class="section-label">Product Details and FAQ</div>
-                <div id="faq-container" class="faq-static-section"></div>
+                <div id="faq-container" class="faq-section"></div>
 
                 <div class="section-label">Choose Your Package</div>
                 <div id="pricing-tiers"></div>
@@ -457,14 +443,14 @@
                 featuresContainer.appendChild(card);
             }
 
-            /* Product Details & FAQ — STATIC, NO ACCORDION */
+            /* Product Details & FAQ — ORGANIZED CARDS */
             var faqContainer = document.getElementById('faq-container');
             faqContainer.innerHTML = '';
             for (var q = 0; q < p.faqs.length; q++) {
-                var item = document.createElement('div');
-                item.className = 'faq-static-item';
-                item.innerHTML = '<div class="faq-static-question">' + p.faqs[q].question + '</div><div class="faq-static-answer">' + p.faqs[q].answer + '</div>';
-                faqContainer.appendChild(item);
+                var card = document.createElement('div');
+                card.className = 'faq-card';
+                card.innerHTML = '<div class="faq-question">' + p.faqs[q].question + '</div><div class="faq-answer">' + p.faqs[q].answer + '</div>';
+                faqContainer.appendChild(card);
             }
 
             /* Pricing Tiers */
