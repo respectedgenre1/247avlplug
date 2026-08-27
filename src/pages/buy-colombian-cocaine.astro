@@ -208,12 +208,10 @@
             transition: transform 0.25s ease;
         }
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            display: none;
         }
         .faq-item.open .faq-answer {
-            max-height: 300px;
+            display: block;
         }
         .faq-answer-inner {
             padding: 0 20px 16px;
@@ -226,13 +224,11 @@
             color: #25D366;
         }
 
-        /* ============================================================ */
-        /*  FEATURED PRODUCTS — SIMPLE TEXT BUTTONS (NO IMAGES)         */
-        /* ============================================================ */
+        /* Featured Products */
         .featured-products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 14px;
             margin-top: 16px;
         }
         .featured-product-btn {
@@ -564,7 +560,7 @@
                 })(p.pricingTiers[i], i);
             }
 
-            /* Featured Products — SIMPLE TEXT BUTTONS (NO IMAGES) */
+            /* Featured Products */
             var featuredContainer = document.getElementById('featured-products');
             featuredContainer.innerHTML = '';
 
