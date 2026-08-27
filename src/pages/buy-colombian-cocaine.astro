@@ -175,9 +175,7 @@
             color: #fff;
         }
 
-        /* ============================================================ */
-        /*  PRODUCT DETAILS & FAQ — ORGANIZED CARDS                     */
-        /* ============================================================ */
+        /* FAQ CARDS */
         .faq-section {
             margin-bottom: 28px;
         }
@@ -286,7 +284,6 @@
             .faq-answer { font-size: 13px; }
         }
     </style>
-<base target="_blank">
 </head>
 <body>
 
@@ -307,7 +304,7 @@
             <section class="card product-details">
                 <h2 id="p-name" class="product-title"></h2>
                 <p id="p-subtitle" class="product-subtitle"></p>
-
+                
                 <div class="section-label">Key Features</div>
                 <div id="feature-bubbles"></div>
 
@@ -340,7 +337,7 @@
         <p id="disclaimer-text"></p>
     </div>
 
-    <script>
+    <script data-cfasync="false">
         const PRODUCT_CONFIG = {
             name: "Premium Research Chemical",
             subtitle: "Lab-Grade Purity | Discreet Worldwide Delivery",
@@ -443,7 +440,7 @@
                 featuresContainer.appendChild(card);
             }
 
-            /* Product Details & FAQ — ORGANIZED CARDS */
+            /* FAQ Cards */
             var faqContainer = document.getElementById('faq-container');
             faqContainer.innerHTML = '';
             for (var q = 0; q < p.faqs.length; q++) {
