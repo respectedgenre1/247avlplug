@@ -175,53 +175,47 @@
             color: #fff;
         }
 
-        /* FAQ */
-        .faq-section { margin-bottom: 28px; }
-        .faq-item {
+        /* ============================================================ */
+        /*  PRODUCT DETAILS & FAQ — STATIC STYLED LIST                  */
+        /* ============================================================ */
+        .faq-static-section {
+            margin-bottom: 28px;
+        }
+        .faq-static-item {
             background-color: #ffffff;
             border: 1.5px solid #e5e5e7;
             border-radius: 12px;
             margin-bottom: 10px;
-            overflow: hidden;
-            transition: all 0.2s ease;
+            padding: 18px 20px;
         }
-        .faq-question {
-            width: 100%;
-            padding: 16px 20px;
-            background: none;
-            border: none;
-            text-align: left;
+        .faq-static-question {
             font-size: 15px;
-            font-weight: 700;
-            color: #1d1d1f;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-        }
-        .faq-icon {
-            font-size: 18px;
             font-weight: 800;
-            color: #86868b;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-static-question::before {
+            content: "Q";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #25D366;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 900;
+            border-radius: 50%;
             flex-shrink: 0;
-            transition: transform 0.25s ease;
         }
-        .faq-answer {
-            display: none;
-        }
-        .faq-item.open .faq-answer {
-            display: block;
-        }
-        .faq-answer-inner {
-            padding: 0 20px 16px;
-            color: #6e6e73;
+        .faq-static-answer {
             font-size: 14px;
+            color: #6e6e73;
             line-height: 1.7;
-        }
-        .faq-item.open .faq-icon {
-            transform: rotate(45deg);
-            color: #25D366;
+            padding-left: 34px;
         }
 
         /* Featured Products */
@@ -286,6 +280,8 @@
             .product-title { font-size: 40px; }
             .featured-products-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
             .featured-product-btn { font-size: 14px; padding: 18px 16px; }
+            .faq-static-question { font-size: 16px; }
+            .faq-static-answer { font-size: 15px; }
         }
         @media (min-width: 1200px) {
             main { max-width: 1280px; padding: 48px 40px 0; }
@@ -299,8 +295,9 @@
             .buy-buttons { flex-direction: column; }
             .contact-btn { width: 100%; }
             .featured-product-btn { font-size: 12px; padding: 14px 10px; }
-            .faq-question { font-size: 14px; padding: 14px 16px; }
-            .faq-answer-inner { padding: 0 16px 14px; }
+            .faq-static-item { padding: 14px 16px; }
+            .faq-static-question { font-size: 14px; }
+            .faq-static-answer { font-size: 13px; padding-left: 0; margin-top: 6px; }
         }
     </style>
 <base target="_blank">
@@ -330,8 +327,8 @@
 
                 <p id="p-desc" class="product-description"></p>
 
-                <div class="section-label">Frequently Asked Questions</div>
-                <div id="faq-container" class="faq-section"></div>
+                <div class="section-label">Product Details and FAQ</div>
+                <div id="faq-container" class="faq-static-section"></div>
 
                 <div class="section-label">Choose Your Package</div>
                 <div id="pricing-tiers"></div>
@@ -460,43 +457,14 @@
                 featuresContainer.appendChild(card);
             }
 
-            /* FAQ Accordion */
+            /* Product Details & FAQ — STATIC, NO ACCORDION */
             var faqContainer = document.getElementById('faq-container');
             faqContainer.innerHTML = '';
             for (var q = 0; q < p.faqs.length; q++) {
-                var faqItem = document.createElement('div');
-                faqItem.className = 'faq-item';
-
-                var btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'faq-question';
-                btn.innerHTML = '<span>' + p.faqs[q].question + '</span><span class="faq-icon">+</span>';
-
-                var answerWrap = document.createElement('div');
-                answerWrap.className = 'faq-answer';
-
-                var answerInner = document.createElement('div');
-                answerInner.className = 'faq-answer-inner';
-                answerInner.textContent = p.faqs[q].answer;
-
-                answerWrap.appendChild(answerInner);
-                faqItem.appendChild(btn);
-                faqItem.appendChild(answerWrap);
-
-                btn.addEventListener('click', function(item) {
-                    return function() {
-                        var isOpen = item.classList.contains('open');
-                        var allFaqs = faqContainer.querySelectorAll('.faq-item');
-                        for (var a = 0; a < allFaqs.length; a++) {
-                            allFaqs[a].classList.remove('open');
-                        }
-                        if (!isOpen) {
-                            item.classList.add('open');
-                        }
-                    };
-                }(faqItem));
-
-                faqContainer.appendChild(faqItem);
+                var item = document.createElement('div');
+                item.className = 'faq-static-item';
+                item.innerHTML = '<div class="faq-static-question">' + p.faqs[q].question + '</div><div class="faq-static-answer">' + p.faqs[q].answer + '</div>';
+                faqContainer.appendChild(item);
             }
 
             /* Pricing Tiers */
