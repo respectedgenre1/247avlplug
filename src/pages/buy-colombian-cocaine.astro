@@ -15,8 +15,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { -webkit-text-size-adjust: 100%; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #FF9500;
@@ -90,7 +89,6 @@
             overflow: hidden;
             box-shadow: 0 8px 24px rgba(0,0,0,0.15);
             background-color: #e5e5e7;
-            min-height: 200px;
         }
         .product-image {
             width: 100%;
@@ -181,7 +179,7 @@
         .faq-section { margin-bottom: 28px; }
         .faq-item {
             background-color: #ffffff;
-            border: 2px solid #e5e5e7;
+            border: 1.5px solid #e5e5e7;
             border-radius: 12px;
             margin-bottom: 10px;
             overflow: hidden;
@@ -189,7 +187,7 @@
         .faq-question {
             width: 100%;
             padding: 16px 20px;
-            background-color: #ffffff;
+            background: none;
             border: none;
             text-align: left;
             font-size: 15px;
@@ -200,14 +198,12 @@
             justify-content: space-between;
             align-items: center;
             gap: 12px;
-            font-family: inherit;
         }
         .faq-icon {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             color: #86868b;
             flex-shrink: 0;
-            line-height: 1;
         }
         .faq-answer {
             display: none;
@@ -222,7 +218,6 @@
         }
         .faq-item.open {
             border-color: #25D366;
-            box-shadow: 0 4px 12px rgba(37,211,102,0.1);
         }
         .faq-item.open .faq-answer {
             display: block;
@@ -245,7 +240,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 6px 20px rgba(255, 215, 0, 0.25), 0 2px 6px rgba(0,0,0,0.08);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            transition: all 0.25s ease;
             display: block;
             text-decoration: none;
             color: #1d1d1f;
@@ -255,13 +250,11 @@
             box-shadow: 0 12px 32px rgba(255, 215, 0, 0.4), 0 4px 12px rgba(0,0,0,0.12);
             border-color: #FFC107;
         }
-        .featured-product-card .fp-img-wrap {
+        .fp-img-wrap {
             padding: 10px;
             background: linear-gradient(145deg, #fff9c4 0%, #fff59d 100%);
-            position: relative;
-            min-height: 120px;
         }
-        .featured-product-card .fp-img-wrap img {
+        .fp-img-wrap img {
             width: 100%;
             height: auto;
             display: block;
@@ -270,18 +263,6 @@
             background-color: #e5e5e7;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-        }
-        .featured-product-card .fp-placeholder {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e5e5e7;
-            border-radius: 10px;
-            border: 2px solid #FFD700;
-            font-size: 48px;
-            line-height: 1;
         }
         .featured-product-card h3 {
             font-size: 13px;
@@ -292,7 +273,7 @@
             line-height: 1.3;
             margin: 0;
         }
-        .featured-product-card .fp-view {
+        .fp-view {
             text-align: center;
             padding: 4px 10px 12px;
             font-size: 11px;
@@ -311,7 +292,7 @@
         }
         .disclaimer-bar p {
             font-size: 12px;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.85);
             line-height: 1.7;
             max-width: 800px;
             margin: 0 auto;
@@ -334,7 +315,7 @@
             .product-title { font-size: 40px; }
             .featured-products-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
             .featured-product-card h3 { font-size: 14px; padding: 14px 12px 2px; }
-            .featured-product-card .fp-view { font-size: 12px; padding: 6px 12px 14px; }
+            .fp-view { font-size: 12px; padding: 6px 12px 14px; }
         }
         @media (min-width: 1200px) {
             main { max-width: 1280px; padding: 48px 40px 0; }
@@ -348,7 +329,7 @@
             .buy-buttons { flex-direction: column; }
             .contact-btn { width: 100%; }
             .featured-product-card h3 { font-size: 12px; padding: 10px 8px 2px; }
-            .featured-product-card .fp-view { font-size: 10px; padding: 2px 8px 10px; }
+            .fp-view { font-size: 10px; padding: 2px 8px 10px; }
             .featured-products-grid { gap: 12px; }
             .faq-question { font-size: 14px; padding: 14px 16px; }
             .faq-answer-inner { padding: 14px 16px; }
@@ -630,14 +611,6 @@
                 img.src = fpImage;
                 img.alt = fp.name;
                 img.loading = 'lazy';
-
-                img.onerror = function() {
-                    this.style.display = 'none';
-                    var ph = document.createElement('div');
-                    ph.className = 'fp-placeholder';
-                    ph.textContent = String.fromCodePoint(0x1F4E6);
-                    this.parentNode.appendChild(ph);
-                };
 
                 wrap.appendChild(img);
                 link.appendChild(wrap);
