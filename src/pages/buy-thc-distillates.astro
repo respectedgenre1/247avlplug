@@ -261,6 +261,67 @@
             }
         }
 
+        /* ─── BACK TO HOME BUTTON ─── */
+        .back-home {
+            position: fixed;
+            top: 1.25rem;
+            left: 1.25rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.1rem;
+            background: var(--bg-glass);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle);
+            border-radius: 100px;
+            box-shadow: var(--shadow-card);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .back-home:hover {
+            transform: translateX(-3px);
+            border-color: var(--border-orange);
+            box-shadow: var(--shadow-orange);
+            color: var(--accent-orange-light);
+        }
+
+        .back-home:active {
+            transform: scale(0.95);
+        }
+
+        .back-home svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .back-home:hover svg {
+            transform: translateX(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .back-home {
+                top: 0.75rem;
+                left: 0.75rem;
+                padding: 0.55rem 0.9rem;
+                font-size: 0.8rem;
+            }
+            .back-home svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
 
         /* ─── BACKGROUND IMAGE LAYER ─── */
         /* ═══ EDIT: Change the background-image URL below to your GitHub raw image URL ═══ */
@@ -1206,9 +1267,21 @@
     </style>
 <base target="_blank">
 <base target="_blank">
+<base target="_blank">
 </head>
 
 <body>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- ║  BACK TO HOME BUTTON — EDIT href TO POINT TO YOUR HOMEPAGE       ║ -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <a href="https://247avlplug.com/" class="back-home" aria-label="Back to homepage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Home</span>
+    </a>
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- ║  THEME TOGGLE BUTTON — Fixed top-right corner                     ║ -->
@@ -1674,8 +1747,8 @@
                     <div class="related-image-wrap">
                         <!-- ═══ EDIT: Replace src with your GitHub raw image URL ═══ -->
                         <img 
-                            src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Bolivian%20Cocaine.jpeg?raw=true" 
-                            alt="Buy Pure Cocaine Online | Best Prices /1kg for Uncut Coke" 
+                            src="https://https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Bolivian%20Cocaine.jpeg?raw=true" 
+                            alt="Buy Uncut Cocaine Online | 247 AVL Plug" 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=THC+Vape+Carts'"
@@ -1686,7 +1759,7 @@
                     </div>
                     <div class="related-info">
                         <h3 class="related-name">Buy Cocaine</h3>
-                        <p class="related-desc">Buy Pure Cocaine Online | Best Prices /1kg for Uncut Coke</p>
+                        <p class="related-desc">Buy Uncut Cocaine Online | Best prices /kg for Raw Cocaine</p>
                     </div>
                 </a>
 
@@ -1695,7 +1768,7 @@
                     <div class="related-image-wrap">
                         <img 
                             src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Ketamine%20for%20sale.jpeg?raw=true" 
-                            alt="Ketamine For Sale | Type S and R Available " 
+                            alt="Buy Ketamine Online | Liquid and Nasal Spray | 247 AVL Plug" 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=Cannabis+Edibles'"
@@ -1706,7 +1779,7 @@
                     </div>
                     <div class="related-info">
                         <h3 class="related-name">Buy Ketamine</h3>
-                        <p class="related-desc">Ketamine For Sale | Type S and R Available | Flavored Nasal Spray and Liquid KET</p>
+                        <p class="related-desc">Buy Ketamine Online | Liquid and Nasal Spray | Type S and R</p>
                     </div>
                 </a>
 
@@ -1715,7 +1788,7 @@
                     <div class="related-image-wrap">
                         <img 
                             src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Research%20Chemicals%20For%20sale.jpeg?raw=true" 
-                            alt="Buy Lab Grade Research Chemicals Online | a-PvP, MDMA, 4-fluorococaine" 
+                            alt="Cannabis Concentrates - Shatter, wax, and live resin" 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=Concentrates'"
@@ -1725,17 +1798,17 @@
                         </div>
                     </div>
                     <div class="related-info">
-                        <h3 class="related-name">Buy Research Chemicals</h3>
-                        <p class="related-desc">Buy Lab Grade Research Chemicals Online | a-PvP, MDMA, 4-fluorococaine and More</p>
+                        <h3 class="related-name">Vuy Research Chemicals</h3>
+                        <p class="related-desc">Buy Lab Grade Research Chemicals Online | a-PVP,MDMA, 4-fluorococaine, etc</p>
                     </div>
                 </a>
 
                 <!-- ═══ RELATED CATEGORY 4 — EDIT ALL FIELDS BELOW ═══ -->
-                <a href="https://247avlplug.com/buy-the-distillates/" class="related-card glass-card" role="listitem">
+                <a href="https://247avlplug.com/buy-cbd-products/" class="related-card glass-card" role="listitem">
                     <div class="related-image-wrap">
                         <img 
                             src="https://github.com/respectedgenre1/247avlplug/blob/main/public/THC%20Distillates%20For%20sale.jpeg?raw=true" 
-                            alt="Up to 98% pure THC Distillates for sale " 
+                            alt="THC Products - Oils, THCv, and THCp" 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=CBD+Products'"
@@ -1746,7 +1819,7 @@
                     </div>
                     <div class="related-info">
                         <h3 class="related-name">Buy THC Distillates</h3>
-                        <p class="related-desc">Up to 98% pure THC Distillates for sale | Buy Pure THC Distillate Oil Online</p>
+                        <p class="related-desc">Buy Pure THC Distillate Oil, Delta 8|9|10, Upto 98% pure</p>
                     </div>
                 </a>
 
