@@ -1,1 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="seo-title">Product | 247 AVL Plug</title>
+    <meta name="description" id="seo-desc" content="">
+    <meta name="robots" content="index, follow">
+    <link id="seo-canonical" rel="canonical" href="">
+    <meta property="og:type" content="product">
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-desc" content="">
+    <meta property="og:image" id="og-image" content="">
+    <meta property="og:url" id="og-url" content="">
+    <meta name="twitter:card" content="summary_large_image">
 
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #FF9500;
+            color: #1d1d1f;
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+        header {
+            background-color: rgba(255,255,255,0.97);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e5e7;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .back-btn {
+            background-color: #fff;
+            border: 1.5px solid #d1d1d6;
+            color: #1d1d1f;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #6e6e73;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 50%;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 28px 16px 0;
+        }
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+        .product-image-container {
+            padding: 20px;
+            background-color: #f5f5f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            background-color: #e5e5e7;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+        .image-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background-color: #25D366;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 7px 16px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+            z-index: 2;
+        }
+        .product-details {
+            padding: 32px 28px;
+        }
+        .product-title {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            line-height: 1.15;
+            color: #1d1d1f;
+        }
+        .product-subtitle {
+            font-size: 15px;
+            color: #6e6e73;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        .product-description {
+            color: #6e6e73;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            padding: 22px;
+            background-color: #f5f5f7;
+            border-radius: 16px;
+            border-left: 4px solid #25D366;
+        }
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86868b;
+            margin-bottom: 14px;
+        }
+        .buy-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 4px;
+        }
+        .contact-btn {
+            flex: 1;
+            padding: 18px 20px;
+            border-radius: 14px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #fff;
+        }
+        .btn-telegram {
+            background-color: #0088cc;
+            color: #fff;
+        }
+
+        /* ============================================================ */
+        /*  FAQ ACCORDION                                               */
+        /* ============================================================ */
+        .faq-section {
+            margin-bottom: 28px;
+        }
+        .faq-item {
+            background-color: #ffffff;
+            border: 1.5px solid #e5e5e7;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        .faq-item:hover {
+            border-color: #d1d1d6;
+        }
+        .faq-question {
+            width: 100%;
+            padding: 16px 20px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1d1d1f;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .faq-icon {
+            font-size: 18px;
+            font-weight: 800;
+            color: #86868b;
+            flex-shrink: 0;
+            transition: transform 0.25s ease;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            color: #25D366;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-answer-inner {
+            padding: 0 20px 16px;
+            color: #6e6e73;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ============================================================ */
+        /*  FEATURED PRODUCTS — TEXT BUTTONS (NO IMAGES)                */
+        /* ============================================================ */
+        .featured-products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .featured-product-btn {
+            display: block;
+            background-color: #ffffff;
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 16px 14px;
+            text-align: center;
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+            transition: all 0.25s ease;
+            line-height: 1.3;
+        }
+        .featured-product-btn:hover {
+            background-color: #fff9c4;
+            border-color: #FFC107;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.35);
+            color: #1d1d1f;
+        }
+
+        /* ============================================================ */
+        /*  DISCLAIMER BAR — BOTTOM OF PAGE                             */
+        /* ============================================================ */
+        .disclaimer-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+            text-align: center;
+        }
+        .disclaimer-bar p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .disclaimer-bar strong {
+            color: #ffffff;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (min-width: 768px) {
+            main { padding: 40px 28px 0; }
+            article { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+            .product-image-container { position: sticky; top: 80px; }
+            .product-details { padding: 40px 36px; }
+            .product-title { font-size: 40px; }
+            .featured-products-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+            .featured-product-btn { font-size: 14px; padding: 18px 16px; }
+        }
+        @media (min-width: 1200px) {
+            main { max-width: 1280px; padding: 48px 40px 0; }
+            article { gap: 40px; }
+            .product-title { font-size: 44px; }
+        }
+        @media (max-width: 480px) {
+            .product-title { font-size: 26px; }
+            .product-details { padding: 24px 20px; }
+            .card { padding: 20px; border-radius: 20px; }
+            .buy-buttons { flex-direction: column; }
+            .contact-btn { width: 100%; }
+            .featured-product-btn { font-size: 12px; padding: 14px 10px; }
+            .faq-question { font-size: 14px; padding: 14px 16px; }
+            .faq-answer-inner { padding: 0 16px 14px; }
+        }
+
+        /* ============================================================ */
+        /*  IMAGE LIGHTBOX                                              */
+        /* ============================================================ */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            cursor: zoom-out;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: #fff;
+            font-size: 36px;
+            font-weight: 300;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* ============================================================ */
+        /*  VIDEO SECTION                                               */
+        /* ============================================================ */
+        .video-section {
+            margin-bottom: 28px;
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* ============================================================ */
+        /*  COA SECTION                                                 */
+        /* ============================================================ */
+        .coa-section {
+            margin-bottom: 28px;
+        }
+        .coa-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #ffffff;
+            border: 2px solid #e5e5e7;
+            border-left: 4px solid #25D366;
+            border-radius: 12px;
+            padding: 18px 20px;
+            text-decoration: none;
+            color: #1d1d1f;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.2s ease;
+        }
+        .coa-card:hover {
+            border-color: #25D366;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.15);
+            transform: translateX(4px);
+        }
+        .coa-icon {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, #25D366 0%, #1faa52 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .coa-info {
+            flex: 1;
+        }
+        .coa-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 2px;
+        }
+        .coa-subtitle {
+            font-size: 12px;
+            color: #86868b;
+        }
+        .coa-arrow {
+            font-size: 18px;
+            color: #86868b;
+            font-weight: 700;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="back-btn">&#8592; Back to Shop</a>
+        <h1 id="header-title" class="header-title"></h1>
+    </header>
+
+    <main>
+        <article>
+            <div class="card product-image-container">
+                <div class="image-wrapper">
+                    <span class="image-badge" id="img-badge">In Stock</span>
+                    <img id="p-img" src="" alt="" class="product-image">
+                </div>
+            </div>
+
+            <section class="card product-details">
+                <h2 id="p-name" class="product-title"></h2>
+                <p id="p-subtitle" class="product-subtitle"></p>
+
+                <div class="section-label">Key Features</div>
+                <div id="feature-bubbles"></div>
+
+                <p id="p-desc" class="product-description"></p>
+
+                <!-- PRODUCT VIDEO -->
+                <div id="video-section" class="video-section" style="display:none;">
+                    <div class="section-label">Product Video</div>
+                    <div id="video-container" class="video-wrapper"></div>
+                </div>
+
+                <!-- COA (Certificate of Analysis) -->
+                <div id="coa-section" class="coa-section" style="display:none;">
+                    <div class="section-label" id="coa-label">Certificate of Analysis</div>
+                    <a id="coa-card" href="#" target="_blank" rel="noopener" class="coa-card">
+                        <div class="coa-icon">&#128196;</div>
+                        <div class="coa-info">
+                            <div class="coa-title" id="coa-title-text">View COA Document</div>
+                            <div class="coa-subtitle">Lab-tested purity report</div>
+                        </div>
+                        <div class="coa-arrow">&#8594;</div>
+                    </a>
+                </div>
+
+                <!-- FAQ ACCORDION -->
+                <div class="section-label">THC FEATURES and FAQs</div>
+                <div id="faq-container" class="faq-section"></div>
+
+                <div class="section-label">THC DISTILLATE PRICES</div>
+                <div id="pricing-tiers"></div>
+
+                <div class="buy-buttons">
+                    <a id="btn-wa" href="#" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">
+                        <span style="font-size:20px;">&#128172;</span> Buy on WhatsApp
+                    </a>
+                    <a id="btn-tg" href="#" class="contact-btn btn-telegram" target="_blank" rel="noopener">
+                        <span style="font-size:20px;">&#9992;</span> Buy on Telegram
+                    </a>
+                </div>
+
+                <!-- FEATURED PRODUCTS -->
+                <div class="section-label" style="margin-top:32px;">You May Also Like</div>
+                <div id="featured-products" class="featured-products-grid"></div>
+
+                <!-- FOOTER POLICY LINKS -->
+                <div id="footer-links"></div>
+            </section>
+        </article>
+    </main>
+
+    <!-- DISCLAIMER — sits on the orange background at the very bottom -->
+    <div class="disclaimer-bar">
+        <p id="disclaimer-text"></p>
+    </div>
+
+    <!-- ================================================================ -->
+    -->
+    <!--   EDIT ONLY THIS BLOCK FOR NEW PRODUCTS                          -->
+    -->
+    <!--   Each section is labeled. Change the values inside quotes.      -->
+    -->
+    <!-- ================================================================ -->
+    <script>
+        const PRODUCT_CONFIG = {
+
+            /* ========================================================= */
+            /*  1. BASIC INFO                                            */
+            /* ========================================================= */
+            name: "Buy Full Spectrum Delta 10 THC Distillate | Uplifting Hemp Oil ",
+            subtitle: "High Purity | COA Available | Delta 10",
+
+            /* ========================================================= */
+            /*  2. IMAGES                                                */
+            /* ========================================================= */
+            imageSrc: "https://github.com/respectedgenre1/247avlplug/blob/main/thcdis/Full%20Spectrum%20THC%20Distillate.jpeg?raw=true",
+            imageAlt: "Buy Full Spectrum Delta 10 THC Distillate | Uplifting Hemp Oil",
+            imageBadge: "In Stock",
+
+            /* ========================================================= */
+            /*  3. SEO & META                                            */
+            /* ========================================================= */
+            seoTitle: "Buy Pure Delta 10 THC Distillate CAT 3 | Uplifting Hemp Oil| 247 AVL Plug",
+            seoDescription: "Shop premium Full Spectrum Delta 10 THC Distillate Oil. Rich in minor cannabinoids and natural terpenes for an uplifting, energizing entourage effect. Perfect for edibles and vapes. Fast Discreet shipping. Buy On 247 AVL Plug",
+            urlSlug: "buy-delta-10-thc-distillate-oil-cat3.html",
+
+            /* ========================================================= */
+            /*  4. PRICING TIERS                                         */
+            /* ========================================================= */
+            pricingTiers: [
+                { label: "100ml",    price: "$230.00",              badge: "" },
+                { label: "200ml",   price: "$470.00",            badge: "best deal" },
+                { label: "500ml",  price: "$960.00",            badge: "Free shipping + 10ml" },
+                { label: "1 liter",  price: "$1750.00",            badge: "Free 30ml" },
+                { label: "Above 1 Liter", price: "Contact Us",  badge: "Wholesale" }
+            ],
+            defaultTierIndex: 0,
+
+            /* ========================================================= */
+            /*  5. DESCRIPTION                                           */
+            /* ========================================================= */
+            description: "Our Full Spectrum Delta 10 THC Distillate Oil is a premium, whole-plant extract that retains a rich profile of minor cannabinoids and naturally occurring botanical terpenes alongside the uplifting Delta 10. This unadulterated oil delivers a powerful entourage effect, offering a more balanced, energizing, and authentic cannabis experience compared to isolated distillates. It features a natural golden-amber color, a robust earthy hemp aroma, and is fully decarboxylated for immediate use. Every batch is rigorously third-party lab tested to ensure safety, potency, and strict compliance with federal hemp regulations, making it the perfect foundation for artisanal edibles, full-spectrum tinctures, and premium daytime vape formulations.",
+
+            /* ========================================================= */
+            /*  6. FAQS — Add as many Q&A pairs as needed                */
+            /* ========================================================= */
+            faqs: [
+                {
+                    question: "Delta 10 THC Distillate oil (Full Spectrum) Features ",
+                    answer: "Potency: 98% Pure Delta 10 THC (Full Spectrum), Source: 100% Hemp-Derived & Federally Compliant, Format: Premium, Ready-to-Use Distillate Oil, Purity: Broad-spectrum purified; THC-dominant with negligible CBD/CBN, Quality Assurance: Third-party lab tested for potency, pesticides, and heavy metals, Ideal For: Edibles, tinctures, vape cartridges, dabs, and custom formulations"
+                },
+                {
+                    question: "How long does delivery take?",
+                    answer: "Delta 10 THC Distillates | Packaging: Discreet | completely Discreet Shipping:Worldwide with full tracking provided. We offer various shipping options including standard, express, and overnight shipping within the USA,Canada, and UK. With 3-5 days Express delivery to other country in Europe, Australia and the Middle east.."
+                },
+                {
+                    question: "Whar are the available Flavors Delta 10 THC Flavors?",
+                    answer: "Girl Scout Cookies, Northern Lights, Sour Diesel, Strawberry Banana, Banana Split, Watermelon OG, Gorilla Glue #4, AK-47, Blueberry Kush, Bubblegum, Cinnamon Roll, Durban Poison, Ghost Bubba, MAC #1, Phantom Lemon Haze, Pineapple Express, Sunset Sherbert, Purple Haze, Sour Green Apple, Wedding Cake, Wild Cherry."
+                },
+                {
+                    question: "Is this product legal in my country?",
+                    answer: "It is your responsibility to verify the legal status of research chemicals in your jurisdiction before ordering. We sell strictly for research purposes and comply with all applicable laws."
+                },
+                {
+                    question: "Will this product show up on a drug test?",
+                    answer: "Yes. All forms of THC, including Delta 9, Delta 8, and Delta 10, will trigger a positive result on standard drug tests."
+                },
+                 {
+                    question: "What does Delta 10 feel like compared to Delta 8 and Delta 9?",
+                    answer: "Delta 10 is widely known as the uplifting daytime choice. Unlike the heavy relaxation of Delta 8 or the intense psychoactive effects of Delta 9, Delta 10 provides a clear-headed, energizing, and focus-enhancing experience. It is perfect for daytime use, creative projects, or staying productive without feeling sedated."
+                }
+            ],
+
+            /* ========================================================= */
+            /*  7. FEATURES (3 items max)                                */
+            /* ========================================================= */
+            features: [
+                "High Purity",
+                "Discreet Packaging",
+                "Any Address Delivery"
+            ],
+            featureEmojis: ["&#128142;", "&#128230;", "&#128666;"],
+
+            /* ========================================================= */
+            /*  8. CONTACT — EDIT THESE FOR YOUR ACCOUNTS                */
+            /* ========================================================= */
+            whatsappNumber: "13254365583",
+            telegramHandle: "datplugg",
+
+            /* ========================================================= */
+            /*  9. FEATURED PRODUCTS                                     */
+            /*     4 products shown below contact buttons                */
+            /* ========================================================= */
+            featuredProducts: [
+                { name: "Ketamine", url: "/buy-ketamine.html" },
+                { name: "Cocaine", url: "/buy-cocaine.html" },
+                { name: "Research Chemicals", url: "/buy-research-chemicals.html" },
+                { name: "THC Distillates", url: "/buy-thc-distillates" }
+            ],
+
+            /* ========================================================= */
+            /*  10. FOOTER POLICY LINKS                                  */
+            /* ========================================================= */
+            footerLinks: [
+                { text: "Privacy Policy",                 url: "/privacy-policy.html" },
+                { text: "Payment and Refund Policy",      url: "/payment-refund-policy.html" },
+                { text: "Terms and Conditions",           url: "/terms-and-conditions.html" },
+                { text: "Shipping and Delivery Policies", url: "/shipping-delivery-policy.html" }
+            ],
+
+            /* ========================================================= */
+            /*  11. MEDIA — Video & COA                                  */
+            /*     Leave as "" to hide the section                       */
+            /* ========================================================= */
+            videoUrl: "https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/WhatsApp%20Video%202023-04-21%20at%205.56.47%20PM.mp4",
+            coaUrl: "https://drive.google.com/file/d/1OqZpJ1YcDafLpnURZjdDlWPUWqhtJaiq/view?usp=drive_link",
+            coaTitle: "Certificate of Analysis",
+
+            /* ========================================================= */
+            /*  12. DISCLAIMER — Edit this text as needed                */
+            /* ========================================================= */
+            disclaimer: "All products sold on this website are intended for research purposes only. By purchasing, you confirm that you are at least 18 years of age and will use these products strictly in accordance with all applicable local, state, and federal laws. We do not condone the misuse of any products on our website. The vendor assumes no liability for the misuse of products.",
+
+            /* ========================================================= */
+            /*  13. THEME COLORS                                         */
+            /* ========================================================= */
+            themeColor: "#25D366",
+            backgroundColor: "#FF9500"
+        };
+
+        /* ================================================================ */
+        /*  ENGINE — DO NOT EDIT BELOW THIS LINE                            */
+        /* ================================================================ */
+        document.addEventListener('DOMContentLoaded', function() {
+            var p = PRODUCT_CONFIG;
+            var baseUrl = "https://247avlplug.com";
+            var productUrl = baseUrl + "/products/" + p.urlSlug;
+            var imageUrl = p.imageSrc.startsWith('http') ? p.imageSrc : baseUrl + p.imageSrc;
+
+            document.body.style.backgroundColor = p.backgroundColor;
+
+            // SEO
+            document.title = p.seoTitle;
+            document.getElementById('seo-desc').content = p.seoDescription;
+            document.getElementById('seo-canonical').href = productUrl;
+            document.getElementById('og-title').content = p.seoTitle;
+            document.getElementById('og-desc').content = p.seoDescription;
+            document.getElementById('og-image').content = imageUrl;
+            document.getElementById('og-url').content = productUrl;
+
+            // Content
+            document.getElementById('header-title').textContent = p.name;
+            document.getElementById('p-name').textContent = p.name;
+            document.getElementById('p-subtitle').textContent = p.subtitle;
+            document.getElementById('p-desc').textContent = p.description;
+
+            var imgEl = document.getElementById('p-img');
+            imgEl.src = imageUrl;
+            imgEl.alt = p.imageAlt;
+
+            var badgeEl = document.getElementById('img-badge');
+            if (p.imageBadge && p.imageBadge.trim() !== "") {
+                badgeEl.textContent = p.imageBadge;
+                badgeEl.style.display = "inline-block";
+            } else {
+                badgeEl.style.display = "none";
+            }
+
+            // Disclaimer
+            var disclaimerEl = document.getElementById('disclaimer-text');
+            disclaimerEl.innerHTML = '<strong>Disclaimer</strong>' + p.disclaimer;
+
+            /* ========================================================= */
+            /*  VIDEO                                                    */
+            /* ========================================================= */
+            if (p.videoUrl && p.videoUrl.trim() !== '') {
+                var videoSection = document.getElementById('video-section');
+                var videoContainer = document.getElementById('video-container');
+                videoSection.style.display = 'block';
+
+                if (p.videoUrl.indexOf('youtube.com/embed') !== -1 || p.videoUrl.indexOf('youtube.com/watch') !== -1) {
+                    var embedUrl = p.videoUrl;
+                    if (p.videoUrl.indexOf('watch?v=') !== -1) {
+                        embedUrl = p.videoUrl.replace('watch?v=', 'embed/');
+                    }
+                    videoContainer.innerHTML = '<iframe src="' + embedUrl + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                } else {
+                    videoContainer.innerHTML = '<video controls preload="metadata"><source src="' + p.videoUrl + '">Your browser does not support the video tag.</video>';
+                }
+            }
+
+            /* ========================================================= */
+            /*  COA                                                      */
+            /* ========================================================= */
+            if (p.coaUrl && p.coaUrl.trim() !== '') {
+                var coaSection = document.getElementById('coa-section');
+                var coaCard = document.getElementById('coa-card');
+                var coaLabel = document.getElementById('coa-label');
+                var coaTitleText = document.getElementById('coa-title-text');
+                coaSection.style.display = 'block';
+                coaCard.href = p.coaUrl;
+                if (p.coaTitle) {
+                    coaLabel.textContent = p.coaTitle;
+                    coaTitleText.textContent = 'View ' + p.coaTitle;
+                }
+            }
+
+            /* ========================================================= */
+            /*  IMAGE LIGHTBOX                                           */
+            /* ========================================================= */
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightbox-img');
+            imgEl.style.cursor = 'zoom-in';
+            imgEl.addEventListener('click', function() {
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                lightbox.classList.add('active');
+            });
+
+            /* ========================================================= */
+            /*  FEATURE CARDS                                            */
+            /* ========================================================= */
+            var featuresContainer = document.getElementById('feature-bubbles');
+            featuresContainer.innerHTML = '';
+            featuresContainer.style.display = 'flex';
+            featuresContainer.style.flexWrap = 'wrap';
+            featuresContainer.style.gap = '12px';
+            featuresContainer.style.marginBottom = '28px';
+
+            var emojis = p.featureEmojis || ["&#10003;", "&#10003;", "&#10003;"];
+
+            if (p.features && p.features.length > 0) {
+                for (var i = 0; i < p.features.length; i++) {
+                    var card = document.createElement('div');
+                    card.style.backgroundColor = '#ffffff';
+                    card.style.border = '1.5px solid #e5e5e7';
+                    card.style.borderTop = '4px solid #25D366';
+                    card.style.borderRadius = '14px';
+                    card.style.padding = '18px 16px';
+                    card.style.flex = '1 1 140px';
+                    card.style.minWidth = '140px';
+                    card.style.textAlign = 'center';
+                    card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+                    card.style.transition = 'all 0.25s ease';
+                    card.style.cursor = 'default';
+
+                    card.innerHTML =
+                        '<div style="font-size:28px;margin-bottom:8px;">' + emojis[i] + '</div>' +
+                        '<div style="font-size:13px;font-weight:700;color:#1d1d1f;line-height:1.4;">' + p.features[i] + '</div>';
+
+                    featuresContainer.appendChild(card);
+                }
+            }
+
+            /* ========================================================= */
+            /*  FAQ ACCORDION                                            */
+            /* ========================================================= */
+            var faqContainer = document.getElementById('faq-container');
+            faqContainer.innerHTML = '';
+
+            if (p.faqs && p.faqs.length > 0) {
+                for (var q = 0; q < p.faqs.length; q++) {
+                    var faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item';
+                    faqItem.style.backgroundColor = '#ffffff';
+                    faqItem.style.border = '1.5px solid #e5e5e7';
+                    faqItem.style.borderRadius = '12px';
+                    faqItem.style.marginBottom = '10px';
+                    faqItem.style.overflow = 'hidden';
+                    faqItem.style.transition = 'all 0.2s ease';
+
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'faq-question';
+                    btn.style.width = '100%';
+                    btn.style.padding = '16px 20px';
+                    btn.style.background = 'none';
+                    btn.style.border = 'none';
+                    btn.style.textAlign = 'left';
+                    btn.style.fontSize = '15px';
+                    btn.style.fontWeight = '700';
+                    btn.style.color = '#1d1d1f';
+                    btn.style.cursor = 'pointer';
+                    btn.style.display = 'flex';
+                    btn.style.justifyContent = 'space-between';
+                    btn.style.alignItems = 'center';
+                    btn.style.gap = '12px';
+                    btn.innerHTML = '<span>' + p.faqs[q].question + '</span><span class="faq-icon" style="font-size:18px;font-weight:800;color:#86868b;flex-shrink:0;transition:transform 0.25s ease;">+</span>';
+
+                    var answerWrap = document.createElement('div');
+                    answerWrap.className = 'faq-answer';
+                    answerWrap.style.maxHeight = '0';
+                    answerWrap.style.overflow = 'hidden';
+                    answerWrap.style.transition = 'max-height 0.3s ease, padding 0.3s ease';
+
+                    var answerInner = document.createElement('div');
+                    answerInner.className = 'faq-answer-inner';
+                    answerInner.style.padding = '0 20px 16px';
+                    answerInner.style.color = '#6e6e73';
+                    answerInner.style.fontSize = '14px';
+                    answerInner.style.lineHeight = '1.7';
+                    answerInner.textContent = p.faqs[q].answer;
+
+                    answerWrap.appendChild(answerInner);
+                    faqItem.appendChild(btn);
+                    faqItem.appendChild(answerWrap);
+
+                    btn.addEventListener('click', function(item, ans, icon) {
+                        return function() {
+                            var isOpen = item.classList.contains('open');
+                            // Close all
+                            var allFaqs = faqContainer.querySelectorAll('.faq-item');
+                            for (var a = 0; a < allFaqs.length; a++) {
+                                allFaqs[a].classList.remove('open');
+                                allFaqs[a].style.borderColor = '#e5e5e7';
+                                var aAns = allFaqs[a].querySelector('.faq-answer');
+                                if (aAns) aAns.style.maxHeight = '0';
+                                var aIcon = allFaqs[a].querySelector('.faq-icon');
+                                if (aIcon) {
+                                    aIcon.style.transform = 'rotate(0deg)';
+                                    aIcon.style.color = '#86868b';
+                                }
+                            }
+                            // Toggle current
+                            if (!isOpen) {
+                                item.classList.add('open');
+                                item.style.borderColor = '#25D366';
+                                ans.style.maxHeight = '300px';
+                                icon.style.transform = 'rotate(45deg)';
+                                icon.style.color = '#25D366';
+                            }
+                        };
+                    }(faqItem, answerWrap, btn.querySelector('.faq-icon')));
+
+                    faqContainer.appendChild(faqItem);
+                }
+            }
+
+            /* ========================================================= */
+            /*  PRICING TIERS                                            */
+            /* ========================================================= */
+            var tiersContainer = document.getElementById('pricing-tiers');
+            tiersContainer.innerHTML = '';
+            tiersContainer.style.display = 'flex';
+            tiersContainer.style.flexDirection = 'column';
+            tiersContainer.style.gap = '10px';
+            tiersContainer.style.marginBottom = '28px';
+
+            var currentTier = p.pricingTiers[p.defaultTierIndex];
+
+            for (var i = 0; i < p.pricingTiers.length; i++) {
+                (function(tier, index) {
+                    var row = document.createElement('div');
+                    var isSelected = (index === p.defaultTierIndex);
+
+                    row.style.backgroundColor = isSelected ? '#e8f8ee' : '#ffffff';
+                    row.style.border = isSelected ? '2px solid #25D366' : '2px solid #d1d1d6';
+                    row.style.borderLeft = isSelected ? '5px solid #25D366' : '2px solid #d1d1d6';
+                    row.style.borderRadius = '12px';
+                    row.style.padding = '16px 18px';
+                    row.style.cursor = 'pointer';
+                    row.style.display = 'flex';
+                    row.style.alignItems = 'center';
+                    row.style.justifyContent = 'space-between';
+                    row.style.gap = '12px';
+                    row.style.boxShadow = isSelected ? '0 4px 12px rgba(37,211,102,0.15)' : '0 1px 4px rgba(0,0,0,0.04)';
+                    row.style.transition = 'all 0.2s ease';
+
+                    var radioColor = isSelected ? '#25D366' : '#d1d1d6';
+                    var radioInner = isSelected ? '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>' : '';
+
+                    var badgeHtml = '';
+                    if (tier.badge && tier.badge.trim() !== '') {
+                        badgeHtml = '<span style="font-size:11px;background:#25D366;color:#fff;padding:3px 10px;border-radius:50px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;">' + tier.badge + '</span>';
+                    }
+
+                    row.innerHTML =
+                        '<div style="display:flex;align-items:center;gap:12px;flex:1;">' +
+                            '<div style="width:22px;height:22px;border-radius:50%;border:3px solid ' + radioColor + ';background:' + radioColor + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + radioInner + '</div>' +
+                            '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">' +
+                                '<span style="font-weight:700;font-size:15px;color:#1d1d1f;white-space:nowrap;">' + tier.label + '</span>' +
+                                badgeHtml +
+                            '</div>' +
+                        '</div>' +
+                        '<span style="font-weight:800;font-size:17px;color:#1faa52;white-space:nowrap;flex-shrink:0;">' + tier.price + '</span>';
+
+                    row.addEventListener('click', function() {
+                        var allRows = tiersContainer.children;
+                        for (var j = 0; j < allRows.length; j++) {
+                            var r = allRows[j];
+                            r.style.backgroundColor = '#ffffff';
+                            r.style.border = '2px solid #d1d1d6';
+                            r.style.borderLeft = '2px solid #d1d1d6';
+                            r.style.boxShadow = '0 1px 4px rgba(0,0,0,0.04)';
+                            var radio = r.querySelector('div > div');
+                            if (radio) {
+                                radio.style.borderColor = '#d1d1d6';
+                                radio.style.background = '#d1d1d6';
+                                radio.innerHTML = '';
+                            }
+                        }
+
+                        row.style.backgroundColor = '#e8f8ee';
+                        row.style.border = '2px solid #25D366';
+                        row.style.borderLeft = '5px solid #25D366';
+                        row.style.boxShadow = '0 4px 12px rgba(37,211,102,0.15)';
+                        var activeRadio = row.querySelector('div > div');
+                        if (activeRadio) {
+                            activeRadio.style.borderColor = '#25D366';
+                            activeRadio.style.background = '#25D366';
+                            activeRadio.innerHTML = '<div style="width:10px;height:10px;background:#fff;border-radius:50%;"></div>';
+                        }
+
+                        updateLinks(tier);
+                    });
+
+                    tiersContainer.appendChild(row);
+                })(p.pricingTiers[i], i);
+            }
+
+            /* ========================================================= */
+            /*  FEATURED PRODUCTS — TEXT BUTTONS (NO IMAGES)             */
+            /* ========================================================= */
+            var featuredContainer = document.getElementById('featured-products');
+            featuredContainer.innerHTML = '';
+
+            for (var f = 0; f < p.featuredProducts.length; f++) {
+                var fp = p.featuredProducts[f];
+
+                var link = document.createElement('a');
+                link.href = fp.url;
+                link.className = 'featured-product-btn';
+                link.textContent = fp.name;
+
+                featuredContainer.appendChild(link);
+            }
+
+            /* ========================================================= */
+            /*  FOOTER POLICY LINKS                                      */
+            /* ========================================================= */
+            var footerContainer = document.getElementById('footer-links');
+            footerContainer.innerHTML = '';
+            footerContainer.style.marginTop = '28px';
+            footerContainer.style.paddingTop = '22px';
+            footerContainer.style.borderTop = '1px solid #e5e5e7';
+            footerContainer.style.display = 'flex';
+            footerContainer.style.flexWrap = 'wrap';
+            footerContainer.style.justifyContent = 'center';
+            footerContainer.style.gap = '8px 20px';
+
+            if (p.footerLinks && p.footerLinks.length > 0) {
+                for (var k = 0; k < p.footerLinks.length; k++) {
+                    var link = document.createElement('a');
+                    link.href = p.footerLinks[k].url;
+                    link.textContent = p.footerLinks[k].text;
+                    link.style.color = '#86868b';
+                    link.style.fontSize = '12px';
+                    link.style.fontWeight = '600';
+                    link.style.textDecoration = 'none';
+                    link.style.transition = 'color 0.2s ease';
+                    link.style.whiteSpace = 'nowrap';
+
+                    link.addEventListener('mouseenter', function() {
+                        this.style.color = '#25D366';
+                    });
+                    link.addEventListener('mouseleave', function() {
+                        this.style.color = '#86868b';
+                    });
+
+                    footerContainer.appendChild(link);
+                }
+            }
+
+            /* ========================================================= */
+            /*  CONTACT LINKS                                            */
+            /* ========================================================= */
+            function updateLinks(selectedTier) {
+                var waMessage = encodeURIComponent(
+                    'Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com'
+                );
+                document.getElementById('btn-wa').href = 'https://wa.me/' + p.whatsappNumber + '?text=' + waMessage;
+
+                var tgMessage = encodeURIComponent(
+                    'Hi! I want to buy the ' + p.name + ' (' + selectedTier.label + ' - ' + selectedTier.price + ') from 247avlplug.com'
+                );
+                document.getElementById('btn-tg').href = 'https://t.me/' + p.telegramHandle + '?text=' + tgMessage;
+            }
+
+            updateLinks(currentTier);
+        });
+    </script>
+
+    <!-- IMAGE LIGHTBOX -->
+    <div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('active')">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="" class="lightbox-img" onclick="event.stopPropagation()">
+    </div>
+</body>
+</html>
