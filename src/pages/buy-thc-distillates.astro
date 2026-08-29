@@ -700,6 +700,17 @@
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+        }
+
+        /* Video controls styling */
+        .video-container video::-webkit-media-controls-panel {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        [data-theme="light"] .video-container video::-webkit-media-controls-panel {
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
         }
 
         .video-caption {
@@ -1075,6 +1086,7 @@
             .glass-card { background: #111; border: 1px solid #333; }
         }
     </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 
@@ -1453,7 +1465,12 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════════════════ -->
-        <!-- ║  SECTION 9: PRODUCT VIDEOS — EDIT EMBED URLs & CAPTIONS          ║ -->
+        <!-- ║  SECTION 9: PRODUCT VIDEOS — GITHUB RAW VIDEO FILES              ║ -->
+        <!-- ║  Use <video> tags for direct MP4 files from GitHub (not iframe)  ║ -->
+        <!-- ║  GitHub raw URL format:                                          ║ -->
+        <!-- ║  https://github.com/USER/REPO/raw/branch/path/video.mp4          ║ -->
+        <!-- ║  OR                                                              ║ -->
+        <!-- ║  https://raw.githubusercontent.com/USER/REPO/branch/path.mp4   ║ -->
         <!-- ═══════════════════════════════════════════════════════════════════════ -->
         <section class="video-section main-container reveal" aria-labelledby="videos-heading">
             <div class="glass-card section-header">
@@ -1463,44 +1480,60 @@
 
             <div class="video-grid">
 
+                <!-- ═══ VIDEO 1 — EDIT src URL & caption below ═══ -->
                 <div class="video-frame glass-card">
                     <div class="video-container">
-                        <!-- ═══ EDIT: Replace with your YouTube embed URL ═══ -->
-                        <iframe 
-                            src="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/Raw%20THC.mp4" 
+                        <!-- 
+                          ═══ FOR GITHUB VIDEOS: Use <video> tag, NOT <iframe> ═══
+                          ═══ EDIT the src below with your GitHub raw MP4 URL ═══
+                          ═══ OPTIONAL: Add poster="thumbnail.jpg" for preview image ═══
+                        -->
+                        <video 
+                            src="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/Raw%20THC.mp4"
+                            poster="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/video-thumb-1.jpg"
                             title="Raw D9 THC Distillate"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            loading="lazy"
-                        ></iframe>
+                            controls
+                            preload="metadata"
+                            playsinline
+                            muted
+                            loop
+                        ></video>
                     </div>
                     <p class="video-caption">What Raw Delta 9 THC Distillate Looks Like</p>
                 </div>
 
+                <!-- ═══ VIDEO 2 — EDIT src URL & caption below ═══ -->
                 <div class="video-frame glass-card">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/VIDEO_ID_2?rel=0&modestbranding=1" 
-                            title="Lab Testing and Quality Control"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            loading="lazy"
-                        ></iframe>
+                        <video 
+                            src="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/Pure%20Delta%209%20THC%20Distillates.mp4"
+                            poster="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/video-thumb-2.jpg"
+                            title="Pure Delta 9 THC Distillate"
+                            controls
+                            preload="metadata"
+                            playsinline
+                            muted
+                            loop
+                        ></video>
                     </div>
-                    <p class="video-caption">Third-Party Lab Testing Protocol</p>
+                    <p class="video-caption">Pure Delta 9 THC Distillate — Crystal Clear</p>
                 </div>
 
+                <!-- ═══ VIDEO 3 — EDIT src URL & caption below ═══ -->
                 <div class="video-frame glass-card">
                     <div class="video-container">
-                        <iframe 
-                            src="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/Pure%20Delta%209%20THC%20Distillates.mp4" 
-                            title="Bulk Packaging and Shipping"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            loading="lazy"
-                        ></iframe>
+                        <video 
+                            src="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/video-3.mp4"
+                            poster="https://github.com/respectedgenre1/247avlplug/raw/refs/heads/main/thcdis/video-thumb-3.jpg"
+                            title="Lab Testing and Quality Control"
+                            controls
+                            preload="metadata"
+                            playsinline
+                            muted
+                            loop
+                        ></video>
                     </div>
-                    <p class="video-caption">Bulk Packaging & Secure Shipping</p>
+                    <p class="video-caption">Third-Party Lab Testing Protocol</p>
                 </div>
 
             </div>
@@ -1838,7 +1871,7 @@
     ║  • SECTION 6  → Sub-cat 1: badge, title, desc, product cards (img, name, link)  ║
     ║  • SECTION 7  → Sub-cat 2: badge, title, desc, product cards (img, name, link)  ║
     ║  • SECTION 8  → Sub-cat 3: badge, title, desc, product cards (img, name, link)  ║
-    ║  • SECTION 9  → Video embed URLs and captions                                   ║
+    ║  • SECTION 9  → Video src URLs (GitHub raw MP4), poster thumbnails, captions    ║
     ║  • SECTION 10 → "You May Also Like" — 4 category cards (img, title, link, desc) ║
     ║  • SECTION 11 → Accordion questions and answers (add/remove as needed)          ║
     ║  • SECTION 12 → Footer copyright / legal text                                   ║
