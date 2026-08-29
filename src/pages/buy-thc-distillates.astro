@@ -23,7 +23,7 @@
     <meta property="og:url" content="https://247avlplug.com/buy-thc-distillates/">
     <!-- ═══ EDIT: Replace with your actual OG image hosted on GitHub ═══ -->
     <meta property="og:image" content="https://github.com/respectedgenre1/247avlplug/blob/main/public/THC%20Distillates%20For%20sale.jpeg?raw=true">
-    <meta property="og:site_name" content="247AVL Plug">
+    <meta property="og:site_name" content="247 AVL Plug">
 
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
@@ -1146,23 +1146,69 @@
             .product-card, .related-card { break-inside: avoid; }
             .glass-card { background: #111; border: 1px solid #333; }
         }
+
+        /* ─── FOOTER DIVIDER & POLICY LINKS ─── */
+        .footer-divider {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-orange), transparent);
+            opacity: 0.6;
+        }
+
+        .footer-policies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-policies a {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .footer-policies a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+
+        .footer-policies a:hover {
+            color: var(--accent-orange-light);
+        }
+
+        .footer-policies a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 640px) {
+            .footer-policies {
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            .footer-policies a {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 <base target="_blank">
 <base target="_blank">
 </head>
 
 <body>
-
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <!-- ║  BACK TO HOME BUTTON — EDIT href TO POINT TO YOUR HOMEPAGE       ║ -->
-    <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <a href="https://247avlplug.com/" class="back-home" aria-label="Back to homepage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        <span>Home</span>
-    </a>
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- ║  THEME TOGGLE BUTTON — Fixed top-right corner                     ║ -->
@@ -1628,8 +1674,8 @@
                     <div class="related-image-wrap">
                         <!-- ═══ EDIT: Replace src with your GitHub raw image URL ═══ -->
                         <img 
-                            src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Bolivian%20Cocaine.jpeg?raw=true" 
-                            alt="Buy Uncut Cocaine Online | Best Prices /1kg for Pure Coke" 
+                            src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/images/categories/vape-carts.jpg" 
+                            alt="Buy Pure Cocaine Online | Best Prices /1kg for Uncut Coke" 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=THC+Vape+Carts'"
@@ -1640,7 +1686,7 @@
                     </div>
                     <div class="related-info">
                         <h3 class="related-name">Buy Cocaine</h3>
-                        <p class="related-desc">Buy Uncut Cocaine Online | Best Prices /1kg for Pure Coke </p>
+                        <p class="related-desc">Buy Pure Cocaine Online | Best Prices /1kg for Uncut Coke</p>
                     </div>
                 </a>
 
@@ -1649,7 +1695,7 @@
                     <div class="related-image-wrap">
                         <img 
                             src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Ketamine%20for%20sale.jpeg?raw=true" 
-                            alt="Type S Ketmaine | Type R ketamine | Flavored Ketamine Nasal Spray" 
+                            alt="Ketamine For Sale | Type S and R Available " 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=Cannabis+Edibles'"
@@ -1660,7 +1706,7 @@
                     </div>
                     <div class="related-info">
                         <h3 class="related-name">Buy Ketamine</h3>
-                        <p class="related-desc">Type S Ketmaine | Type R ketamine | Flavored Ketamine Nasal Spray </p>
+                        <p class="related-desc">Ketamine For Sale | Type S and R Available | Flavored Nasal Spray and Liquid KET</p>
                     </div>
                 </a>
 
@@ -1669,7 +1715,7 @@
                     <div class="related-image-wrap">
                         <img 
                             src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Research%20Chemicals%20For%20sale.jpeg?raw=true" 
-                            alt="Buy Research Chemicals Online | a-PvP, MDMA," 
+                            alt="Buy Lab Grade Research Chemicals Online | a-PvP, MDMA, 4-fluorococaine" 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=Concentrates'"
@@ -1679,17 +1725,17 @@
                         </div>
                     </div>
                     <div class="related-info">
-                        <h3 class="related-name">Concentrates</h3>
-                        <p class="related-desc">Buy Research Chemicals Online | a-PvP, MDMA, 4-Fluorococaine and more</p>
+                        <h3 class="related-name">Buy Research Chemicals</h3>
+                        <p class="related-desc">Buy Lab Grade Research Chemicals Online | a-PvP, MDMA, 4-fluorococaine and More</p>
                     </div>
                 </a>
 
                 <!-- ═══ RELATED CATEGORY 4 — EDIT ALL FIELDS BELOW ═══ -->
-                <a href="https://247avlplug.com/buy-thc-distillates/" class="related-card glass-card" role="listitem">
+                <a href="https://247avlplug.com/buy-cbd-products/" class="related-card glass-card" role="listitem">
                     <div class="related-image-wrap">
                         <img 
                             src="https://github.com/respectedgenre1/247avlplug/blob/main/public/THC%20Distillates%20For%20sale.jpeg?raw=true" 
-                            alt="Pure THC Distillates, CAT 1-3 THC Oil for sale, THCv and THCp" 
+                            alt="Up to 98% pure THC Distillates for sale " 
                             class="related-image"
                             loading="lazy"
                             onerror="this.src='https://via.placeholder.com/400x250/f5f5f7/ff6b00?text=CBD+Products'"
@@ -1699,8 +1745,8 @@
                         </div>
                     </div>
                     <div class="related-info">
-                        <h3 class="related-name">CBD Products</h3>
-                        <p class="related-desc">Pure THC Distillates, CAT 1-3 THC Oil for sale, THCv and THCp</p>
+                        <h3 class="related-name">Buy THC Distillates</h3>
+                        <p class="related-desc">Up to 98% pure THC Distillates for sale | Buy Pure THC Distillate Oil Online</p>
                     </div>
                 </a>
 
@@ -1818,9 +1864,21 @@
     </main>
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <!-- ║  SECTION 12: FOOTER — EDIT COPYRIGHT TEXT                        ║ -->
+    <!-- ║  SECTION 12: FOOTER — EDIT COPYRIGHT & POLICY LINKS              ║ -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <footer class="site-footer">
+        <!-- Divider line under accordions -->
+        <div class="footer-divider" aria-hidden="true"></div>
+
+        <!-- Policy Links — EDIT hrefs to your actual policy pages -->
+        <nav class="footer-policies" aria-label="Legal policies">
+            <!-- ═══ EDIT: Replace href with your actual policy page URLs ═══ -->
+            <a href="https://247avlplug.com/privacy-policy/">Privacy Policy</a>
+            <a href="https://247avlplug.com/payment-refund-policy/">Payment & Refund Policy</a>
+            <a href="https://247avlplug.com/terms-and-conditions/">Terms & Conditions</a>
+            <a href="https://247avlplug.com/shipping-delivery/">Shipping & Delivery</a>
+        </nav>
+
         <p class="footer-text">
             &copy; 2026 247AVL Plug. All rights reserved. 
             Products contain less than 0.3% Delta 9 THC by dry weight. Must be 21+ to purchase.
