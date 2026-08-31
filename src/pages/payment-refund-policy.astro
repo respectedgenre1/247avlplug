@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Refund Policy | 247AVL Plug</title>
+    <meta name="description" content="247AVL Plug Refund Policy. Returns, reshipments, and what to do if your order is lost or damaged.">
+    <link rel="canonical" href="https://247avlplug.com/payment-refund-policy/">
+    <meta name="theme-color" content="#0a0a0a" id="themeColorMeta">
+    <link rel="icon" type="image/png" href="https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Peruvian%20Cocaine.jpeg?raw=true">
 
+    <style>
+        :root {
+            --bg-deep: #050505; --bg-primary: #0a0a0a; --bg-secondary: #111111;
+            --bg-glass: rgba(15, 15, 15, 0.55); --bg-glass-hover: rgba(25, 25, 25, 0.75);
+            --accent-orange: #ff6b00; --accent-orange-light: #ff8c00; --accent-orange-bright: #ffaa33;
+            --accent-orange-glow: rgba(255, 107, 0, 0.25); --accent-orange-glow-strong: rgba(255, 107, 0, 0.45);
+            --text-primary: #ffffff; --text-secondary: #c0c0c0; --text-muted: #666666;
+            --border-subtle: rgba(255, 255, 255, 0.06); --border-orange: rgba(255, 107, 0, 0.25);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3); --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+            --glass-blur: blur(20px) saturate(1.2); --radius-md: 18px; --radius-lg: 28px;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-body: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            --toggle-icon: #ffffff;
+        }
+        [data-theme="light"] {
+            --bg-deep: #f5f5f7; --bg-primary: #ffffff; --bg-secondary: #f0f0f2;
+            --bg-glass: rgba(255, 255, 255, 0.65); --bg-glass-hover: rgba(255, 255, 255, 0.85);
+            --accent-orange: #e65100; --accent-orange-light: #ff6b00; --accent-orange-bright: #ff8c00;
+            --accent-orange-glow: rgba(255, 107, 0, 0.15); --accent-orange-glow-strong: rgba(255, 107, 0, 0.3);
+            --text-primary: #1a1a1a; --text-secondary: #555555; --text-muted: #999999;
+            --border-subtle: rgba(0, 0, 0, 0.06); --border-orange: rgba(255, 107, 0, 0.2);
+            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08); --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --glass-blur: blur(24px) saturate(1.3); --toggle-icon: #1a1a1a;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; transition: background 0.5s ease, color 0.5s ease; }
+        a { text-decoration: none; color: inherit; }
+
+        .theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--bg-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth); color: var(--toggle-icon); }
+        .theme-toggle:hover { transform: scale(1.1); border-color: var(--border-orange); }
+        .theme-toggle svg { width: 22px; height: 22px; }
+        [data-theme="light"] .theme-toggle .moon { display: none; } [data-theme="light"] .theme-toggle .sun { display: block; }
+        :root:not([data-theme="light"]) .theme-toggle .moon { display: block; } :root:not([data-theme="light"]) .theme-toggle .sun { display: none; }
+
+        .page-hero { position: relative; min-height: 35vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 5rem 1.5rem 3rem; overflow: hidden; }
+        .page-hero-bg { position: absolute; inset: 0; z-index: -2; background: radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(255,140,0,0.08) 0%, transparent 50%), linear-gradient(180deg, #08080a 0%, #0a0a0c 40%, #0d0806 70%, #0a0a0a 100%); }
+        .page-hero-glass { position: relative; z-index: 2; background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem 2rem; max-width: 800px; width: 100%; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.05); animation: glassReveal 1s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
+        @keyframes glassReveal { from { opacity:0; transform:translateY(30px) scale(0.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+        .page-hero-logo { width: 180px; height: 126px; margin: 0 auto 1.25rem; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5)); }
+        .page-hero-title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.75rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .breadcrumb { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+        .breadcrumb a { color: var(--accent-orange-light); } .breadcrumb a:hover { color: var(--accent-orange-bright); } .breadcrumb-sep { color: var(--text-muted); }
+
+        .section { padding: 2.5rem 0; }
+        .main-container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+
+        .policy-card { background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.04); padding: 1.75rem; margin-bottom: 1.25rem; transition: var(--transition-smooth); }
+        .policy-card:hover { border-color: var(--border-orange); box-shadow: var(--shadow-card-hover), 0 0 20px var(--accent-orange-glow); }
+        .policy-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--accent-orange-light); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .policy-card h3 svg { width: 20px; height: 20px; stroke: var(--accent-orange-light); }
+        .policy-card p, .policy-card li { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; }
+        .policy-card ul { margin-left: 1.25rem; margin-top: 0.5rem; }
+        .policy-card li { margin-bottom: 0.4rem; }
+        .policy-card strong { color: var(--accent-orange-bright); font-weight: 600; }
+
+        .site-footer { background: var(--bg-glass); backdrop-filter: blur(20px); border-top: 1px solid var(--border-subtle); padding: 3rem 1.5rem 2rem; margin-top: 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+        .footer-brand p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; margin-top: 1rem; }
+        .footer-col h4 { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-primary); margin-bottom: 1.25rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.625rem; }
+        .footer-col a { color: var(--text-muted); font-size: 0.85rem; transition: color 0.3s ease; }
+        .footer-col a:hover { color: var(--accent-orange-light); }
+        .footer-bottom { text-align: center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); }
+        .footer-bottom p { color: var(--text-muted); font-size: 0.8rem; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) { .page-hero { padding: 3rem 1rem 2rem; } .page-hero-glass { padding: 2rem 1.25rem; } .page-hero-logo { width: 140px; height: 98px; } .section { padding: 2rem 0; } .main-container { padding: 0 1rem; } .policy-card { padding: 1.25rem; } .footer-grid { gap: 2rem; } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+<section class="page-hero" id="top">
+    <div class="page-hero-bg" aria-hidden="true"></div>
+    <div class="page-hero-glass">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://247avlplug.com/">Home</a><span class="breadcrumb-sep">/</span><span>Refund Policy</span>
+        </nav>
+        <svg class="page-hero-logo" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="refBubble3D" x="-50%" y="-50%" width="200%" height="200%">
+                    <feOffset in="SourceAlpha" dx="4" dy="6" result="offsetShadow"/>
+                    <feFlood flood-color="#fbbf24" result="yellowFlood"/>
+                    <feComposite in="yellowFlood" in2="offsetShadow" operator="in" result="yellowShadow"/>
+                    <feMorphology in="SourceAlpha" result="thickOutline" operator="dilate" radius="3"/>
+                    <feFlood flood-color="#0f0f0f" result="blackFlood"/>
+                    <feComposite in="blackFlood" in2="thickOutline" operator="in" result="blackOutline"/>
+                    <feMerge><feMergeNode in="yellowShadow"/><feMergeNode in="blackOutline"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+            </defs>
+            <text x="200" y="105" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="72" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#refBubble3D)" letter-spacing="-2">247 AVL</text>
+            <text x="200" y="210" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="90" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#refBubble3D)" letter-spacing="6">PLUG</text>
+        </svg>
+        <h1 class="page-hero-title">Refund Policy</h1>
+    </div>
+</section>
+
+<main>
+<section class="section main-container">
+
+    <div class="policy-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> All Sales Are Final</h3>
+        <p>Once your order has been dispatched, <strong>all sales are final</strong>. We do not accept returns on opened or used products. This is standard for our industry due to health, safety, and legal considerations.</p>
+    </div>
+
+    <div class="policy-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> When We Will Reship</h3>
+        <p>We will reship or offer a partial refund if:</p>
+        <ul>
+            <li>Your package is confirmed lost by the carrier</li>
+            <li>Your package is seized by customs (with proof)</li>
+            <li>Your package arrives damaged (photo proof within 24 hours)</li>
+        </ul>
+        <p>Each case is reviewed individually. Contact us on WhatsApp or Telegram <strong>@datplugg</strong> within 7 days of the expected delivery date.</p>
+    </div>
+
+    <div class="policy-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> When We Cannot Help</h3>
+        <p>We do not offer refunds or reshipments for:</p>
+        <ul>
+            <li>Wrong addresses provided by you</li>
+            <li>Orders refused at delivery</li>
+            <li>Change of mind after dispatch</li>
+            <li>Legal issues in your jurisdiction</li>
+            <li>Delays caused by the carrier or customs</li>
+        </ul>
+        <p>Always double-check your shipping address before confirming your order.</p>
+    </div>
+
+    <div class="policy-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> How to File a Claim</h3>
+        <p>1. Message us on <strong>WhatsApp</strong> or <strong>Telegram @datplugg</strong> within 7 days.<br>
+        2. Provide your order number and a clear explanation.<br>
+        3. Attach photos if the package arrived damaged.<br>
+        4. We will review and respond within 48 hours.</p>
+    </div>
+
+    <div class="policy-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Seizure Insurance</h3>
+        <p>For international orders, we offer optional <strong>seizure insurance</strong> at checkout. If you purchase insurance and your package is seized by customs, we will reship <strong>100% free</strong>. Without insurance, we offer a <strong>50% reship credit</strong> for confirmed seizures only.</p>
+    </div>
+
+    <div class="policy-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Questions?</h3>
+        <p>Reach us anytime on <strong>WhatsApp</strong>, <strong>Telegram @datplugg</strong>, or <strong>support@247avlplug.com</strong>. We reply fast.</p>
+    </div>
+
+</section>
+</main>
+
+<footer class="site-footer" id="contact">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" width="100" height="70">
+                <defs><filter id="footBubble3D" x="-50%" y="-50%" width="200%" height="200%"><feOffset in="SourceAlpha" dx="4" dy="5" result="offsetShadow"/><feFlood flood-color="#fbbf24" result="yellowFlood"/><feComposite in="yellowFlood" in2="offsetShadow" operator="in" result="yellowShadow"/><feMorphology in="SourceAlpha" result="thickOutline" operator="dilate" radius="3"/><feFlood flood-color="#0f0f0f" result="blackFlood"/><feComposite in="blackFlood" in2="thickOutline" operator="in" result="blackOutline"/><feMerge><feMergeNode in="yellowShadow"/><feMergeNode in="blackOutline"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+                <text x="200" y="105" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="72" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#footBubble3D)" letter-spacing="-2">247 AVL</text>
+                <text x="200" y="210" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="90" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#footBubble3D)" letter-spacing="6">PLUG</text>
+            </svg>
+            <p>Your trusted source for premium cannabis products and research chemicals. Lab-tested, discreet, and delivered worldwide.</p>
+        </div>
+        <div class="footer-col"><h4>Shop</h4><ul><li><a href="https://247avlplug.com/buy-thc-distillates/">Buy THC Distillates</a></li><li><a href="https://247avlplug.com/buy-ketamine/">Buy Ketamine</a></li><li><a href="https://247avlplug.com/buy-research-chemicals">Buy Research Chemicals</a></li><li><a href="https://247avlplug.com/buy-cocaine-online/">Buy Cocaine</a></li></ul></div>
+        <div class="footer-col"><h4>Support</h4><ul><li><a href="https://247avlplug.com/contact/">Contact Us</a></li><li><a href="https://247avlplug.com/faq/">FAQ</a></li><li><a href="https://247avlplug.com/shipping-delivery-policy/">Shipping Info</a></li></ul></div>
+        <div class="footer-col"><h4>Legal</h4><ul><li><a href="https://247avlplug.com/privacy-policy/">Privacy Policy</a></li><li><a href="https://247avlplug.com/terms-and-conditions/">Terms & Conditions</a></li><li><a href="https://247avlplug.com/payment-refund-policy/">Refund Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 247AVL Plug. All rights reserved. Must be 21+ to purchase. Research chemicals for research purposes only.</p></div>
+</footer>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+</button>
+
+<script>
+    (function() {
+        const toggle = document.getElementById('themeToggle');
+        const metaTheme = document.getElementById('themeColorMeta');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'light' || (!savedTheme && !systemPrefersDark)) { html.setAttribute('data-theme', 'light'); metaTheme.setAttribute('content', '#f5f5f7'); }
+        toggle.addEventListener('click', function() {
+            const isLight = html.getAttribute('data-theme') === 'light';
+            if (isLight) { html.removeAttribute('data-theme'); localStorage.setItem('theme', 'dark'); metaTheme.setAttribute('content', '#0a0a0a'); }
+            else { html.setAttribute('data-theme', 'light'); localStorage.setItem('theme', 'light'); metaTheme.setAttribute('content', '#f5f5f7'); }
+        });
+    })();
+    const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
