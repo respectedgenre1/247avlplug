@@ -1,1 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>FAQ | 247AVL Plug — Frequently Asked Questions</title>
+    <meta name="description" content="Find answers to common questions about ordering, shipping, lab testing, payments, and discreet delivery at 247AVL Plug.">
+    <meta name="keywords" content="247 AVL Plug FAQ, buy cocaine online FAQ, discreet shipping questions, ketamine delivery FAQ, THC distillates help">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://247avlplug.com/faq/">
+    <meta name="theme-color" content="#0a0a0a" id="themeColorMeta">
+    <link rel="icon" type="image/png" href="https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Peruvian%20Cocaine.jpeg?raw=true">
 
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  CSS VARIABLES — Same theme as homepage                          ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        :root {
+            --bg-deep: #050505;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: rgba(20, 20, 20, 0.65);
+            --bg-glass: rgba(15, 15, 15, 0.55);
+            --bg-glass-hover: rgba(25, 25, 25, 0.75);
+            --accent-orange: #ff6b00;
+            --accent-orange-light: #ff8c00;
+            --accent-orange-bright: #ffaa33;
+            --accent-orange-glow: rgba(255, 107, 0, 0.25);
+            --accent-orange-glow-strong: rgba(255, 107, 0, 0.45);
+            --text-primary: #ffffff;
+            --text-secondary: #c0c0c0;
+            --text-muted: #666666;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-orange: rgba(255, 107, 0, 0.25);
+            --border-orange-strong: rgba(255, 107, 0, 0.5);
+            --shadow-orange: 0 8px 32px rgba(255, 107, 0, 0.12);
+            --shadow-orange-lg: 0 12px 48px rgba(255, 107, 0, 0.18);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+            --glass-blur: blur(20px) saturate(1.2);
+            --radius-sm: 10px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --font-body: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            --toggle-icon: #ffffff;
+        }
+        [data-theme="light"] {
+            --bg-deep: #f5f5f7;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f0f0f2;
+            --bg-card: rgba(255, 255, 255, 0.72);
+            --bg-glass: rgba(255, 255, 255, 0.65);
+            --bg-glass-hover: rgba(255, 255, 255, 0.85);
+            --accent-orange: #e65100;
+            --accent-orange-light: #ff6b00;
+            --accent-orange-bright: #ff8c00;
+            --accent-orange-glow: rgba(255, 107, 0, 0.15);
+            --accent-orange-glow-strong: rgba(255, 107, 0, 0.3);
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --text-muted: #999999;
+            --border-subtle: rgba(0, 0, 0, 0.06);
+            --border-orange: rgba(255, 107, 0, 0.2);
+            --border-orange-strong: rgba(255, 107, 0, 0.4);
+            --shadow-orange: 0 8px 32px rgba(255, 107, 0, 0.08);
+            --shadow-orange-lg: 0 12px 48px rgba(255, 107, 0, 0.12);
+            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+            --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --glass-blur: blur(24px) saturate(1.3);
+            --toggle-icon: #1a1a1a;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; transition: background 0.5s ease, color 0.5s ease; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  THEME TOGGLE                                                    ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .theme-toggle {
+            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000;
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--bg-glass); backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card);
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: var(--transition-smooth); color: var(--toggle-icon);
+        }
+        .theme-toggle:hover { transform: scale(1.1); border-color: var(--border-orange); box-shadow: var(--shadow-orange); }
+        .theme-toggle svg { width: 22px; height: 22px; }
+        [data-theme="light"] .theme-toggle .moon { display: none; }
+        [data-theme="light"] .theme-toggle .sun { display: block; }
+        :root:not([data-theme="light"]) .theme-toggle .moon { display: block; }
+        :root:not([data-theme="light"]) .theme-toggle .sun { display: none; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  HERO / PAGE HEADER                                              ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .page-hero {
+            position: relative; min-height: 45vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center;
+            padding: 6rem 1.5rem 4rem; overflow: hidden;
+        }
+        .page-hero-bg {
+            position: absolute; inset: 0; z-index: -2;
+            background: radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 70%, rgba(255,140,0,0.08) 0%, transparent 50%),
+                        linear-gradient(180deg, #08080a 0%, #0a0a0c 40%, #0d0806 70%, #0a0a0a 100%);
+        }
+        .page-hero-glass {
+            position: relative; z-index: 2;
+            background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+            padding: 3rem 2.5rem; max-width: 800px; width: 100%;
+            box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.05);
+            animation: glassReveal 1s cubic-bezier(0.22,1,0.36,1) 0.2s both;
+        }
+        @keyframes glassReveal { from { opacity:0; transform:translateY(30px) scale(0.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+
+        .page-hero-logo {
+            width: 200px; height: 140px; margin: 0 auto 1.5rem;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+        }
+        .page-hero-title {
+            font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 900;
+            letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-hero-subtitle {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: var(--text-secondary); max-width: 500px; margin: 0 auto;
+            line-height: 1.7;
+        }
+        .breadcrumb {
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;
+        }
+        .breadcrumb a { color: var(--accent-orange-light); transition: color 0.3s ease; }
+        .breadcrumb a:hover { color: var(--accent-orange-bright); }
+        .breadcrumb-sep { color: var(--text-muted); }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  SECTION UTILITIES                                               ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .section { padding: 4rem 0; }
+        .main-container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        .section-badge {
+            display: inline-block; padding: 0.4rem 1.1rem;
+            background: linear-gradient(135deg, rgba(255,107,0,0.12), rgba(255,140,0,0.08));
+            border: 1px solid var(--border-orange); border-radius: 100px;
+            font-size: 0.7rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--accent-orange-light); margin-bottom: 1rem; backdrop-filter: blur(10px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  FAQ ACCORDION                                                   ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        .faq-category-header {
+            display: flex; align-items: center; gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-orange);
+        }
+        .faq-category-icon {
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light));
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(255,107,0,0.3);
+        }
+        .faq-category-icon svg { width: 18px; height: 18px; }
+        .faq-category-title {
+            font-size: 1.3rem; font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .faq-item {
+            background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.04);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+        .faq-item:hover {
+            border-color: var(--border-orange);
+            box-shadow: var(--shadow-card-hover), 0 0 20px var(--accent-orange-glow);
+        }
+        .faq-item.active {
+            border-color: var(--border-orange-strong);
+            box-shadow: var(--shadow-orange-lg);
+        }
+
+        .faq-question {
+            width: 100%; background: none; border: none;
+            padding: 1.25rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; text-align: left;
+            color: var(--text-primary); font-family: inherit;
+        }
+        .faq-question-text {
+            font-size: 1rem; font-weight: 700;
+            padding-right: 1rem;
+            transition: color 0.3s ease;
+        }
+        .faq-item:hover .faq-question-text,
+        .faq-item.active .faq-question-text {
+            color: var(--accent-orange-bright);
+        }
+        .faq-chevron {
+            width: 24px; height: 24px;
+            color: var(--accent-orange-light);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        }
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+        .faq-answer-inner strong {
+            color: var(--accent-orange-light); font-weight: 600;
+        }
+        .faq-answer-inner a {
+            color: var(--accent-orange-light);
+            border-bottom: 1px solid var(--border-orange);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .faq-answer-inner a:hover {
+            color: var(--accent-orange-bright);
+            border-color: var(--accent-orange-bright);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  CTA BOX                                                         ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .faq-cta-box {
+            background: linear-gradient(135deg, rgba(255,107,0,0.08), rgba(255,140,0,0.04));
+            border: 1px solid var(--border-orange); border-radius: var(--radius-md);
+            padding: 2.5rem; text-align: center; margin-top: 3rem;
+        }
+        .faq-cta-box h3 {
+            font-size: 1.4rem; font-weight: 900;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            margin-bottom: 0.75rem;
+        }
+        .faq-cta-box p {
+            color: var(--text-secondary); font-size: 0.95rem;
+            margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;
+        }
+        .btn-whatsapp {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: #fff; padding: 1rem 2.5rem; border-radius: 100px;
+            font-weight: 800; font-size: 1rem; letter-spacing: 0.02em;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35);
+            transition: var(--transition-bounce); border: none; cursor: pointer;
+        }
+        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37, 211, 102, 0.5); }
+        .btn-whatsapp svg { width: 22px; height: 22px; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  FOOTER                                                          ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .site-footer { background: var(--bg-glass); backdrop-filter: blur(20px); border-top: 1px solid var(--border-subtle); padding: 4rem 1.5rem 2.5rem; margin-top: 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+        .footer-brand p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; margin-top: 1rem; }
+        .footer-col h4 { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-primary); margin-bottom: 1.25rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.625rem; }
+        .footer-col a { color: var(--text-muted); font-size: 0.85rem; transition: color 0.3s ease; }
+        .footer-col a:hover { color: var(--accent-orange-light); }
+        .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); }
+        .footer-bottom p { color: var(--text-muted); font-size: 0.8rem; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  SCROLL REVEAL                                                   ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  RESPONSIVE                                                      ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .page-hero { min-height: auto; padding: 4rem 1rem 3rem; }
+            .page-hero-glass { padding: 2rem 1.5rem; }
+            .page-hero-logo { width: 160px; height: 112px; }
+            .section { padding: 3rem 0; }
+            .main-container { padding: 0 1rem; }
+            .faq-question { padding: 1rem 1.25rem; }
+            .faq-question-text { font-size: 0.92rem; }
+            .faq-answer-inner { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; }
+            .footer-grid { gap: 2rem; }
+        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ║  PAGE HERO — 3D BUBBLE LOGO + BOLD FAQ HEADING                    ║ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="page-hero" id="top">
+    <div class="page-hero-bg" aria-hidden="true"></div>
+
+    <div class="page-hero-glass">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://247avlplug.com/">Home</a>
+            <span class="breadcrumb-sep">/</span>
+            <span>FAQ</span>
+        </nav>
+
+        <!-- 3D Bubble Logo -->
+        <svg class="page-hero-logo" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="faqBubble3D" x="-50%" y="-50%" width="200%" height="200%">
+                    <feOffset in="SourceAlpha" dx="5" dy="7" result="offsetShadow"/>
+                    <feFlood flood-color="#fbbf24" result="yellowFlood"/>
+                    <feComposite in="yellowFlood" in2="offsetShadow" operator="in" result="yellowShadow"/>
+                    <feMorphology in="SourceAlpha" result="thickOutline" operator="dilate" radius="4"/>
+                    <feFlood flood-color="#0f0f0f" result="blackFlood"/>
+                    <feComposite in="blackFlood" in2="thickOutline" operator="in" result="blackOutline"/>
+                    <feMerge>
+                        <feMergeNode in="yellowShadow"/>
+                        <feMergeNode in="blackOutline"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <text x="200" y="105" 
+                  font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" 
+                  font-size="72" font-weight="900" fill="#ffffff" 
+                  text-anchor="middle" filter="url(#faqBubble3D)"
+                  letter-spacing="-2">247 AVL</text>
+            <text x="200" y="210" 
+                  font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" 
+                  font-size="90" font-weight="900" fill="#ffffff" 
+                  text-anchor="middle" filter="url(#faqBubble3D)"
+                  letter-spacing="6">PLUG</text>
+        </svg>
+
+        <!-- BOLD HEADING -->
+        <h1 class="page-hero-title">Frequently Asked Questions</h1>
+        <p class="page-hero-subtitle">
+            Everything you need to know about ordering, shipping, lab testing, and discreet delivery. Can't find your answer? Reach out on WhatsApp.
+        </p>
+    </div>
+</section>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ║  FAQ CONTENT — ORGANIZED BY CATEGORY                               ║ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="section main-container">
+
+    <!-- ═══ CATEGORY: ORDERS & ORDERING ═══ -->
+    <div class="faq-category reveal">
+        <div class="faq-category-header">
+            <div class="faq-category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </div>
+            <h2 class="faq-category-title">Orders & Ordering</h2>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">How do I place an order with 247AVL Plug?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Placing an order is simple and discreet. Click the <strong>"Shop On WhatsApp"</strong> button on our homepage or any product page. This opens a direct WhatsApp chat with our team. Tell us what you need, the quantity, and your delivery location. We will confirm availability, pricing, and estimated delivery time within minutes.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Is there a minimum order amount?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Minimum order amounts vary by product category. For <strong>cocaine</strong> and <strong>ketamine</strong>, the minimum is typically 1 gram. For <strong>THC distillates</strong>, minimums start at 5ml. <strong>Research chemicals</strong> vary by compound — ask us on WhatsApp for specific MOQs. We occasionally run promotions with reduced minimums for new customers.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Can I modify or cancel my order after placing it?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Yes, but only before your order has been dispatched. Once the package is in transit, modifications are not possible. To change or cancel, message us on WhatsApp immediately with your order details. We process most orders within 2–4 hours, so act quickly.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CATEGORY: SHIPPING & DELIVERY ═══ -->
+    <div class="faq-category reveal">
+        <div class="faq-category-header">
+            <div class="faq-category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <h2 class="faq-category-title">Shipping & Delivery</h2>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">How discreet is the packaging?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    <strong>Completely discreet.</strong> All orders are vacuum-sealed in multiple layers of odor-proof Mylar, then placed in plain, unmarked boxes or padded envelopes. There are no logos, product names, or sender identifiers that would reveal the contents. The return address is generic and untraceable. Even the delivery driver will not know what is inside.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">How long does delivery take?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Delivery times depend on your location:<br><br>
+                    • <strong>Local / Same City:</strong> 2–6 hours<br>
+                    • <strong>Domestic (USA):</strong> 1–3 business days<br>
+                    • <strong>International:</strong> 5–10 business days<br><br>
+                    We ship daily. Once dispatched, you will receive a tracking number (for domestic orders) or confirmation of shipment (for international). We also offer <strong>express same-day delivery</strong> in select metro areas — ask on WhatsApp for availability.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Can you deliver to hotels, Airbnbs, or PO boxes?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Yes. We deliver to <strong>homes, hotels, Airbnbs, offices, and private mailboxes</strong>. For hotels and short-term rentals, we recommend using the guest's real name (or a plausible alias) and confirming the exact address and room details with us before dispatch. We do <strong>not</strong> recommend PO boxes for international orders due to customs screening.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Do you ship internationally?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Yes, we ship to <strong>30+ countries</strong> worldwide. However, we do not ship to regions where specific compounds are prohibited by local law. Before ordering internationally, confirm your country's regulations. We use stealth packaging and customs-friendly labeling for international orders, but the buyer assumes responsibility for local legal compliance.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CATEGORY: PRODUCTS & QUALITY ═══ -->
+    <div class="faq-category reveal">
+        <div class="faq-category-header">
+            <div class="faq-category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <h2 class="faq-category-title">Products & Quality</h2>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Are your products lab-tested?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    <strong>Absolutely.</strong> Every batch of cocaine, ketamine, THC distillates, and research chemicals undergoes <strong>third-party laboratory testing</strong> for purity, potency, and contaminants. We test for common cutting agents, heavy metals, residual solvents, and microbial contamination. Lab reports are available upon request for verified customers.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">What purity levels can I expect?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Our purity standards are industry-leading:<br><br>
+                    • <strong>Cocaine (Colombian / Peruvian / Mexican / Bolivian):</strong> 95–98% pure, uncut fish-scale<br>
+                    • <strong>S-Ketamine & R-Ketamine:</strong> 98%+ pharmaceutical grade<br>
+                    • <strong>THC Distillates (CAT3):</strong> 96–98% Delta-8 or Delta-9<br>
+                    • <strong>Research Chemicals:</strong> 99%+ analytical grade<br><br>
+                    Purity percentages are verified by independent HPLC and GC-MS testing.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">What is the difference between S-Ketamine and R-Ketamine?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Ketamine has two molecular forms called <strong>enantiomers</strong> — S-isomer (esketamine) and R-isomer (arketamine). The <strong>S-isomer</strong> is approximately 3–4 times more potent by weight and is the form used in FDA-approved nasal spray treatments. The <strong>R-isomer</strong> has a longer duration and different qualitative effects. We stock both in pure crystalline and nasal spray forms. Read our <a href="https://247avlplug.com/blog/s-ketamine-vs-r-ketamine/">detailed blog post</a> for more.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Are research chemicals safe for human consumption?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    <strong>No.</strong> All research chemicals sold by 247AVL Plug are intended <strong>strictly for laboratory research purposes</strong> and are <strong>not for human or animal consumption</strong>. By purchasing, you confirm that you are a qualified researcher or institution and will use these compounds in compliance with all applicable laws. We include safety data sheets (SDS) with every research chemical order.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CATEGORY: PAYMENTS ═══ -->
+    <div class="faq-category reveal">
+        <div class="faq-category-header">
+            <div class="faq-category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            </div>
+            <h2 class="faq-category-title">Payments</h2>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">What payment methods do you accept?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    We accept multiple <strong>discreet and secure</strong> payment methods:<br><br>
+                    • <strong>Cryptocurrency:</strong> Bitcoin (BTC), Ethereum (ETH), Monero (XMR) — preferred for anonymity<br>
+                    • <strong>CashApp / Venmo / Zelle</strong> (USA customers)<br>
+                    • <strong>Apple Pay / Google Pay</strong><br>
+                    • <strong>Western Union / MoneyGram</strong> (international)<br><br>
+                    We do not accept traditional credit cards due to chargeback risks. All payment details are shared securely via WhatsApp after you confirm your order.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Is my payment information secure?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Yes. We never store credit card numbers (we do not accept them). Crypto payments are processed via secure wallet addresses generated per transaction. For digital payment apps, we use verified business accounts with two-factor authentication. We delete all payment confirmation screenshots within 24 hours of order completion.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Do you offer refunds?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    We offer refunds on a <strong>case-by-case basis</strong>. If your order is lost in transit (confirmed by tracking), seized by customs (with proof), or arrives damaged, we will reship or refund at our discretion. We do not offer refunds for:<br><br>
+                    • Incorrect addresses provided by the customer<br>
+                    • Orders refused at delivery<br>
+                    • Change of mind after dispatch<br><br>
+                    Read our full <a href="https://247avlplug.com/payment-refund-policy/">Refund Policy</a> for details.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CATEGORY: SAFETY & LEGAL ═══ -->
+    <div class="faq-category reveal">
+        <div class="faq-category-header">
+            <div class="faq-category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h2 class="faq-category-title">Safety & Legal</h2>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Do I need to verify my age?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Yes. You must be <strong>21 years of age or older</strong> to purchase from 247AVL Plug. By placing an order, you confirm that you meet this requirement. For first-time orders over a certain threshold, we may request age verification via a discreet photo ID check (sensitive data is deleted immediately after verification).
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">Is buying these products legal in my area?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Legal status varies dramatically by jurisdiction. <strong>It is your sole responsibility</strong> to understand and comply with local laws. We do not ship to regions where specific compounds are explicitly prohibited. If you are unsure, consult a legal professional in your area before ordering. We are not liable for legal consequences arising from purchases made in violation of local law.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span class="faq-question-text">What happens if my package is seized by customs?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    In the rare event of customs seizure, contact us immediately with any documentation received. For orders with <strong>seizure insurance</strong> (available at checkout for international orders), we will reship 100% free of charge. Without insurance, we offer a 50% reship credit. We have a 99.2% successful international delivery rate due to our advanced stealth protocols.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ STILL HAVE QUESTIONS CTA ═══ -->
+    <div class="faq-cta-box reveal">
+        <h3>Still Have Questions?</h3>
+        <p>Our team is online 24/7. Reach out on WhatsApp for instant, discreet support — no question is too small.</p>
+        <a href="https://wa.me/13254365583?text=Hi%20247AVL%20Plug%2C%20I%20have%20a%20question%20from%20your%20FAQ" class="btn-whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat With Us On WhatsApp
+        </a>
+    </div>
+
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ║  FOOTER — Same as homepage                                         ║ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<footer class="site-footer" id="contact">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" width="100" height="70">
+                <defs>
+                    <filter id="footBubble3D" x="-50%" y="-50%" width="200%" height="200%">
+                        <feOffset in="SourceAlpha" dx="4" dy="5" result="offsetShadow"/>
+                        <feFlood flood-color="#fbbf24" result="yellowFlood"/>
+                        <feComposite in="yellowFlood" in2="offsetShadow" operator="in" result="yellowShadow"/>
+                        <feMorphology in="SourceAlpha" result="thickOutline" operator="dilate" radius="3"/>
+                        <feFlood flood-color="#0f0f0f" result="blackFlood"/>
+                        <feComposite in="blackFlood" in2="thickOutline" operator="in" result="blackOutline"/>
+                        <feMerge>
+                            <feMergeNode in="yellowShadow"/>
+                            <feMergeNode in="blackOutline"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <text x="200" y="105" 
+                      font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" 
+                      font-size="72" font-weight="900" fill="#ffffff" 
+                      text-anchor="middle" filter="url(#footBubble3D)"
+                      letter-spacing="-2">247 AVL</text>
+                <text x="200" y="210" 
+                      font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" 
+                      font-size="90" font-weight="900" fill="#ffffff" 
+                      text-anchor="middle" filter="url(#footBubble3D)"
+                      letter-spacing="6">PLUG</text>
+            </svg>
+            <p>
+                Your trusted source for premium cannabis products and research chemicals. 
+                Lab-tested, discreet, and delivered worldwide.
+            </p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+                <li><a href="https://247avlplug.com/buy-thc-distillates/">Buy THC Distillates</a></li>
+                <li><a href="https://247avlplug.com/buy-ketamine/">Buy Ketamine</a></li>
+                <li><a href="https://247avlplug.com/buy-research-chemicals">Buy Research Chemicals</a></li>
+                <li><a href="https://247avlplug.com/buy-cocaine-online/">Buy Cocaine</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="https://247avlplug.com/contact/">Contact Us</a></li>
+                <li><a href="https://247avlplug.com/faq/">FAQ</a></li>
+                <li><a href="https://247avlplug.com/shipping-delivery-policy/">Shipping Info</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="https://247avlplug.com/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="https://247avlplug.com/terms-and-conditions/">Terms & Conditions</a></li>
+                <li><a href="https://247avlplug.com/payment-refund-policy/">Refund Policy</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 247AVL Plug. All rights reserved. Must be 21+ to purchase. Research chemicals for research purposes only.</p>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ║  THEME TOGGLE BUTTON                                               ║ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ║  JAVASCRIPT                                                        ║ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<script>
+    // Theme Toggle
+    (function() {
+        const toggle = document.getElementById('themeToggle');
+        const metaTheme = document.getElementById('themeColorMeta');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'light' || (!savedTheme && !systemPrefersDark)) {
+            html.setAttribute('data-theme', 'light');
+            metaTheme.setAttribute('content', '#f5f5f7');
+        }
+        toggle.addEventListener('click', function() {
+            const isLight = html.getAttribute('data-theme') === 'light';
+            if (isLight) { html.removeAttribute('data-theme'); localStorage.setItem('theme', 'dark'); metaTheme.setAttribute('content', '#0a0a0a'); }
+            else { html.setAttribute('data-theme', 'light'); localStorage.setItem('theme', 'light'); metaTheme.setAttribute('content', '#f5f5f7'); }
+        });
+    })();
+
+    // FAQ Accordion
+    (function initFAQ() {
+        const items = document.querySelectorAll('.faq-item');
+        items.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                // Close all others
+                items.forEach(other => {
+                    other.classList.remove('active');
+                    other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    })();
+
+    // Scroll Reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
