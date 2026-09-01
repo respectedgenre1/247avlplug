@@ -48,30 +48,30 @@
         [data-theme="light"] .theme-toggle .moon { display: none; } [data-theme="light"] .theme-toggle .sun { display: block; }
         :root:not([data-theme="light"]) .theme-toggle .moon { display: block; } :root:not([data-theme="light"]) .theme-toggle .sun { display: none; }
 
-        .page-hero { position: relative; min-height: 55vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding: 6rem 1.5rem 4rem; overflow: hidden; }
+        .page-hero { position: relative; min-height: 55vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding: 6rem 1rem 4rem; overflow: hidden; }
         .page-hero-bg { position: absolute; inset: 0; z-index: -2; background: radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(255,140,0,0.1) 0%, transparent 50%), linear-gradient(180deg, #08080a 0%, #0a0a0c 40%, #0d0806 70%, #0a0a0a 100%); }
-        .page-hero-glass { position: relative; z-index: 2; background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem 2.5rem; max-width: 850px; width: 100%; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.05); animation: glassReveal 1s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
+        .page-hero-glass { position: relative; z-index: 2; background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem 2rem; max-width: 850px; width: 100%; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.05); animation: glassReveal 1s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
         @keyframes glassReveal { from { opacity:0; transform:translateY(30px) scale(0.96); } to { opacity:1; transform:translateY(0) scale(1); } }
-        .breadcrumb { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        .breadcrumb { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; flex-wrap: wrap; }
         .breadcrumb a { color: var(--accent-orange-light); transition: color 0.3s ease; }
         .breadcrumb a:hover { color: var(--accent-orange-bright); } .breadcrumb-sep { color: var(--text-muted); }
         .post-category { display: inline-block; padding: 0.35rem 1rem; background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,140,0,0.1)); border: 1px solid var(--border-orange); border-radius: 100px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-orange-light); margin-bottom: 1rem; backdrop-filter: blur(10px); }
-        .post-title { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
+        .post-title { font-size: clamp(1.5rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; word-break: break-word; }
         .post-meta { display: flex; align-items: center; justify-content: center; gap: 1.5rem; font-size: 0.85rem; color: var(--text-muted); flex-wrap: wrap; }
         .post-meta span { display: flex; align-items: center; gap: 0.4rem; }
-        .post-meta svg { width: 16px; height: 16px; stroke: var(--accent-orange-light); }
+        .post-meta svg { width: 16px; height: 16px; stroke: var(--accent-orange-light); flex-shrink: 0; }
 
         .section { padding: 3rem 0; }
-        .main-container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        .main-container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
 
-        .post-content { font-size: 1.05rem; line-height: 1.85; color: var(--text-secondary); }
-        .post-content h2 { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin: 2.5rem 0 1rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .post-content h3 { font-size: 1.2rem; font-weight: 800; color: var(--accent-orange-light); margin: 2rem 0 0.75rem; }
-        .post-content p { margin-bottom: 1.25rem; }
+        .post-content { font-size: 1.05rem; line-height: 1.85; color: var(--text-secondary); word-wrap: break-word; }
+        .post-content h2 { font-size: clamp(1.3rem, 4vw, 1.5rem); font-weight: 800; color: var(--text-primary); margin: 2.5rem 0 1rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; word-break: break-word; }
+        .post-content h3 { font-size: clamp(1.1rem, 3.5vw, 1.2rem); font-weight: 800; color: var(--accent-orange-light); margin: 2rem 0 0.75rem; word-break: break-word; }
+        .post-content p { margin-bottom: 1.25rem; word-wrap: break-word; }
         .post-content strong { color: var(--accent-orange-bright); font-weight: 600; }
         .post-content ul { margin-left: 1.5rem; margin-bottom: 1.25rem; }
-        .post-content li { margin-bottom: 0.6rem; }
-        .post-content a { color: var(--accent-orange-light); border-bottom: 1px solid var(--border-orange); transition: color 0.3s ease, border-color 0.3s ease; }
+        .post-content li { margin-bottom: 0.6rem; word-wrap: break-word; }
+        .post-content a { color: var(--accent-orange-light); border-bottom: 1px solid var(--border-orange); transition: color 0.3s ease, border-color 0.3s ease; word-break: break-word; }
         .post-content a:hover { color: var(--accent-orange-bright); border-color: var(--accent-orange-bright); }
         .post-content blockquote {
             border-left: 3px solid var(--accent-orange); padding-left: 1.25rem; margin: 1.5rem 0;
@@ -82,14 +82,14 @@
         /* ═══════════════════════════════════════════════════════════════════ */
         /* ║  VISUAL: DOSAGE COMPARISON TABLE                                   ║ */
         /* ═══════════════════════════════════════════════════════════════════ */
-        .dose-table-wrap { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin: 1.5rem 0; }
-        .dose-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .dose-table-wrap { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+        .dose-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 600px; }
         .dose-table thead { background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,140,0,0.08)); }
-        .dose-table th { padding: 0.85rem 1rem; text-align: left; font-weight: 800; color: var(--accent-orange-light); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; border-bottom: 2px solid var(--border-orange); }
+        .dose-table th { padding: 0.85rem 1rem; text-align: left; font-weight: 800; color: var(--accent-orange-light); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; border-bottom: 2px solid var(--border-orange); white-space: nowrap; }
         .dose-table td { padding: 0.7rem 1rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-subtle); }
         .dose-table tr:last-child td { border-bottom: none; }
         .dose-table tr:hover td { background: rgba(255,107,0,0.04); }
-        .dose-badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+        .dose-badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
         .dose-badge.low { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
         .dose-badge.med { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
         .dose-badge.high { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
@@ -101,34 +101,34 @@
             background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
             border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
             box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.04);
-            padding: 2rem; margin: 1.5rem 0; position: relative;
+            padding: 1.5rem; margin: 1.5rem 0; position: relative;
         }
         .timeline-track {
-            position: relative; padding-left: 2rem;
+            position: relative; padding-left: 1.5rem;
         }
         .timeline-track::before {
-            content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+            content: ''; position: absolute; left: 6px; top: 0; bottom: 0;
             width: 2px; background: linear-gradient(180deg, var(--accent-orange), transparent);
         }
         .timeline-node {
-            position: relative; margin-bottom: 1.5rem;
-            padding: 1rem 1.25rem; background: var(--bg-secondary);
+            position: relative; margin-bottom: 1.25rem;
+            padding: 1rem; background: var(--bg-secondary);
             border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);
             transition: var(--transition-smooth);
         }
         .timeline-node:last-child { margin-bottom: 0; }
         .timeline-node:hover { border-color: var(--border-orange); transform: translateX(4px); }
         .timeline-node::before {
-            content: ''; position: absolute; left: -1.55rem; top: 1.25rem;
-            width: 12px; height: 12px; border-radius: 50%;
-            background: var(--accent-orange); box-shadow: 0 0 12px var(--accent-orange-glow);
+            content: ''; position: absolute; left: -1.15rem; top: 1.1rem;
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--accent-orange); box-shadow: 0 0 10px var(--accent-orange-glow);
             border: 2px solid var(--bg-primary);
         }
         .timeline-time {
             font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
             letter-spacing: 0.12em; color: var(--accent-orange-light); margin-bottom: 0.3rem;
         }
-        .timeline-phase { font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.3rem; }
+        .timeline-phase { font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.3rem; }
         .timeline-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
 
         /* ═══════════════════════════════════════════════════════════════════ */
@@ -143,8 +143,8 @@
             padding: 1.25rem; text-align: center; transition: var(--transition-smooth);
         }
         .flavor-card:hover { transform: translateY(-4px); border-color: var(--border-orange); box-shadow: var(--shadow-orange); }
-        .flavor-emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .flavor-name { font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.3rem; }
+        .flavor-emoji { font-size: 2.2rem; margin-bottom: 0.5rem; line-height: 1; }
+        .flavor-name { font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.3rem; }
         .flavor-note { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.75rem; }
         .flavor-tag {
             display: inline-block; padding: 0.2rem 0.6rem; border-radius: 100px;
@@ -163,30 +163,31 @@
         .isomer-card {
             background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
             border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
-            padding: 1.5rem; transition: var(--transition-smooth);
+            padding: 1.25rem; transition: var(--transition-smooth);
         }
         .isomer-card:hover { border-color: var(--border-orange); }
         .isomer-header {
             display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
             padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle);
+            flex-wrap: wrap;
         }
         .isomer-badge {
-            width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+            width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
             display: flex; align-items: center; justify-content: center;
-            font-weight: 900; font-size: 0.8rem; color: #fff;
+            font-weight: 900; font-size: 0.75rem; color: #fff;
         }
         .isomer-badge.s { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
         .isomer-badge.r { background: linear-gradient(135deg, #06b6d4, #0891b2); }
-        .isomer-title { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); }
+        .isomer-title { font-size: 1rem; font-weight: 800; color: var(--text-primary); }
         .isomer-subtitle { font-size: 0.75rem; color: var(--text-muted); }
         .isomer-list { list-style: none; margin: 0; padding: 0; }
         .isomer-list li {
             font-size: 0.85rem; color: var(--text-secondary); padding: 0.4rem 0;
-            border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 0.5rem;
+            border-bottom: 1px solid var(--border-subtle); display: flex; align-items: flex-start; gap: 0.5rem;
         }
         .isomer-list li:last-child { border-bottom: none; }
         .isomer-list li::before {
-            content: '›'; color: var(--accent-orange-light); font-weight: 900; font-size: 1rem;
+            content: '›'; color: var(--accent-orange-light); font-weight: 900; font-size: 1rem; flex-shrink: 0; line-height: 1.4;
         }
 
         /* ═══════════════════════════════════════════════════════════════════ */
@@ -202,19 +203,19 @@
         }
         .safety-card:hover { border-color: var(--border-orange); }
         .safety-icon {
-            width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+            width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1rem; font-weight: 900;
+            font-size: 0.9rem; font-weight: 900;
         }
         .safety-warn { background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; }
         .safety-ok { background: linear-gradient(135deg, #10b981, #059669); color: #fff; }
-        .safety-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+        .safety-text { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
         .safety-text strong { color: var(--text-primary); display: block; margin-bottom: 0.2rem; }
 
         /* Related Products */
         .related-section { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border-subtle); }
         .related-header { text-align: center; margin-bottom: 2rem; }
-        .related-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .related-title { font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 900; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .related-desc { color: var(--text-secondary); font-size: 0.95rem; }
         .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
         @media (max-width: 900px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -232,7 +233,7 @@
         .related-card:hover .related-card-image { transform: scale(1.08); }
         .related-card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
         .related-card-tag { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-orange-light); background: rgba(255,107,0,0.1); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid rgba(255,107,0,0.15); display: inline-block; margin-bottom: 0.4rem; }
-        .related-card-name { font-size: 0.88rem; font-weight: 700; color: var(--text-primary); line-height: 1.35; margin-bottom: 0.4rem; }
+        .related-card-name { font-size: 0.85rem; font-weight: 700; color: var(--text-primary); line-height: 1.35; margin-bottom: 0.4rem; }
         .related-card-price { font-size: 0.9rem; font-weight: 800; color: var(--accent-orange-light); margin-top: auto; }
 
         .site-footer { background: var(--bg-glass); backdrop-filter: blur(20px); border-top: 1px solid var(--border-subtle); padding: 4rem 1.5rem 2.5rem; margin-top: 2rem; }
@@ -251,7 +252,102 @@
         .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 768px) { .page-hero { min-height: auto; padding: 3rem 1rem 2rem; } .page-hero-glass { padding: 2rem 1.5rem; } .section { padding: 2rem 0; } .main-container { padding: 0 1rem; } .post-content { font-size: 1rem; } .related-grid { gap: 1rem; } .flavor-grid { grid-template-columns: 1fr; } .isomer-grid { grid-template-columns: 1fr; } .safety-grid { grid-template-columns: 1fr; } .dose-table th, .dose-table td { padding: 0.6rem 0.5rem; font-size: 0.8rem; } .footer-grid { gap: 2rem; } }
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  MOBILE BREAKPOINTS — COMPREHENSIVE                                ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .page-hero { min-height: auto; padding: 3rem 0.75rem 2rem; }
+            .page-hero-glass { padding: 2rem 1rem; border-radius: var(--radius-md); }
+            .breadcrumb { font-size: 0.75rem; margin-bottom: 1rem; }
+            .post-category { font-size: 0.65rem; padding: 0.3rem 0.8rem; }
+            .post-title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+            .post-meta { gap: 1rem; font-size: 0.8rem; }
+            .section { padding: 2rem 0; }
+            .main-container { padding: 0 1rem; }
+            .post-content { font-size: 1rem; line-height: 1.75; }
+            .post-content h2 { margin: 2rem 0 0.75rem; }
+            .post-content h3 { margin: 1.5rem 0 0.5rem; }
+            .post-content blockquote { padding: 0.75rem 0.75rem 0.75rem 1rem; }
+            .timeline-wrap { padding: 1.25rem 1rem; }
+            .timeline-track { padding-left: 1.25rem; }
+            .timeline-track::before { left: 4px; }
+            .timeline-node { padding: 0.875rem; }
+            .timeline-node::before { left: -0.95rem; width: 8px; height: 8px; top: 1rem; }
+            .timeline-phase { font-size: 0.9rem; }
+            .timeline-desc { font-size: 0.8rem; }
+            .isomer-card { padding: 1rem; }
+            .isomer-header { gap: 0.5rem; padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
+            .isomer-badge { width: 32px; height: 32px; font-size: 0.7rem; }
+            .isomer-title { font-size: 0.95rem; }
+            .isomer-list li { font-size: 0.8rem; padding: 0.3rem 0; }
+            .flavor-card { padding: 1rem; }
+            .flavor-emoji { font-size: 1.8rem; }
+            .flavor-name { font-size: 0.9rem; }
+            .flavor-note { font-size: 0.75rem; }
+            .safety-card { padding: 1rem; gap: 0.6rem; }
+            .safety-icon { width: 28px; height: 28px; font-size: 0.8rem; }
+            .safety-text { font-size: 0.8rem; }
+            .related-grid { gap: 1rem; }
+            .related-card-body { padding: 0.875rem; }
+            .related-card-name { font-size: 0.82rem; }
+            .dose-table th, .dose-table td { padding: 0.6rem 0.5rem; font-size: 0.8rem; }
+            .footer-grid { gap: 2rem; padding: 0 1rem; }
+            .footer-brand svg { width: 80px; height: 56px; }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero { padding: 2.5rem 0.5rem 1.5rem; }
+            .page-hero-glass { padding: 1.5rem 0.875rem; border-radius: var(--radius-sm); }
+            .breadcrumb { font-size: 0.7rem; gap: 0.3rem; }
+            .post-title { font-size: 1.25rem; letter-spacing: -0.02em; }
+            .post-meta { flex-direction: column; gap: 0.5rem; }
+            .post-meta span { font-size: 0.75rem; }
+            .main-container { padding: 0 0.75rem; }
+            .post-content { font-size: 0.95rem; }
+            .post-content h2 { font-size: 1.15rem; }
+            .post-content h3 { font-size: 1rem; }
+            .post-content ul { margin-left: 1.25rem; }
+            .timeline-wrap { padding: 1rem 0.75rem; margin: 1rem 0; }
+            .timeline-track { padding-left: 1rem; }
+            .timeline-track::before { left: 3px; }
+            .timeline-node { padding: 0.75rem; margin-bottom: 1rem; }
+            .timeline-node::before { left: -0.8rem; width: 7px; height: 7px; top: 0.9rem; }
+            .timeline-time { font-size: 0.65rem; }
+            .timeline-phase { font-size: 0.85rem; }
+            .timeline-desc { font-size: 0.78rem; }
+            .dose-table-wrap { margin: 1rem 0; border-radius: var(--radius-sm); }
+            .isomer-grid { gap: 0.75rem; margin: 1rem 0; }
+            .isomer-card { padding: 0.875rem; }
+            .isomer-header { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+            .isomer-badge { width: 28px; height: 28px; font-size: 0.65rem; }
+            .isomer-title { font-size: 0.9rem; }
+            .flavor-grid { gap: 0.75rem; margin: 1rem 0; }
+            .flavor-card { padding: 0.875rem; }
+            .flavor-emoji { font-size: 1.6rem; }
+            .safety-grid { gap: 0.75rem; margin: 1rem 0; }
+            .safety-card { padding: 0.875rem; }
+            .safety-text { font-size: 0.78rem; }
+            .related-section { margin-top: 2.5rem; padding-top: 2rem; }
+            .related-grid { gap: 0.75rem; }
+            .related-card-body { padding: 0.75rem; }
+            .related-card-name { font-size: 0.8rem; }
+            .related-card-price { font-size: 0.85rem; }
+            .site-footer { padding: 2.5rem 1rem 1.5rem; }
+            .footer-grid { gap: 1.5rem; }
+            .footer-bottom { margin-top: 2rem; padding-top: 1.5rem; }
+            .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+        }
+
+        @media (max-width: 360px) {
+            .page-hero-glass { padding: 1.25rem 0.75rem; }
+            .post-title { font-size: 1.15rem; }
+            .main-container { padding: 0 0.625rem; }
+            .post-content { font-size: 0.9rem; }
+            .post-content h2 { font-size: 1.05rem; }
+            .timeline-node { padding: 0.625rem; }
+            .timeline-desc { font-size: 0.75rem; }
+        }
+
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
     </style>
 <base target="_blank">
@@ -337,43 +433,43 @@
         <div class="dose-table-wrap reveal">
             <table class="dose-table">
                 <thead>
-                    <tr><th>Tier</th><th>Spray Count</th><th>Total Dose</th><th>Approx. Bioavailable</th><th>Experience</th></tr>
+                    <tr><th>Tier</th><th>Sprays</th><th>Total Dose</th><th>Bioavailable</th><th>Experience</th></tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><span class="dose-badge low">Microdose</span></td>
-                        <td>1 spray</td>
+                        <td>1</td>
                         <td>10 mg</td>
                         <td>2.5–5 mg</td>
                         <td>Sub-perceptual mood lift, mild focus enhancement</td>
                     </tr>
                     <tr>
                         <td><span class="dose-badge low">Low</span></td>
-                        <td>2–3 sprays</td>
+                        <td>2–3</td>
                         <td>20–30 mg</td>
                         <td>5–15 mg</td>
                         <td>Light dissociation, body warmth, music enhancement</td>
                     </tr>
                     <tr>
                         <td><span class="dose-badge med">Moderate</span></td>
-                        <td>4–6 sprays</td>
+                        <td>4–6</td>
                         <td>40–60 mg</td>
                         <td>10–30 mg</td>
                         <td>Classic K-hole threshold, time dilation, ego softening</td>
                     </tr>
                     <tr>
                         <td><span class="dose-badge med">High</span></td>
-                        <td>7–10 sprays</td>
+                        <td>7–10</td>
                         <td>70–100 mg</td>
                         <td>17.5–50 mg</td>
                         <td>Full dissociation, out-of-body sensation, closed-eye visuals</td>
                     </tr>
                     <tr>
                         <td><span class="dose-badge high">Heavy</span></td>
-                        <td>11+ sprays</td>
+                        <td>11+</td>
                         <td>110+ mg</td>
                         <td>27.5+ mg</td>
-                        <td>Deep K-hole, complete sensory detachment — not recommended without sitter</td>
+                        <td>Deep K-hole, complete sensory detachment — sitter required</td>
                     </tr>
                 </tbody>
             </table>
