@@ -41,7 +41,7 @@
             --radius-sm: 10px;
             --radius-md: 18px;
             --radius-lg: 28px;
-            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.4 cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             --font-body: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             --font-bubble: 'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif;
@@ -97,7 +97,7 @@
         :root:not([data-theme="light"]) .theme-toggle .sun { display: none; }
 
         /* ═══════════════════════════════════════════════════════════════════ */
-        /* ║  HERO SECTION — 3D BUBBLE LOGO + LIVE BADGE + SERVICES TITLE     ║ */
+        /* ║  HERO SECTION                                                    ║ */
         /* ═══════════════════════════════════════════════════════════════════ */
         .hero-section {
             position: relative; min-height: 70vh; display: flex; flex-direction: column;
@@ -120,7 +120,6 @@
         }
         @keyframes glassReveal { from { opacity:0; transform:translateY(30px) scale(0.96); } to { opacity:1; transform:translateY(0) scale(1); } }
 
-        /* Logo Wrap */
         .hero-logo-wrap {
             position: relative; width: 320px; height: 220px; margin: 0 auto 1.5rem;
             display: flex; align-items: center; justify-content: center;
@@ -131,7 +130,6 @@
         .hero-logo-wrap svg { width: 100%; height: 100%; }
         @keyframes logoBounce { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
 
-        /* Live Badge */
         .live-badge {
             position: absolute; bottom: 15px; right: 25px;
             background: linear-gradient(135deg, #22c55e, #16a34a);
@@ -144,7 +142,6 @@
         }
         @keyframes badgePulse { 0%,100% { box-shadow: 0 2px 12px rgba(34,197,94,0.4); } 50% { box-shadow: 0 2px 20px rgba(34,197,94,0.7); } }
 
-        /* Services Title — Matches logo font */
         .services-title {
             font-family: var(--font-bubble);
             font-size: clamp(2rem, 8vw, 4.5rem);
@@ -291,13 +288,22 @@
             flex-shrink: 0;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  SERVICE LINKS — CLICKABLE & DISABLED                            ║ */
+        /* ║  • Use <a href="..." class="service-link"> for ACTIVE links      ║ */
+        /* ║  • Use <a href="..." class="service-link disabled"> for FUTURE  ║ */
+        /* ║  • Both look identical. Disabled = no click, no hover transform  ║ */
+        /* ║  • To activate: remove "disabled" class                          ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
         .service-list {
             list-style: none;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0.5rem;
         }
-        .service-list li {
+        .service-list .service-link,
+        .service-list .service-link.disabled {
+            display: block;
             font-size: 0.82rem;
             color: var(--text-secondary);
             padding: 0.5rem 0.75rem;
@@ -308,17 +314,37 @@
             word-break: break-word;
             overflow-wrap: anywhere;
             line-height: 1.4;
+            position: relative;
+            padding-left: 1.5rem;
         }
-        .service-list li::before {
-            content: '› ';
+        .service-list .service-link::before,
+        .service-list .service-link.disabled::before {
+            content: '›';
+            position: absolute;
+            left: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
             color: var(--accent-orange-light);
             font-weight: 900;
             font-size: 1rem;
         }
-        .service-list li:hover {
+        /* Active link hover */
+        .service-list .service-link:not(.disabled):hover {
             border-color: var(--border-orange);
             color: var(--text-primary);
             transform: translateX(3px);
+            background: var(--bg-glass-hover);
+        }
+        /* Disabled link — non-clickable, no hover effect */
+        .service-list .service-link.disabled {
+            cursor: default;
+            pointer-events: none;
+        }
+        .service-list .service-link.disabled:hover {
+            border-color: var(--border-subtle);
+            color: var(--text-secondary);
+            transform: none;
+            background: var(--bg-secondary);
         }
 
         /* ═══════════════════════════════════════════════════════════════════ */
@@ -446,7 +472,10 @@
             .service-cat-desc { font-size: 0.8rem; margin-bottom: 1rem; }
             .country-heading { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
             .service-list { gap: 0.4rem; }
-            .service-list li { font-size: 0.78rem; padding: 0.4rem 0.6rem; }
+            .service-list .service-link,
+            .service-list .service-link.disabled { font-size: 0.78rem; padding: 0.4rem 0.6rem; padding-left: 1.35rem; }
+            .service-list .service-link::before,
+            .service-list .service-link.disabled::before { left: 0.5rem; }
             .trust-bar { grid-template-columns: 1fr; gap: 0.75rem; margin: 2rem 0; }
             .trust-item { padding: 1rem 0.75rem; }
             .trust-icon { font-size: 1.5rem; }
@@ -467,7 +496,8 @@
             .main-container { padding: 0 0.625rem; }
             .service-cat-card { padding: 1rem; }
             .country-heading { font-size: 0.7rem; }
-            .service-list li { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
+            .service-list .service-link,
+            .service-list .service-link.disabled { font-size: 0.75rem; padding: 0.35rem 0.5rem; padding-left: 1.25rem; }
         }
 
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
@@ -572,8 +602,11 @@
 <!-- ║  EDIT INSTRUCTIONS:                                                ║ -->
 <!-- ║  • Each .service-cat-card = one chemical category                  ║ -->
 <!-- ║  • Each .country-section = one country within that category        ║ -->
-<!-- ║  • Each <li> = one specific service / city                         ║ -->
-<!-- ║  • Add/remove cards, countries, or services as needed              ║ -->
+<!-- ║  • Each <a> = one specific service link                            ║ -->
+<!-- ║  • ACTIVE link:  class="service-link"                              ║ -->
+<!-- ║  • DISABLED link: class="service-link disabled"                    ║ -->
+<!-- ║  • To activate a disabled link: just remove "disabled" class       ║ -->
+<!-- ║  • To add a new link: copy any <a> block and edit href + text      ║ -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="section main-container reveal" id="services">
     <div class="section-header">
@@ -600,22 +633,22 @@
             <div class="country-section">
                 <div class="country-heading">USA</div>
                 <ul class="service-list">
-                    <li>Discreet Cocaine Delivery USA</li>
-                    <li>Discreet Cocaine Delivery California</li>
-                    <li>Discreet Cocaine Delivery Los Angeles</li>
-                    <li>Discreet Cocaine Delivery San Francisco</li>
-                    <li>Discreet Cocaine Delivery New York</li>
-                    <li>Discreet Cocaine Delivery NYC Manhattan</li>
-                    <li>Discreet Cocaine Delivery Texas</li>
-                    <li>Discreet Cocaine Delivery Houston</li>
-                    <li>Discreet Cocaine Delivery Miami</li>
-                    <li>Discreet Cocaine Delivery Florida</li>
-                    <li>Discreet Cocaine Delivery Chicago</li>
-                    <li>Discreet Cocaine Delivery Illinois</li>
-                    <li>Discreet Cocaine Delivery Las Vegas</li>
-                    <li>Discreet Cocaine Delivery Nevada</li>
-                    <li>Discreet Cocaine Delivery Atlanta</li>
-                    <li>Discreet Cocaine Delivery Georgia</li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-usa/" class="service-link">Discreet Cocaine Delivery USA</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-california/" class="service-link disabled">Discreet Cocaine Delivery California</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-los-angeles/" class="service-link disabled">Discreet Cocaine Delivery Los Angeles</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-san-francisco/" class="service-link disabled">Discreet Cocaine Delivery San Francisco</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-new-york/" class="service-link disabled">Discreet Cocaine Delivery New York</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-nyc-manhattan/" class="service-link disabled">Discreet Cocaine Delivery NYC Manhattan</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-texas/" class="service-link disabled">Discreet Cocaine Delivery Texas</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-houston/" class="service-link disabled">Discreet Cocaine Delivery Houston</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-miami/" class="service-link disabled">Discreet Cocaine Delivery Miami</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-florida/" class="service-link disabled">Discreet Cocaine Delivery Florida</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-chicago/" class="service-link disabled">Discreet Cocaine Delivery Chicago</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-illinois/" class="service-link disabled">Discreet Cocaine Delivery Illinois</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-las-vegas/" class="service-link disabled">Discreet Cocaine Delivery Las Vegas</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-nevada/" class="service-link disabled">Discreet Cocaine Delivery Nevada</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-atlanta/" class="service-link disabled">Discreet Cocaine Delivery Atlanta</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-georgia/" class="service-link disabled">Discreet Cocaine Delivery Georgia</a></li>
                 </ul>
             </div>
 
@@ -623,14 +656,14 @@
             <div class="country-section">
                 <div class="country-heading">UK</div>
                 <ul class="service-list">
-                    <li>Discreet Cocaine Delivery UK</li>
-                    <li>Discreet Cocaine Delivery London</li>
-                    <li>Discreet Cocaine Delivery Manchester</li>
-                    <li>Discreet Cocaine Delivery Birmingham</li>
-                    <li>Discreet Cocaine Delivery Liverpool</li>
-                    <li>Discreet Cocaine Delivery Glasgow</li>
-                    <li>Discreet Cocaine Delivery Edinburgh</li>
-                    <li>Discreet Cocaine Delivery Bristol</li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-uk/" class="service-link">Discreet Cocaine Delivery UK</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-london/" class="service-link disabled">Discreet Cocaine Delivery London</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-manchester/" class="service-link disabled">Discreet Cocaine Delivery Manchester</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-birmingham/" class="service-link disabled">Discreet Cocaine Delivery Birmingham</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-liverpool/" class="service-link disabled">Discreet Cocaine Delivery Liverpool</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-glasgow/" class="service-link disabled">Discreet Cocaine Delivery Glasgow</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-edinburgh/" class="service-link disabled">Discreet Cocaine Delivery Edinburgh</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-bristol/" class="service-link disabled">Discreet Cocaine Delivery Bristol</a></li>
                 </ul>
             </div>
 
@@ -638,12 +671,12 @@
             <div class="country-section">
                 <div class="country-heading">Canada</div>
                 <ul class="service-list">
-                    <li>Discreet Cocaine Delivery Canada</li>
-                    <li>Discreet Cocaine Delivery Toronto</li>
-                    <li>Discreet Cocaine Delivery Vancouver</li>
-                    <li>Discreet Cocaine Delivery Montreal</li>
-                    <li>Discreet Cocaine Delivery Calgary</li>
-                    <li>Discreet Cocaine Delivery Ottawa</li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-canada/" class="service-link">Discreet Cocaine Delivery Canada</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-toronto/" class="service-link disabled">Discreet Cocaine Delivery Toronto</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-vancouver/" class="service-link disabled">Discreet Cocaine Delivery Vancouver</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-montreal/" class="service-link disabled">Discreet Cocaine Delivery Montreal</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-calgary/" class="service-link disabled">Discreet Cocaine Delivery Calgary</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-ottawa/" class="service-link disabled">Discreet Cocaine Delivery Ottawa</a></li>
                 </ul>
             </div>
 
@@ -651,11 +684,11 @@
             <div class="country-section">
                 <div class="country-heading">Australia</div>
                 <ul class="service-list">
-                    <li>Discreet Cocaine Delivery Australia</li>
-                    <li>Discreet Cocaine Delivery Sydney</li>
-                    <li>Discreet Cocaine Delivery Melbourne</li>
-                    <li>Discreet Cocaine Delivery Brisbane</li>
-                    <li>Discreet Cocaine Delivery Perth</li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-australia/" class="service-link">Discreet Cocaine Delivery Australia</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-sydney/" class="service-link disabled">Discreet Cocaine Delivery Sydney</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-melbourne/" class="service-link disabled">Discreet Cocaine Delivery Melbourne</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-brisbane/" class="service-link disabled">Discreet Cocaine Delivery Brisbane</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-perth/" class="service-link disabled">Discreet Cocaine Delivery Perth</a></li>
                 </ul>
             </div>
 
@@ -663,14 +696,14 @@
             <div class="country-section">
                 <div class="country-heading">Europe</div>
                 <ul class="service-list">
-                    <li>Discreet Cocaine Delivery Germany</li>
-                    <li>Discreet Cocaine Delivery Berlin</li>
-                    <li>Discreet Cocaine Delivery France</li>
-                    <li>Discreet Cocaine Delivery Paris</li>
-                    <li>Discreet Cocaine Delivery Netherlands</li>
-                    <li>Discreet Cocaine Delivery Amsterdam</li>
-                    <li>Discreet Cocaine Delivery Spain</li>
-                    <li>Discreet Cocaine Delivery Barcelona</li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-germany/" class="service-link">Discreet Cocaine Delivery Germany</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-berlin/" class="service-link disabled">Discreet Cocaine Delivery Berlin</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-france/" class="service-link">Discreet Cocaine Delivery France</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-paris/" class="service-link disabled">Discreet Cocaine Delivery Paris</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-netherlands/" class="service-link">Discreet Cocaine Delivery Netherlands</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-amsterdam/" class="service-link disabled">Discreet Cocaine Delivery Amsterdam</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-spain/" class="service-link">Discreet Cocaine Delivery Spain</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-cocaine-delivery-barcelona/" class="service-link disabled">Discreet Cocaine Delivery Barcelona</a></li>
                 </ul>
             </div>
         </div>
@@ -691,22 +724,22 @@
             <div class="country-section">
                 <div class="country-heading">USA</div>
                 <ul class="service-list">
-                    <li>Discreet Ketamine Delivery USA</li>
-                    <li>Discreet Ketamine Delivery California</li>
-                    <li>Discreet Ketamine Delivery Los Angeles</li>
-                    <li>Discreet Ketamine Delivery San Diego</li>
-                    <li>Discreet Ketamine Delivery New York</li>
-                    <li>Discreet Ketamine Delivery NYC</li>
-                    <li>Discreet Ketamine Delivery Texas</li>
-                    <li>Discreet Ketamine Delivery Austin</li>
-                    <li>Discreet Ketamine Delivery Miami</li>
-                    <li>Discreet Ketamine Delivery Florida</li>
-                    <li>Discreet Ketamine Delivery Chicago</li>
-                    <li>Discreet Ketamine Delivery Seattle</li>
-                    <li>Discreet Ketamine Delivery Washington</li>
-                    <li>Discreet Ketamine Delivery Denver</li>
-                    <li>Discreet Ketamine Delivery Colorado</li>
-                    <li>Discreet Ketamine Delivery Portland</li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-usa/" class="service-link">Discreet Ketamine Delivery USA</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-california/" class="service-link disabled">Discreet Ketamine Delivery California</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-los-angeles/" class="service-link disabled">Discreet Ketamine Delivery Los Angeles</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-san-diego/" class="service-link disabled">Discreet Ketamine Delivery San Diego</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-new-york/" class="service-link disabled">Discreet Ketamine Delivery New York</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-nyc/" class="service-link disabled">Discreet Ketamine Delivery NYC</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-texas/" class="service-link disabled">Discreet Ketamine Delivery Texas</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-austin/" class="service-link disabled">Discreet Ketamine Delivery Austin</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-miami/" class="service-link disabled">Discreet Ketamine Delivery Miami</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-florida/" class="service-link disabled">Discreet Ketamine Delivery Florida</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-chicago/" class="service-link disabled">Discreet Ketamine Delivery Chicago</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-seattle/" class="service-link disabled">Discreet Ketamine Delivery Seattle</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-washington/" class="service-link disabled">Discreet Ketamine Delivery Washington</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-denver/" class="service-link disabled">Discreet Ketamine Delivery Denver</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-colorado/" class="service-link disabled">Discreet Ketamine Delivery Colorado</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-portland/" class="service-link disabled">Discreet Ketamine Delivery Portland</a></li>
                 </ul>
             </div>
 
@@ -714,14 +747,14 @@
             <div class="country-section">
                 <div class="country-heading">UK</div>
                 <ul class="service-list">
-                    <li>Discreet Ketamine Delivery UK</li>
-                    <li>Discreet Ketamine Delivery London</li>
-                    <li>Discreet Ketamine Delivery Manchester</li>
-                    <li>Discreet Ketamine Delivery Birmingham</li>
-                    <li>Discreet Ketamine Delivery Leeds</li>
-                    <li>Discreet Ketamine Delivery Bristol</li>
-                    <li>Discreet Ketamine Delivery Cardiff</li>
-                    <li>Discreet Ketamine Delivery Belfast</li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-uk/" class="service-link">Discreet Ketamine Delivery UK</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-london/" class="service-link disabled">Discreet Ketamine Delivery London</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-manchester/" class="service-link disabled">Discreet Ketamine Delivery Manchester</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-birmingham/" class="service-link disabled">Discreet Ketamine Delivery Birmingham</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-leeds/" class="service-link disabled">Discreet Ketamine Delivery Leeds</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-bristol/" class="service-link disabled">Discreet Ketamine Delivery Bristol</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-cardiff/" class="service-link disabled">Discreet Ketamine Delivery Cardiff</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-belfast/" class="service-link disabled">Discreet Ketamine Delivery Belfast</a></li>
                 </ul>
             </div>
 
@@ -729,12 +762,12 @@
             <div class="country-section">
                 <div class="country-heading">Canada</div>
                 <ul class="service-list">
-                    <li>Discreet Ketamine Delivery Canada</li>
-                    <li>Discreet Ketamine Delivery Toronto</li>
-                    <li>Discreet Ketamine Delivery Vancouver</li>
-                    <li>Discreet Ketamine Delivery Montreal</li>
-                    <li>Discreet Ketamine Delivery Edmonton</li>
-                    <li>Discreet Ketamine Delivery Winnipeg</li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-canada/" class="service-link">Discreet Ketamine Delivery Canada</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-toronto/" class="service-link disabled">Discreet Ketamine Delivery Toronto</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-vancouver/" class="service-link disabled">Discreet Ketamine Delivery Vancouver</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-montreal/" class="service-link disabled">Discreet Ketamine Delivery Montreal</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-edmonton/" class="service-link disabled">Discreet Ketamine Delivery Edmonton</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-winnipeg/" class="service-link disabled">Discreet Ketamine Delivery Winnipeg</a></li>
                 </ul>
             </div>
 
@@ -742,12 +775,12 @@
             <div class="country-section">
                 <div class="country-heading">Australia</div>
                 <ul class="service-list">
-                    <li>Discreet Ketamine Delivery Australia</li>
-                    <li>Discreet Ketamine Delivery Sydney</li>
-                    <li>Discreet Ketamine Delivery Melbourne</li>
-                    <li>Discreet Ketamine Delivery Brisbane</li>
-                    <li>Discreet Ketamine Delivery Gold Coast</li>
-                    <li>Discreet Ketamine Delivery Adelaide</li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-australia/" class="service-link">Discreet Ketamine Delivery Australia</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-sydney/" class="service-link disabled">Discreet Ketamine Delivery Sydney</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-melbourne/" class="service-link disabled">Discreet Ketamine Delivery Melbourne</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-brisbane/" class="service-link disabled">Discreet Ketamine Delivery Brisbane</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-gold-coast/" class="service-link disabled">Discreet Ketamine Delivery Gold Coast</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-adelaide/" class="service-link disabled">Discreet Ketamine Delivery Adelaide</a></li>
                 </ul>
             </div>
 
@@ -755,14 +788,14 @@
             <div class="country-section">
                 <div class="country-heading">Europe</div>
                 <ul class="service-list">
-                    <li>Discreet Ketamine Delivery Germany</li>
-                    <li>Discreet Ketamine Delivery Berlin</li>
-                    <li>Discreet Ketamine Delivery France</li>
-                    <li>Discreet Ketamine Delivery Paris</li>
-                    <li>Discreet Ketamine Delivery Netherlands</li>
-                    <li>Discreet Ketamine Delivery Amsterdam</li>
-                    <li>Discreet Ketamine Delivery Italy</li>
-                    <li>Discreet Ketamine Delivery Rome</li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-germany/" class="service-link">Discreet Ketamine Delivery Germany</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-berlin/" class="service-link disabled">Discreet Ketamine Delivery Berlin</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-france/" class="service-link">Discreet Ketamine Delivery France</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-paris/" class="service-link disabled">Discreet Ketamine Delivery Paris</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-netherlands/" class="service-link">Discreet Ketamine Delivery Netherlands</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-amsterdam/" class="service-link disabled">Discreet Ketamine Delivery Amsterdam</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-italy/" class="service-link">Discreet Ketamine Delivery Italy</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-ketamine-delivery-rome/" class="service-link disabled">Discreet Ketamine Delivery Rome</a></li>
                 </ul>
             </div>
         </div>
@@ -783,22 +816,22 @@
             <div class="country-section">
                 <div class="country-heading">USA</div>
                 <ul class="service-list">
-                    <li>Discreet THC Distillate Delivery USA</li>
-                    <li>Discreet THC Distillate Delivery California</li>
-                    <li>Discreet THC Distillate Delivery Los Angeles</li>
-                    <li>Discreet THC Distillate Delivery San Francisco</li>
-                    <li>Discreet THC Distillate Delivery San Diego</li>
-                    <li>Discreet THC Distillate Delivery New York</li>
-                    <li>Discreet THC Distillate Delivery NYC</li>
-                    <li>Discreet THC Distillate Delivery Texas</li>
-                    <li>Discreet THC Distillate Delivery Houston</li>
-                    <li>Discreet THC Distillate Delivery Miami</li>
-                    <li>Discreet THC Distillate Delivery Florida</li>
-                    <li>Discreet THC Distillate Delivery Chicago</li>
-                    <li>Discreet THC Distillate Delivery Illinois</li>
-                    <li>Discreet THC Distillate Delivery Seattle</li>
-                    <li>Discreet THC Distillate Delivery Washington</li>
-                    <li>Discreet THC Distillate Delivery Denver</li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-usa/" class="service-link">Discreet THC Distillate Delivery USA</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-california/" class="service-link disabled">Discreet THC Distillate Delivery California</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-los-angeles/" class="service-link disabled">Discreet THC Distillate Delivery Los Angeles</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-san-francisco/" class="service-link disabled">Discreet THC Distillate Delivery San Francisco</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-san-diego/" class="service-link disabled">Discreet THC Distillate Delivery San Diego</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-new-york/" class="service-link disabled">Discreet THC Distillate Delivery New York</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-nyc/" class="service-link disabled">Discreet THC Distillate Delivery NYC</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-texas/" class="service-link disabled">Discreet THC Distillate Delivery Texas</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-houston/" class="service-link disabled">Discreet THC Distillate Delivery Houston</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-miami/" class="service-link disabled">Discreet THC Distillate Delivery Miami</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-florida/" class="service-link disabled">Discreet THC Distillate Delivery Florida</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-chicago/" class="service-link disabled">Discreet THC Distillate Delivery Chicago</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-illinois/" class="service-link disabled">Discreet THC Distillate Delivery Illinois</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-seattle/" class="service-link disabled">Discreet THC Distillate Delivery Seattle</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-washington/" class="service-link disabled">Discreet THC Distillate Delivery Washington</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-denver/" class="service-link disabled">Discreet THC Distillate Delivery Denver</a></li>
                 </ul>
             </div>
 
@@ -806,14 +839,14 @@
             <div class="country-section">
                 <div class="country-heading">UK</div>
                 <ul class="service-list">
-                    <li>Discreet THC Distillate Delivery UK</li>
-                    <li>Discreet THC Distillate Delivery London</li>
-                    <li>Discreet THC Distillate Delivery Manchester</li>
-                    <li>Discreet THC Distillate Delivery Birmingham</li>
-                    <li>Discreet THC Distillate Delivery Glasgow</li>
-                    <li>Discreet THC Distillate Delivery Edinburgh</li>
-                    <li>Discreet THC Distillate Delivery Liverpool</li>
-                    <li>Discreet THC Distillate Delivery Bristol</li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-uk/" class="service-link">Discreet THC Distillate Delivery UK</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-london/" class="service-link disabled">Discreet THC Distillate Delivery London</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-manchester/" class="service-link disabled">Discreet THC Distillate Delivery Manchester</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-birmingham/" class="service-link disabled">Discreet THC Distillate Delivery Birmingham</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-glasgow/" class="service-link disabled">Discreet THC Distillate Delivery Glasgow</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-edinburgh/" class="service-link disabled">Discreet THC Distillate Delivery Edinburgh</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-liverpool/" class="service-link disabled">Discreet THC Distillate Delivery Liverpool</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-bristol/" class="service-link disabled">Discreet THC Distillate Delivery Bristol</a></li>
                 </ul>
             </div>
 
@@ -821,12 +854,12 @@
             <div class="country-section">
                 <div class="country-heading">Canada</div>
                 <ul class="service-list">
-                    <li>Discreet THC Distillate Delivery Canada</li>
-                    <li>Discreet THC Distillate Delivery Toronto</li>
-                    <li>Discreet THC Distillate Delivery Vancouver</li>
-                    <li>Discreet THC Distillate Delivery Montreal</li>
-                    <li>Discreet THC Distillate Delivery Calgary</li>
-                    <li>Discreet THC Distillate Delivery Ottawa</li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-canada/" class="service-link">Discreet THC Distillate Delivery Canada</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-toronto/" class="service-link disabled">Discreet THC Distillate Delivery Toronto</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-vancouver/" class="service-link disabled">Discreet THC Distillate Delivery Vancouver</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-montreal/" class="service-link disabled">Discreet THC Distillate Delivery Montreal</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-calgary/" class="service-link disabled">Discreet THC Distillate Delivery Calgary</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-ottawa/" class="service-link disabled">Discreet THC Distillate Delivery Ottawa</a></li>
                 </ul>
             </div>
 
@@ -834,12 +867,12 @@
             <div class="country-section">
                 <div class="country-heading">Australia</div>
                 <ul class="service-list">
-                    <li>Discreet THC Distillate Delivery Australia</li>
-                    <li>Discreet THC Distillate Delivery Sydney</li>
-                    <li>Discreet THC Distillate Delivery Melbourne</li>
-                    <li>Discreet THC Distillate Delivery Brisbane</li>
-                    <li>Discreet THC Distillate Delivery Perth</li>
-                    <li>Discreet THC Distillate Delivery Adelaide</li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-australia/" class="service-link">Discreet THC Distillate Delivery Australia</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-sydney/" class="service-link disabled">Discreet THC Distillate Delivery Sydney</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-melbourne/" class="service-link disabled">Discreet THC Distillate Delivery Melbourne</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-brisbane/" class="service-link disabled">Discreet THC Distillate Delivery Brisbane</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-perth/" class="service-link disabled">Discreet THC Distillate Delivery Perth</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-adelaide/" class="service-link disabled">Discreet THC Distillate Delivery Adelaide</a></li>
                 </ul>
             </div>
 
@@ -847,14 +880,14 @@
             <div class="country-section">
                 <div class="country-heading">Europe</div>
                 <ul class="service-list">
-                    <li>Discreet THC Distillate Delivery Germany</li>
-                    <li>Discreet THC Distillate Delivery Berlin</li>
-                    <li>Discreet THC Distillate Delivery France</li>
-                    <li>Discreet THC Distillate Delivery Paris</li>
-                    <li>Discreet THC Distillate Delivery Netherlands</li>
-                    <li>Discreet THC Distillate Delivery Amsterdam</li>
-                    <li>Discreet THC Distillate Delivery Spain</li>
-                    <li>Discreet THC Distillate Delivery Madrid</li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-germany/" class="service-link">Discreet THC Distillate Delivery Germany</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-berlin/" class="service-link disabled">Discreet THC Distillate Delivery Berlin</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-france/" class="service-link">Discreet THC Distillate Delivery France</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-paris/" class="service-link disabled">Discreet THC Distillate Delivery Paris</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-netherlands/" class="service-link">Discreet THC Distillate Delivery Netherlands</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-amsterdam/" class="service-link disabled">Discreet THC Distillate Delivery Amsterdam</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-spain/" class="service-link">Discreet THC Distillate Delivery Spain</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-thc-distillate-delivery-madrid/" class="service-link disabled">Discreet THC Distillate Delivery Madrid</a></li>
                 </ul>
             </div>
         </div>
@@ -875,22 +908,22 @@
             <div class="country-section">
                 <div class="country-heading">USA</div>
                 <ul class="service-list">
-                    <li>Discreet Research Chemical Delivery USA</li>
-                    <li>Discreet Research Chemical Delivery California</li>
-                    <li>Discreet Research Chemical Delivery Los Angeles</li>
-                    <li>Discreet Research Chemical Delivery San Francisco</li>
-                    <li>Discreet Research Chemical Delivery New York</li>
-                    <li>Discreet Research Chemical Delivery NYC</li>
-                    <li>Discreet Research Chemical Delivery Texas</li>
-                    <li>Discreet Research Chemical Delivery Houston</li>
-                    <li>Discreet Research Chemical Delivery Miami</li>
-                    <li>Discreet Research Chemical Delivery Florida</li>
-                    <li>Discreet Research Chemical Delivery Chicago</li>
-                    <li>Discreet Research Chemical Delivery Illinois</li>
-                    <li>Discreet Research Chemical Delivery Boston</li>
-                    <li>Discreet Research Chemical Delivery Massachusetts</li>
-                    <li>Discreet Research Chemical Delivery Seattle</li>
-                    <li>Discreet Research Chemical Delivery Denver</li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-usa/" class="service-link">Discreet Research Chemical Delivery USA</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-california/" class="service-link disabled">Discreet Research Chemical Delivery California</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-los-angeles/" class="service-link disabled">Discreet Research Chemical Delivery Los Angeles</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-san-francisco/" class="service-link disabled">Discreet Research Chemical Delivery San Francisco</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-new-york/" class="service-link disabled">Discreet Research Chemical Delivery New York</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-nyc/" class="service-link disabled">Discreet Research Chemical Delivery NYC</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-texas/" class="service-link disabled">Discreet Research Chemical Delivery Texas</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-houston/" class="service-link disabled">Discreet Research Chemical Delivery Houston</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-miami/" class="service-link disabled">Discreet Research Chemical Delivery Miami</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-florida/" class="service-link disabled">Discreet Research Chemical Delivery Florida</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-chicago/" class="service-link disabled">Discreet Research Chemical Delivery Chicago</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-illinois/" class="service-link disabled">Discreet Research Chemical Delivery Illinois</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-boston/" class="service-link disabled">Discreet Research Chemical Delivery Boston</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-massachusetts/" class="service-link disabled">Discreet Research Chemical Delivery Massachusetts</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-seattle/" class="service-link disabled">Discreet Research Chemical Delivery Seattle</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-denver/" class="service-link disabled">Discreet Research Chemical Delivery Denver</a></li>
                 </ul>
             </div>
 
@@ -898,14 +931,14 @@
             <div class="country-section">
                 <div class="country-heading">UK</div>
                 <ul class="service-list">
-                    <li>Discreet Research Chemical Delivery UK</li>
-                    <li>Discreet Research Chemical Delivery London</li>
-                    <li>Discreet Research Chemical Delivery Manchester</li>
-                    <li>Discreet Research Chemical Delivery Birmingham</li>
-                    <li>Discreet Research Chemical Delivery Cambridge</li>
-                    <li>Discreet Research Chemical Delivery Oxford</li>
-                    <li>Discreet Research Chemical Delivery Glasgow</li>
-                    <li>Discreet Research Chemical Delivery Edinburgh</li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-uk/" class="service-link">Discreet Research Chemical Delivery UK</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-london/" class="service-link disabled">Discreet Research Chemical Delivery London</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-manchester/" class="service-link disabled">Discreet Research Chemical Delivery Manchester</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-birmingham/" class="service-link disabled">Discreet Research Chemical Delivery Birmingham</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-cambridge/" class="service-link disabled">Discreet Research Chemical Delivery Cambridge</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-oxford/" class="service-link disabled">Discreet Research Chemical Delivery Oxford</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-glasgow/" class="service-link disabled">Discreet Research Chemical Delivery Glasgow</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-edinburgh/" class="service-link disabled">Discreet Research Chemical Delivery Edinburgh</a></li>
                 </ul>
             </div>
 
@@ -913,12 +946,12 @@
             <div class="country-section">
                 <div class="country-heading">Canada</div>
                 <ul class="service-list">
-                    <li>Discreet Research Chemical Delivery Canada</li>
-                    <li>Discreet Research Chemical Delivery Toronto</li>
-                    <li>Discreet Research Chemical Delivery Vancouver</li>
-                    <li>Discreet Research Chemical Delivery Montreal</li>
-                    <li>Discreet Research Chemical Delivery Calgary</li>
-                    <li>Discreet Research Chemical Delivery Ottawa</li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-canada/" class="service-link">Discreet Research Chemical Delivery Canada</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-toronto/" class="service-link disabled">Discreet Research Chemical Delivery Toronto</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-vancouver/" class="service-link disabled">Discreet Research Chemical Delivery Vancouver</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-montreal/" class="service-link disabled">Discreet Research Chemical Delivery Montreal</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-calgary/" class="service-link disabled">Discreet Research Chemical Delivery Calgary</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-ottawa/" class="service-link disabled">Discreet Research Chemical Delivery Ottawa</a></li>
                 </ul>
             </div>
 
@@ -926,12 +959,12 @@
             <div class="country-section">
                 <div class="country-heading">Australia</div>
                 <ul class="service-list">
-                    <li>Discreet Research Chemical Delivery Australia</li>
-                    <li>Discreet Research Chemical Delivery Sydney</li>
-                    <li>Discreet Research Chemical Delivery Melbourne</li>
-                    <li>Discreet Research Chemical Delivery Brisbane</li>
-                    <li>Discreet Research Chemical Delivery Perth</li>
-                    <li>Discreet Research Chemical Delivery Canberra</li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-australia/" class="service-link">Discreet Research Chemical Delivery Australia</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-sydney/" class="service-link disabled">Discreet Research Chemical Delivery Sydney</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-melbourne/" class="service-link disabled">Discreet Research Chemical Delivery Melbourne</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-brisbane/" class="service-link disabled">Discreet Research Chemical Delivery Brisbane</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-perth/" class="service-link disabled">Discreet Research Chemical Delivery Perth</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-canberra/" class="service-link disabled">Discreet Research Chemical Delivery Canberra</a></li>
                 </ul>
             </div>
 
@@ -939,14 +972,14 @@
             <div class="country-section">
                 <div class="country-heading">Europe</div>
                 <ul class="service-list">
-                    <li>Discreet Research Chemical Delivery Germany</li>
-                    <li>Discreet Research Chemical Delivery Berlin</li>
-                    <li>Discreet Research Chemical Delivery France</li>
-                    <li>Discreet Research Chemical Delivery Paris</li>
-                    <li>Discreet Research Chemical Delivery Netherlands</li>
-                    <li>Discreet Research Chemical Delivery Amsterdam</li>
-                    <li>Discreet Research Chemical Delivery Switzerland</li>
-                    <li>Discreet Research Chemical Delivery Zurich</li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-germany/" class="service-link">Discreet Research Chemical Delivery Germany</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-berlin/" class="service-link disabled">Discreet Research Chemical Delivery Berlin</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-france/" class="service-link">Discreet Research Chemical Delivery France</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-paris/" class="service-link disabled">Discreet Research Chemical Delivery Paris</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-netherlands/" class="service-link">Discreet Research Chemical Delivery Netherlands</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-amsterdam/" class="service-link disabled">Discreet Research Chemical Delivery Amsterdam</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-switzerland/" class="service-link">Discreet Research Chemical Delivery Switzerland</a></li>
+                    <li><a href="https://247avlplug.com/services/discreet-research-chemical-delivery-zurich/" class="service-link disabled">Discreet Research Chemical Delivery Zurich</a></li>
                 </ul>
             </div>
         </div>
