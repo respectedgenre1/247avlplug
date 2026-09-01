@@ -447,7 +447,7 @@
             <h2 id="products-heading">Our Mushroom Collection</h2>
             <p>Select your strain, choose your quantity, and add to cart. Bulk pricing auto-applied.</p>
         </div>
-        <div class="product-grid" id="productGrid" role="list"></div>
+        <div class="product-grid" id="productGrid" role="list" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;"></div>
     </section>
 
     <!-- SEO CONTENT -->
@@ -666,9 +666,9 @@ products.forEach(p => {
     const potencyClass = p.potency === 'Beginner' ? 'potency-beginner' : p.potency === 'Intermediate' ? 'potency-intermediate' : 'potency-advanced';
     
     card.innerHTML = `
-        <div class="product-image-wrap">
+        <div class="product-image-wrap" style="position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#0f0f0f;flex-shrink:0;max-width:100%;">
             <span class="product-potency ${potencyClass}">${p.potency}</span>
-            <img src="${p.image}" alt="${p.name}" class="product-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ff6b00?text=${encodeURIComponent(p.name.split(' ').slice(0,2).join('+'))}'">
+            <img src="${p.image}" alt="${p.name}" class="product-image" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;max-width:100%;display:block;" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ff6b00?text=${encodeURIComponent(p.name.split(' ').slice(0,2).join('+'))}'">
         </div>
         <div class="product-info">
             <h3 class="product-name">${p.name}</h3>
@@ -860,6 +860,34 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // Init cart
 renderCart();
+
+// ═══════════════════════════════════════════════════════════════════════
+// PLATFORM OVERRIDE — Enforce grid layout (Cloudflare/GitHub builder safe)
+// ═══════════════════════════════════════════════════════════════════════
+(function enforceGrid() {
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+
+    // Force grid display via inline style (highest specificity)
+    grid.style.display = 'grid';
+    grid.style.gap = window.innerWidth <= 768 ? '0.875rem' : '1rem';
+    grid.style.gridTemplateColumns = window.innerWidth <= 768 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)';
+
+    // Also force each card to behave
+    grid.querySelectorAll('.product-card').forEach(card => {
+        card.style.minWidth = '0';
+        card.style.width = '100%';
+        card.style.boxSizing = 'border-box';
+        card.style.overflow = 'hidden';
+    });
+
+    // Re-apply on resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(enforceGrid, 150);
+    });
+})();
 </script>
 
 </body>
