@@ -5,45 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Buy Magic Mushrooms Online | Premium Psilocybin Strains | 247AVL Plug</title>
     <meta name="description" content="Shop premium psilocybin mushrooms online. Golden Teacher, Penis Envy, Albino Avery, Tidal Wave & 20+ strains. Lab-tested, discreet shipping. Bulk 30g to 1kg.">
-    <meta name="keywords" content="buy magic mushrooms, psilocybin mushrooms, magic mushroom strains, Psilocybe cubensis, psychedelic mushrooms, golden teacher, penis envy, albino avery, mushroom microdosing, psilocybin therapy">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://247avlplug.com/buy-magic-mushrooms/">
-    
-    <meta property="og:title" content="Buy Magic Mushrooms Online | Premium Psilocybin Strains">
-    <meta property="og:description" content="20+ premium psilocybin strains. Golden Teacher, Penis Envy, Tidal Wave & more. Bulk pricing 30g to 1kg.">
-    <meta property="og:type" content="product.group">
-    <meta property="og:url" content="https://247avlplug.com/buy-magic-mushrooms/">
-    <meta property="og:image" content="https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Golden%20Teacher.jpg?raw=true">
-    <meta property="og:site_name" content="247 AVL Plug">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Buy Magic Mushrooms Online | 247AVL Plug">
-    <meta name="twitter:description" content="Premium psilocybin strains. Bulk & wholesale available.">
-    <meta name="twitter:image" content="https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Golden%20Teacher.jpg?raw=true">
-    
-    <meta name="theme-color" content="#0a0a0a" id="themeColorMeta">
-    <link rel="icon" type="image/png" href="https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Peruvian%20Cocaine.jpeg?raw=true">
+    <meta name="theme-color" content="#0a0a0a">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Albino Treasure Coast Magic Mushrooms","image":"https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/IMG_8805-ALBINO-TREASURE-COAST-600x600.webp?raw=true","offers":{"@type":"Offer","price":"170.00","priceCurrency":"USD"}}},
-        {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Penis Envy Magic Mushrooms","image":"https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Penis%20Envy.png?raw=true","offers":{"@type":"Offer","price":"180.00","priceCurrency":"USD"}}}
-      ]
-    }
-    </script>
-
     <style>
-        :root {
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  CSS RESET — ISOLATE FROM ALL EXTERNAL STYLES                    ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        #avl-mushroom-store, #avl-mushroom-store *, #avl-mushroom-store *::before, #avl-mushroom-store *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Nunito', 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6; color: inherit;
+        }
+        #avl-mushroom-store img { max-width: 100%; height: auto; display: block; border: 0; }
+        #avl-mushroom-store a { text-decoration: none; color: inherit; }
+        #avl-mushroom-store button, #avl-mushroom-store select {
+            font-family: inherit; cursor: pointer; border: none; background: none; outline: none;
+            -webkit-appearance: none; -moz-appearance: none; appearance: none;
+        }
+        #avl-mushroom-store select::-ms-expand { display: none; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  THEME VARIABLES                                                 ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        #avl-mushroom-store {
             --bg-deep: #050505; --bg-primary: #0a0a0a; --bg-secondary: #111111;
             --bg-glass: rgba(15, 15, 15, 0.55); --bg-glass-hover: rgba(25, 25, 25, 0.75);
-            --bg-card: rgba(20, 20, 20, 0.65);
             --accent-orange: #ff6b00; --accent-orange-light: #ff8c00; --accent-orange-bright: #ffaa33;
             --accent-orange-glow: rgba(255, 107, 0, 0.25); --accent-orange-glow-strong: rgba(255, 107, 0, 0.45);
             --text-primary: #ffffff; --text-secondary: #c0c0c0; --text-muted: #666666;
@@ -55,15 +47,15 @@
             --radius-sm: 10px; --radius-md: 18px; --radius-lg: 28px;
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            --font-body: 'Nunito', 'Quicksand', 'Segoe UI', system-ui, sans-serif;
             --font-display: 'Fredoka One', 'Quicksand', cursive;
             --font-ui: 'Quicksand', 'Nunito', sans-serif;
-            --toggle-icon: #ffffff;
+            background: var(--bg-deep); color: var(--text-primary);
+            overflow-x: hidden; -webkit-font-smoothing: antialiased;
+            position: relative; z-index: 1;
         }
-        [data-theme="light"] {
+        [data-theme="light"] #avl-mushroom-store {
             --bg-deep: #f5f5f7; --bg-primary: #ffffff; --bg-secondary: #f0f0f2;
             --bg-glass: rgba(255, 255, 255, 0.65); --bg-glass-hover: rgba(255, 255, 255, 0.85);
-            --bg-card: rgba(255, 255, 255, 0.72);
             --accent-orange: #e65100; --accent-orange-light: #ff6b00; --accent-orange-bright: #ff8c00;
             --accent-orange-glow: rgba(255, 107, 0, 0.15); --accent-orange-glow-strong: rgba(255, 107, 0, 0.3);
             --text-primary: #1a1a1a; --text-secondary: #555555; --text-muted: #999999;
@@ -72,431 +64,518 @@
             --shadow-orange: 0 8px 32px rgba(255, 107, 0, 0.08); --shadow-orange-lg: 0 12px 48px rgba(255, 107, 0, 0.12);
             --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08); --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
             --glass-blur: blur(24px) saturate(1.3);
-            --toggle-icon: #1a1a1a;
-        }
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; transition: background 0.5s ease, color 0.5s ease; }
-        a { text-decoration: none; color: inherit; }
-
-        /* Back Home */
-        .back-home { position: fixed; top: 1.25rem; left: 1.25rem; z-index: 1001; display: flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.1rem; background: var(--bg-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: 100px; box-shadow: var(--shadow-card); color: var(--text-primary); font-family: var(--font-ui); font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: var(--transition-smooth); }
-        .back-home:hover { transform: translateX(-3px); border-color: var(--border-orange); box-shadow: var(--shadow-orange); color: var(--accent-orange-light); }
-        .back-home svg { width: 18px; height: 18px; flex-shrink: 0; }
-
-        /* Theme Toggle */
-        .theme-toggle { position: fixed; top: 1.25rem; right: 1.25rem; z-index: 1001; width: 48px; height: 48px; border-radius: 50%; background: var(--bg-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth); color: var(--toggle-icon); }
-        .theme-toggle:hover { transform: scale(1.1); border-color: var(--border-orange); box-shadow: var(--shadow-orange); }
-        .theme-toggle svg { width: 22px; height: 22px; }
-        [data-theme="light"] .theme-toggle .moon { display: none; } [data-theme="light"] .theme-toggle .sun { display: block; }
-        :root:not([data-theme="light"]) .theme-toggle .moon { display: block; } :root:not([data-theme="light"]) .theme-toggle .sun { display: none; }
-
-        /* HERO */
-        .hero { position: relative; min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 1rem 3rem; overflow: hidden; }
-        .hero-bg { position: absolute; inset: 0; z-index: -2; background: radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(255,140,0,0.08) 0%, transparent 50%), linear-gradient(180deg, #08080a 0%, #0a0a0c 40%, #0d0806 70%, #0a0a0a 100%); }
-        .spores { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
-        .spore { position: absolute; width: 4px; height: 4px; background: var(--accent-orange); border-radius: 50%; opacity: 0; box-shadow: 0 0 12px var(--accent-orange-glow); animation: floatSpore 12s infinite ease-in-out; }
-        @keyframes floatSpore { 0%,100%{opacity:0;transform:translateY(100vh) scale(0)} 10%{opacity:0.4} 90%{opacity:0.4} 50%{transform:translateY(-10vh) scale(1)} }
-        
-        .hero-glass { position: relative; z-index: 2; background: var(--bg-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem 2rem; max-width: 900px; width: 100%; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.05); animation: glassReveal 1s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
-        @keyframes glassReveal { from{opacity:0;transform:translateY(30px) scale(0.96)} to{opacity:1;transform:translateY(0) scale(1)} }
-        
-        .hero-logo { width: 100%; max-width: 320px; margin: 0 auto 0.5rem; display: flex; justify-content: center; }
-        .hero-logo svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 4px 20px rgba(255,107,0,0.2)); }
-        .hero-title { font-family: var(--font-display); font-size: clamp(2rem, 7vw, 4.5rem); font-weight: 400; letter-spacing: 0.02em; line-height: 1.1; margin: 1rem 0; background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-orange-light) 40%, var(--accent-orange-bright) 70%, var(--accent-orange) 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradientShift 4s ease infinite; }
-        @keyframes gradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
-        .hero-subtitle { font-family: var(--font-ui); font-size: clamp(0.9rem, 2.5vw, 1.15rem); color: var(--text-secondary); max-width: 520px; margin: 0 auto; font-weight: 600; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,140,0,0.1)); border: 1px solid var(--border-orange); border-radius: 100px; font-family: var(--font-ui); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-orange-light); margin-top: 1.5rem; backdrop-filter: blur(10px); }
-        .hero-badge::before { content: '🍄'; font-size: 1rem; }
-
-        /* MAIN */
-        .main-container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
-        .section { padding: 2.5rem 0; }
-
-        /* GLASS CARD */
-        .glass-card { background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.04); transition: var(--transition-smooth); }
-        .glass-card:hover { background: var(--bg-glass-hover); border-color: var(--border-orange); box-shadow: var(--shadow-card-hover), 0 0 30px var(--accent-orange-glow); }
-
-        /* SECTION HEADERS */
-        .section-header { text-align: center; margin-bottom: 2rem; padding: 2rem; }
-        .section-header h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 400; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .section-header p { color: var(--text-secondary); font-family: var(--font-ui); font-size: 0.95rem; font-weight: 600; }
-
-        /* PRODUCT GRID — MOBILE: 1 COLUMN ALWAYS */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
-        @media (max-width: 768px) { 
-            .product-grid { grid-template-columns: 1fr; gap: 1rem; max-width: 480px; margin: 0 auto; } 
         }
 
-        /* PRODUCT CARD */
-        .product-card { background: var(--bg-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition-smooth); position: relative; }
-        .product-card:hover { transform: translateY(-6px); border-color: var(--border-orange-strong); box-shadow: var(--shadow-orange-lg); }
-        .product-card:active { transform: translateY(-2px) scale(0.98); }
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  FLOATING CONTROLS                                               ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-back-home {
+            position: fixed; top: 1.25rem; left: 1.25rem; z-index: 1001;
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.65rem 1.1rem; background: var(--bg-glass);
+            backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle); border-radius: 100px;
+            box-shadow: var(--shadow-card); color: var(--text-primary);
+            font-family: var(--font-ui); font-size: 0.85rem; font-weight: 700;
+            transition: var(--transition-smooth);
+        }
+        .avl-back-home:hover { transform: translateX(-3px); border-color: var(--border-orange); box-shadow: var(--shadow-orange); color: var(--accent-orange-light); }
+        .avl-back-home svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        .avl-theme-toggle {
+            position: fixed; top: 1.25rem; right: 1.25rem; z-index: 1001;
+            width: 48px; height: 48px; border-radius: 50%; background: var(--bg-glass);
+            backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition-smooth); color: var(--text-primary);
+        }
+        .avl-theme-toggle:hover { transform: scale(1.1); border-color: var(--border-orange); box-shadow: var(--shadow-orange); }
+        .avl-theme-toggle svg { width: 22px; height: 22px; }
+        [data-theme="light"] .avl-theme-toggle .avl-moon { display: none; }
+        [data-theme="light"] .avl-theme-toggle .avl-sun { display: block; }
+        :root:not([data-theme="light"]) .avl-theme-toggle .avl-moon { display: block; }
+        :root:not([data-theme="light"]) .avl-theme-toggle .avl-sun { display: none; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  HERO SECTION                                                    ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-hero {
+            position: relative; min-height: 70vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 6rem 1rem 3rem; overflow: hidden;
+        }
+        .avl-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse at 20% 30%, rgba(255,107,0,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(255,140,0,0.08) 0%, transparent 50%), linear-gradient(180deg, #08080a 0%, #0a0a0c 40%, #0d0806 70%, #0a0a0a 100%); }
+        .avl-spores { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
+        .avl-spore { position: absolute; width: 4px; height: 4px; background: var(--accent-orange); border-radius: 50%; opacity: 0; box-shadow: 0 0 12px var(--accent-orange-glow); animation: avlFloatSpore 12s infinite ease-in-out; }
+        @keyframes avlFloatSpore { 0%,100%{opacity:0;transform:translateY(100vh) scale(0)} 10%{opacity:0.4} 90%{opacity:0.4} 50%{transform:translateY(-10vh) scale(1)} }
         
-        .product-image-wrap { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(30,30,30,0.6)); }
-        [data-theme="light"] .product-image-wrap { background: linear-gradient(135deg, rgba(240,240,240,0.8), rgba(230,230,230,0.6)); }
-        .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-        .product-card:hover .product-image { transform: scale(1.08); }
+        .avl-hero-glass {
+            position: relative; z-index: 2; background: var(--bg-glass);
+            backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+            padding: 3rem 2rem; max-width: 900px; width: 100%;
+            box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.05);
+            animation: avlGlassReveal 1s cubic-bezier(0.22,1,0.36,1) 0.2s both;
+        }
+        @keyframes avlGlassReveal { from{opacity:0;transform:translateY(30px) scale(0.96)} to{opacity:1;transform:translateY(0) scale(1)} }
         
-        .product-potency { position: absolute; top: 0.75rem; left: 0.75rem; padding: 0.25rem 0.6rem; border-radius: 100px; font-family: var(--font-ui); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; z-index: 3; backdrop-filter: blur(10px); }
-        .potency-beginner { background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4); }
-        .potency-intermediate { background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.4); }
-        .potency-advanced { background: rgba(239,68,68,0.2); color: #f87171; border: 1px solid rgba(239,68,68,0.4); }
+        .avl-hero-logo { width: 100%; max-width: 320px; margin: 0 auto 0.5rem; display: flex; justify-content: center; }
+        .avl-hero-logo svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 4px 20px rgba(255,107,0,0.2)); }
+        .avl-hero-title {
+            font-family: var(--font-display); font-size: clamp(2rem, 7vw, 4.5rem);
+            font-weight: 400; letter-spacing: 0.02em; line-height: 1.1; margin: 1rem 0;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-orange-light) 40%, var(--accent-orange-bright) 70%, var(--accent-orange) 100%);
+            background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            animation: avlGradientShift 4s ease infinite;
+        }
+        @keyframes avlGradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+        .avl-hero-subtitle { font-family: var(--font-ui); font-size: clamp(0.9rem, 2.5vw, 1.15rem); color: var(--text-secondary); max-width: 520px; margin: 0 auto; font-weight: 600; }
+        .avl-hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,140,0,0.1)); border: 1px solid var(--border-orange); border-radius: 100px; font-family: var(--font-ui); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-orange-light); margin-top: 1.5rem; backdrop-filter: blur(10px); }
+        .avl-hero-badge::before { content: '🍄'; font-size: 1rem; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  LAYOUT                                                          ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-main { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+        .avl-section { padding: 2.5rem 0; }
+
+        .avl-glass-card {
+            background: var(--bg-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.04);
+            transition: var(--transition-smooth);
+        }
+        .avl-glass-card:hover { background: var(--bg-glass-hover); border-color: var(--border-orange); box-shadow: var(--shadow-card-hover), 0 0 30px var(--accent-orange-glow); }
+
+        .avl-section-header { text-align: center; margin-bottom: 2rem; padding: 2rem; }
+        .avl-section-header h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 400; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .avl-section-header p { color: var(--text-secondary); font-family: var(--font-ui); font-size: 0.95rem; font-weight: 600; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  PRODUCT GRID — DESKTOP: 4 COL, TABLET: 2 COL, MOBILE: 1 COL     ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-product-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 1.25rem !important;
+            width: 100% !important;
+        }
+        @media (max-width: 1024px) {
+            .avl-product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 640px) {
+            .avl-product-grid { grid-template-columns: 1fr !important; gap: 1rem !important; max-width: 480px; margin: 0 auto !important; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  PRODUCT CARD                                                    ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-product-card {
+            background: var(--bg-glass) !important; backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle) !important; border-radius: var(--radius-md) !important;
+            overflow: hidden !important; display: flex !important; flex-direction: column !important;
+            transition: var(--transition-smooth); position: relative;
+        }
+        .avl-product-card:hover { transform: translateY(-6px); border-color: var(--border-orange-strong) !important; box-shadow: var(--shadow-orange-lg); }
+        .avl-product-card:active { transform: translateY(-2px) scale(0.98); }
         
-        .product-info { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
-        .product-name { font-family: var(--font-ui); font-size: 1rem; font-weight: 700; color: var(--text-primary); line-height: 1.35; }
-        .product-card:hover .product-name { color: var(--accent-orange-bright); }
+        .avl-product-image-wrap { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(30,30,30,0.6)); }
+        [data-theme="light"] .avl-product-image-wrap { background: linear-gradient(135deg, rgba(240,240,240,0.8), rgba(230,230,230,0.6)); }
+        .avl-product-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .avl-product-card:hover .avl-product-image { transform: scale(1.08); }
         
-        .product-price-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
-        .product-price { font-family: var(--font-display); font-size: 1.15rem; color: var(--accent-orange-light); letter-spacing: 0.02em; }
-        .product-price .per { font-family: var(--font-ui); font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
+        .avl-potency {
+            position: absolute; top: 0.75rem; left: 0.75rem; z-index: 3;
+            padding: 0.25rem 0.6rem; border-radius: 100px;
+            font-family: var(--font-ui); font-size: 0.65rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.08em; backdrop-filter: blur(10px);
+        }
+        .avl-potency-beginner { background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4); }
+        .avl-potency-intermediate { background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.4); }
+        .avl-potency-advanced { background: rgba(239,68,68,0.2); color: #f87171; border: 1px solid rgba(239,68,68,0.4); }
         
-        .qty-select { width: 100%; padding: 0.6rem 0.875rem; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: var(--text-primary); font-family: var(--font-ui); font-size: 0.9rem; font-weight: 700; cursor: pointer; outline: none; transition: var(--transition-smooth); appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ff6b00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.75rem center; padding-right: 2rem; }
-        .qty-select:focus { border-color: var(--accent-orange); box-shadow: 0 0 0 3px var(--accent-orange-glow); }
+        .avl-product-info { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+        .avl-product-name { font-family: var(--font-ui); font-size: 1rem; font-weight: 700; color: var(--text-primary); line-height: 1.35; margin: 0 !important; }
+        .avl-product-card:hover .avl-product-name { color: var(--accent-orange-bright); }
         
-        .product-actions { display: flex; gap: 0.625rem; margin-top: auto; }
-        .btn-info { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-smooth); flex-shrink: 0; font-family: var(--font-ui); font-weight: 800; font-size: 0.9rem; }
-        .btn-info:hover { border-color: var(--accent-orange); color: var(--accent-orange-light); transform: rotate(15deg) scale(1.1); }
-        .btn-add { flex: 1; padding: 0.7rem 0.5rem; background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light)); border: none; border-radius: var(--radius-sm); color: #fff; font-family: var(--font-ui); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: var(--transition-bounce); box-shadow: 0 4px 16px rgba(255,107,0,0.3); display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
-        .btn-add:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,107,0,0.45); }
-        .btn-add:active { transform: scale(0.95); }
-        .btn-add.added { background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 16px rgba(16,185,129,0.3); }
-
-        /* INFO MODAL */
-        .info-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
-        .info-modal.active { display: flex; animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
-        .info-modal-content { background: var(--bg-primary); border: 1px solid var(--border-orange); border-radius: var(--radius-lg); max-width: 500px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 1.5rem; position: relative; box-shadow: var(--shadow-orange-lg); }
-        .info-modal-close { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; transition: var(--transition-smooth); }
-        .info-modal-close:hover { background: var(--accent-orange); color: #fff; border-color: var(--accent-orange); }
-        .info-modal h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--accent-orange-light); }
-        .info-modal p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75; }
-        .info-modal .potency-line { display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-ui); font-weight: 700; }
-
-        /* FLOATING CART */
-        .cart-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--bg-glass); backdrop-filter: var(--glass-blur-heavy); border-top: 1px solid var(--border-orange); box-shadow: 0 -8px 32px rgba(0,0,0,0.4); transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
-        .cart-bar.active { transform: translateY(0); }
-        .cart-bar-inner { max-width: 1200px; margin: 0 auto; padding: 0.875rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-        .cart-summary { display: flex; align-items: center; gap: 0.75rem; }
-        .cart-icon { position: relative; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; box-shadow: var(--shadow-orange); cursor: pointer; transition: var(--transition-bounce); }
-        .cart-icon:hover { transform: scale(1.1); }
-        .cart-count { position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; border-radius: 50%; background: #fff; color: var(--accent-orange); font-family: var(--font-ui); font-size: 0.65rem; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-orange); }
-        .cart-total-text { font-family: var(--font-ui); font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; }
-        .cart-total-text span { color: var(--accent-orange-light); font-family: var(--font-display); font-size: 1.1rem; }
-        .cart-actions { display: flex; gap: 0.5rem; }
-        .btn-checkout { padding: 0.6rem 1.25rem; border-radius: 100px; font-family: var(--font-ui); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; transition: var(--transition-bounce); border: none; display: flex; align-items: center; gap: 0.4rem; }
-        .btn-whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
-        .btn-telegram { background: linear-gradient(135deg, #0088cc, #005f8f); color: #fff; box-shadow: 0 4px 16px rgba(0,136,204,0.3); }
-        .btn-checkout:hover { transform: translateY(-2px); filter: brightness(1.1); }
-        .btn-viewcart { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-subtle); }
-        .btn-viewcart:hover { border-color: var(--border-orange); }
-
-        /* CART SHEET */
-        .cart-sheet { position: fixed; inset: 0; z-index: 1999; display: none; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
-        .cart-sheet.active { display: block; animation: fadeIn 0.3s ease; }
-        .cart-sheet-panel { position: absolute; bottom: 0; left: 0; right: 0; max-height: 70vh; background: var(--bg-primary); border-top: 2px solid var(--accent-orange); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 1.5rem; overflow-y: auto; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
-        .cart-sheet.active .cart-sheet-panel { transform: translateY(0); }
-        .cart-sheet-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
-        .cart-sheet-header h3 { font-family: var(--font-display); font-size: 1.3rem; }
-        .cart-sheet-close { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; }
-        .cart-item { display: flex; align-items: center; gap: 0.875rem; padding: 0.875rem; background: var(--bg-secondary); border-radius: var(--radius-sm); margin-bottom: 0.625rem; border: 1px solid var(--border-subtle); }
-        .cart-item img { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
-        .cart-item-info { flex: 1; min-width: 0; }
-        .cart-item-name { font-family: var(--font-ui); font-size: 0.8rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .cart-item-meta { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
-        .cart-item-price { font-family: var(--font-display); font-size: 0.95rem; color: var(--accent-orange-light); }
-        .cart-item-remove { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle); background: transparent; color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: var(--transition-smooth); }
-        .cart-item-remove:hover { background: rgba(239,68,68,0.15); color: #f87171; border-color: rgba(239,68,68,0.3); }
-        .cart-empty { text-align: center; padding: 2rem; color: var(--text-muted); font-family: var(--font-ui); font-size: 0.9rem; }
-        .cart-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); }
-        .cart-grand-total { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-family: var(--font-ui); font-size: 1rem; font-weight: 800; }
-        .cart-grand-total span:last-child { font-family: var(--font-display); font-size: 1.3rem; color: var(--accent-orange-light); }
-        .cart-checkout-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .cart-checkout-row .btn-checkout { flex: 1; min-width: 140px; justify-content: center; padding: 0.75rem; font-size: 0.85rem; }
-
-        /* SEO CONTENT */
-        .seo-content { font-size: 1rem; line-height: 1.9; color: var(--text-secondary); }
-        .seo-content h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 4vw, 1.8rem); margin: 2.5rem 0 1rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .seo-content h3 { font-family: var(--font-ui); font-size: 1.1rem; font-weight: 800; color: var(--accent-orange-light); margin: 1.5rem 0 0.5rem; }
-        .seo-content p { margin-bottom: 1.25rem; }
-        .seo-content strong { color: var(--accent-orange-bright); font-weight: 700; }
-        .seo-content ul { margin-left: 1.5rem; margin-bottom: 1.25rem; }
-        .seo-content li { margin-bottom: 0.5rem; }
-        .seo-content blockquote { border-left: 3px solid var(--accent-orange); padding-left: 1.25rem; margin: 1.5rem 0; font-style: italic; color: var(--text-secondary); background: linear-gradient(90deg, rgba(255,107,0,0.06), transparent); padding: 1rem 1rem 1rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+        .avl-qty-select {
+            width: 100%; padding: 0.6rem 0.875rem; background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);
+            color: var(--text-primary); font-family: var(--font-ui); font-size: 0.9rem; font-weight: 700;
+            cursor: pointer; outline: none; transition: var(--transition-smooth);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ff6b00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 0.75rem center; padding-right: 2rem;
+        }
+        .avl-qty-select:focus { border-color: var(--accent-orange); box-shadow: 0 0 0 3px var(--accent-orange-glow); }
         
-        .strain-table-wrap { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin: 1.5rem 0; }
-        .strain-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px; font-family: var(--font-ui); }
-        .strain-table thead { background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,140,0,0.08)); }
-        .strain-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 800; color: var(--accent-orange-light); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; border-bottom: 2px solid var(--border-orange); white-space: nowrap; }
-        .strain-table td { padding: 0.6rem 1rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-subtle); }
-        .strain-table tr:hover td { background: rgba(255,107,0,0.04); }
+        .avl-product-actions { display: flex; gap: 0.625rem; margin-top: auto; }
+        .avl-btn-info {
+            width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border-subtle);
+            background: var(--bg-secondary); color: var(--text-secondary);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-ui); font-weight: 800; font-size: 0.9rem;
+            transition: var(--transition-smooth); flex-shrink: 0;
+        }
+        .avl-btn-info:hover { border-color: var(--accent-orange); color: var(--accent-orange-light); transform: rotate(15deg) scale(1.1); }
+        .avl-btn-add {
+            flex: 1; padding: 0.7rem 0.5rem;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light));
+            border-radius: var(--radius-sm); color: #fff; font-family: var(--font-ui);
+            font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+            transition: var(--transition-bounce); box-shadow: 0 4px 16px rgba(255,107,0,0.3);
+            display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+        }
+        .avl-btn-add:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,107,0,0.45); }
+        .avl-btn-add:active { transform: scale(0.95); }
+        .avl-btn-add.added { background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 16px rgba(16,185,129,0.3); }
 
-        /* RELATED CATEGORIES */
-        .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
-        @media (max-width: 900px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } }
-        .related-card { background: var(--bg-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition-smooth); text-align: center; }
-        .related-card:hover { transform: translateY(-6px); border-color: var(--border-orange-strong); box-shadow: var(--shadow-orange-lg); }
-        .related-image-wrap { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(30,30,30,0.6)); }
-        [data-theme="light"] .related-image-wrap { background: linear-gradient(135deg, rgba(240,240,240,0.8), rgba(230,230,230,0.6)); }
-        .related-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .related-card:hover .related-image { transform: scale(1.08); }
-        .related-info { padding: 1.25rem; }
-        .related-name { font-family: var(--font-ui); font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.375rem; }
-        .related-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  INFO MODAL                                                      ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-info-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
+        .avl-info-modal.active { display: flex; animation: avlFadeIn 0.3s ease; }
+        @keyframes avlFadeIn { from{opacity:0} to{opacity:1} }
+        .avl-info-modal-content { background: var(--bg-primary); border: 1px solid var(--border-orange); border-radius: var(--radius-lg); max-width: 500px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 1.5rem; position: relative; box-shadow: var(--shadow-orange-lg); }
+        .avl-info-modal-close { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: var(--transition-smooth); }
+        .avl-info-modal-close:hover { background: var(--accent-orange); color: #fff; border-color: var(--accent-orange); }
+        .avl-info-modal h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--accent-orange-light); }
+        .avl-info-modal p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75; }
+        .avl-info-potency { display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-ui); font-weight: 700; }
 
-        /* FOOTER */
-        .site-footer { background: var(--bg-glass); backdrop-filter: blur(20px); border-top: 1px solid var(--border-subtle); padding: 3rem 1.5rem 2rem; margin-top: 2rem; text-align: center; }
-        .footer-divider { width: 100%; max-width: 600px; margin: 0 auto 1.5rem; height: 1px; background: linear-gradient(90deg, transparent, var(--border-orange), transparent); opacity: 0.6; }
-        .footer-policies { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
-        .footer-policies a { color: var(--text-muted); font-size: 0.8rem; font-weight: 700; font-family: var(--font-ui); letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.3s ease; position: relative; }
-        .footer-policies a:hover { color: var(--accent-orange-light); }
-        .footer-text { color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-ui); }
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  FLOATING CART BAR                                               ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-cart-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--bg-glass); backdrop-filter: var(--glass-blur-heavy); -webkit-backdrop-filter: var(--glass-blur-heavy); border-top: 1px solid var(--border-orange); box-shadow: 0 -8px 32px rgba(0,0,0,0.4); transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+        .avl-cart-bar.active { transform: translateY(0); }
+        .avl-cart-bar-inner { max-width: 1200px; margin: 0 auto; padding: 0.875rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .avl-cart-summary { display: flex; align-items: center; gap: 0.75rem; }
+        .avl-cart-icon { position: relative; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; box-shadow: var(--shadow-orange); cursor: pointer; transition: var(--transition-bounce); }
+        .avl-cart-icon:hover { transform: scale(1.1); }
+        .avl-cart-count { position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; border-radius: 50%; background: #fff; color: var(--accent-orange); font-family: var(--font-ui); font-size: 0.65rem; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-orange); }
+        .avl-cart-total-text { font-family: var(--font-ui); font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; }
+        .avl-cart-total-text span { color: var(--accent-orange-light); font-family: var(--font-display); font-size: 1.1rem; }
+        .avl-cart-actions { display: flex; gap: 0.5rem; }
+        .avl-btn-checkout { padding: 0.6rem 1.25rem; border-radius: 100px; font-family: var(--font-ui); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; transition: var(--transition-bounce); border: none; display: flex; align-items: center; gap: 0.4rem; }
+        .avl-btn-whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+        .avl-btn-telegram { background: linear-gradient(135deg, #0088cc, #005f8f); color: #fff; box-shadow: 0 4px 16px rgba(0,136,204,0.3); }
+        .avl-btn-checkout:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .avl-btn-viewcart { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-subtle); }
+        .avl-btn-viewcart:hover { border-color: var(--border-orange); }
 
-        /* REVEAL ANIMATION */
-        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  CART SHEET                                                      ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-cart-sheet { position: fixed; inset: 0; z-index: 1999; display: none; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+        .avl-cart-sheet.active { display: block; animation: avlFadeIn 0.3s ease; }
+        .avl-cart-panel { position: absolute; bottom: 0; left: 0; right: 0; max-height: 70vh; background: var(--bg-primary); border-top: 2px solid var(--accent-orange); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 1.5rem; overflow-y: auto; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+        .avl-cart-sheet.active .avl-cart-panel { transform: translateY(0); }
+        .avl-cart-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+        .avl-cart-header h3 { font-family: var(--font-display); font-size: 1.3rem; }
+        .avl-cart-close { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; }
+        .avl-cart-item { display: flex; align-items: center; gap: 0.875rem; padding: 0.875rem; background: var(--bg-secondary); border-radius: var(--radius-sm); margin-bottom: 0.625rem; border: 1px solid var(--border-subtle); }
+        .avl-cart-item img { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+        .avl-cart-item-info { flex: 1; min-width: 0; }
+        .avl-cart-item-name { font-family: var(--font-ui); font-size: 0.8rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .avl-cart-item-meta { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+        .avl-cart-item-price { font-family: var(--font-display); font-size: 0.95rem; color: var(--accent-orange-light); }
+        .avl-cart-item-remove { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle); background: transparent; color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: var(--transition-smooth); }
+        .avl-cart-item-remove:hover { background: rgba(239,68,68,0.15); color: #f87171; border-color: rgba(239,68,68,0.3); }
+        .avl-cart-empty { text-align: center; padding: 2rem; color: var(--text-muted); font-family: var(--font-ui); font-size: 0.9rem; }
+        .avl-cart-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); }
+        .avl-cart-grand { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-family: var(--font-ui); font-size: 1rem; font-weight: 800; }
+        .avl-cart-grand span:last-child { font-family: var(--font-display); font-size: 1.3rem; color: var(--accent-orange-light); }
+        .avl-cart-checkout-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .avl-cart-checkout-row .avl-btn-checkout { flex: 1; min-width: 140px; justify-content: center; padding: 0.75rem; font-size: 0.85rem; }
 
-        /* RESPONSIVE */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  SEO CONTENT                                                     ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-seo { font-size: 1rem; line-height: 1.9; color: var(--text-secondary); }
+        .avl-seo h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 4vw, 1.8rem); margin: 2.5rem 0 1rem; background: linear-gradient(135deg, var(--text-primary), var(--accent-orange-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .avl-seo h3 { font-family: var(--font-ui); font-size: 1.1rem; font-weight: 800; color: var(--accent-orange-light); margin: 1.5rem 0 0.5rem; }
+        .avl-seo p { margin-bottom: 1.25rem; }
+        .avl-seo strong { color: var(--accent-orange-bright); font-weight: 700; }
+        .avl-seo ul { margin-left: 1.5rem; margin-bottom: 1.25rem; }
+        .avl-seo li { margin-bottom: 0.5rem; }
+        .avl-seo blockquote { border-left: 3px solid var(--accent-orange); padding-left: 1.25rem; margin: 1.5rem 0; font-style: italic; color: var(--text-secondary); background: linear-gradient(90deg, rgba(255,107,0,0.06), transparent); padding: 1rem 1rem 1rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+        .avl-table-wrap { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin: 1.5rem 0; }
+        .avl-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px; font-family: var(--font-ui); }
+        .avl-table thead { background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,140,0,0.08)); }
+        .avl-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 800; color: var(--accent-orange-light); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; border-bottom: 2px solid var(--border-orange); white-space: nowrap; }
+        .avl-table td { padding: 0.6rem 1rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-subtle); }
+        .avl-table tr:hover td { background: rgba(255,107,0,0.04); }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  RELATED CATEGORIES                                              ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-related-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 1.25rem !important; margin-top: 1.5rem !important; }
+        @media (max-width: 900px) { .avl-related-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 480px) { .avl-related-grid { grid-template-columns: 1fr !important; } }
+        .avl-related-card { background: var(--bg-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition-smooth); text-align: center; }
+        .avl-related-card:hover { transform: translateY(-6px); border-color: var(--border-orange-strong); box-shadow: var(--shadow-orange-lg); }
+        .avl-related-img-wrap { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(30,30,30,0.6)); }
+        [data-theme="light"] .avl-related-img-wrap { background: linear-gradient(135deg, rgba(240,240,240,0.8), rgba(230,230,230,0.6)); }
+        .avl-related-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .avl-related-card:hover .avl-related-img { transform: scale(1.08); }
+        .avl-related-info { padding: 1.25rem; }
+        .avl-related-name { font-family: var(--font-ui); font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.375rem; }
+        .avl-related-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  FOOTER                                                          ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-footer { background: var(--bg-glass); backdrop-filter: blur(20px); border-top: 1px solid var(--border-subtle); padding: 3rem 1.5rem 2rem; margin-top: 2rem; text-align: center; }
+        .avl-footer-divider { width: 100%; max-width: 600px; margin: 0 auto 1.5rem; height: 1px; background: linear-gradient(90deg, transparent, var(--border-orange), transparent); opacity: 0.6; }
+        .avl-footer-policies { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .avl-footer-policies a { color: var(--text-muted); font-size: 0.8rem; font-weight: 700; font-family: var(--font-ui); letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.3s ease; }
+        .avl-footer-policies a:hover { color: var(--accent-orange-light); }
+        .avl-footer-text { color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-ui); }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  SCROLL REVEAL                                                   ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .avl-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
+        .avl-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ║  MOBILE BREAKPOINTS                                              ║ */
+        /* ═══════════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
-            .hero { min-height: 55vh; padding: 4rem 0.75rem 2rem; }
-            .hero-glass { padding: 2rem 1rem; }
-            .hero-logo { max-width: 240px; }
-            .back-home { top: 0.75rem; left: 0.75rem; padding: 0.55rem 0.9rem; font-size: 0.8rem; }
-            .theme-toggle { width: 42px; height: 42px; top: 0.75rem; right: 0.75rem; }
-            .product-info { padding: 1rem; }
-            .product-name { font-size: 0.95rem; }
-            .product-price { font-size: 1.05rem; }
-            .btn-add { font-size: 0.75rem; padding: 0.6rem 0.25rem; }
-            .btn-info { width: 38px; height: 38px; }
-            .cart-bar-inner { padding: 0.75rem; flex-wrap: wrap; }
-            .cart-actions { width: 100%; justify-content: flex-end; }
-            .section-header { padding: 1.5rem; }
-            .seo-content { font-size: 0.95rem; }
-            .main-container { padding: 0 1rem; }
+            .avl-hero { min-height: 55vh; padding: 4rem 0.75rem 2rem; }
+            .avl-hero-glass { padding: 2rem 1rem; }
+            .avl-hero-logo { max-width: 240px; }
+            .avl-back-home { top: 0.75rem; left: 0.75rem; padding: 0.55rem 0.9rem; font-size: 0.8rem; }
+            .avl-theme-toggle { width: 42px; height: 42px; top: 0.75rem; right: 0.75rem; }
+            .avl-product-info { padding: 1rem; }
+            .avl-product-name { font-size: 0.95rem; }
+            .avl-btn-add { font-size: 0.75rem; padding: 0.6rem 0.25rem; }
+            .avl-btn-info { width: 38px; height: 38px; }
+            .avl-cart-bar-inner { padding: 0.75rem; flex-wrap: wrap; }
+            .avl-cart-actions { width: 100%; justify-content: flex-end; }
+            .avl-section-header { padding: 1.5rem; }
+            .avl-seo { font-size: 0.95rem; }
+            .avl-main { padding: 0 1rem; }
         }
         @media (max-width: 480px) {
-            .hero-title { font-size: 2rem; }
-            .hero-subtitle { font-size: 0.85rem; }
-            .related-grid { gap: 0.75rem; }
-            .qty-select { font-size: 0.85rem; }
+            .avl-hero-title { font-size: 2rem; }
+            .avl-hero-subtitle { font-size: 0.85rem; }
+            .avl-qty-select { font-size: 0.85rem; }
         }
-        @media (prefers-reduced-motion: reduce) { *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important} }
+        @media (prefers-reduced-motion: reduce) { #avl-mushroom-store * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
     </style>
-    <base target="_blank">
 </head>
 <body>
 
-<!-- BACK HOME -->
-<a href="https://247avlplug.com/" class="back-home" aria-label="Back to homepage">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-    <span>Home</span>
-</a>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ║  NAMESPACE WRAPPER — PROTECTS FROM ALL EXTERNAL CSS                 ║ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<div id="avl-mushroom-store">
 
-<!-- THEME TOGGLE -->
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-</button>
+    <!-- BACK HOME -->
+    <a href="https://247avlplug.com/" class="avl-back-home" aria-label="Back to homepage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span>Home</span>
+    </a>
 
-<!-- HERO -->
-<section class="hero" id="top">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="spores" id="sporeContainer" aria-hidden="true"></div>
-    <div class="hero-glass">
-        <div class="hero-logo">
-            <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" aria-label="247 AVL Plug Logo">
-                <defs>
-                    <filter id="bubble3D" x="-50%" y="-50%" width="200%" height="200%">
-                        <feOffset in="SourceAlpha" dx="4" dy="5" result="offsetShadow"/>
-                        <feFlood flood-color="#fbbf24" result="yellowFlood"/>
-                        <feComposite in="yellowFlood" in2="offsetShadow" operator="in" result="yellowShadow"/>
-                        <feMorphology in="SourceAlpha" result="thickOutline" operator="dilate" radius="3"/>
-                        <feFlood flood-color="#0f0f0f" result="blackFlood"/>
-                        <feComposite in="blackFlood" in2="thickOutline" operator="in" result="blackOutline"/>
-                        <feMerge>
-                            <feMergeNode in="yellowShadow"/>
-                            <feMergeNode in="blackOutline"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-                <text x="200" y="105" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="72" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#bubble3D)" letter-spacing="-2">247 AVL</text>
-                <text x="200" y="210" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="90" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#bubble3D)" letter-spacing="6">PLUG</text>
-            </svg>
-        </div>
-        <h1 class="hero-title">Buy Magic Mushrooms</h1>
-        <p class="hero-subtitle">Premium Psilocybe cubensis strains. From Golden Teacher to Penis Envy — lab-cultivated, potency-verified, and delivered discreetly.</p>
-        <div class="hero-badge">21 Premium Strains Available</div>
-    </div>
-</section>
+    <!-- THEME TOGGLE -->
+    <button class="avl-theme-toggle" id="avlThemeToggle" aria-label="Toggle dark/light mode">
+        <svg class="avl-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="avl-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
 
-<main>
-    <!-- PRODUCTS -->
-    <section class="section main-container reveal" aria-labelledby="products-heading">
-        <div class="glass-card section-header">
-            <h2 id="products-heading">Our Mushroom Collection</h2>
-            <p>Select your strain, choose your quantity, and add to cart. Bulk pricing auto-applied.</p>
-        </div>
-        <div class="product-grid" id="productGrid" role="list"></div>
-    </section>
-
-    <!-- SEO CONTENT -->
-    <section class="section main-container reveal" aria-labelledby="guide-heading">
-        <div class="glass-card" style="padding: 2.5rem 2rem;">
-            <article class="seo-content">
-                <h2 id="guide-heading">The Complete Guide to Psilocybin Mushrooms</h2>
-                
-                <p>Welcome to the most comprehensive collection of <strong>psilocybin mushrooms</strong> available online. At 247AVL Plug, we specialize in premium <strong>Psilocybe cubensis</strong> strains — from beginner-friendly classics like <strong>Golden Teacher</strong> to cup-tier powerhouses like <strong>Tidal Wave</strong> and <strong>Penis Envy</strong>. Whether you're exploring <strong>microdosing</strong>, seeking therapeutic insights, or researching alkaloid profiles, our lab-cultivated strains deliver consistency you can trust.</p>
-
-                <h3>What Are Magic Mushrooms?</h3>
-                <p>Magic mushrooms are fungi containing <strong>psilocybin</strong> and <strong>psilocin</strong> — naturally occurring psychedelic compounds that interact with serotonin 5-HT2A receptors in the brain. When ingested, psilocybin converts to psilocin, producing altered perception, enhanced creativity, emotional openness, and profound introspective experiences. With over 200 psilocybin-containing species documented worldwide, <strong>Psilocybe cubensis</strong> remains the most widely cultivated and researched due to its reliability, potency range, and accessibility.</p>
-
-                <blockquote>"Psilocybe cubensis is the best-known psychedelic mushroom in the world because it's relatively easy to cultivate indoors. Dozens of cultivated strains exist, but these are all genetic variants of the same species." — <em>Beckley Foundation Research</em></blockquote>
-
-                <h3>Understanding Strain Potency & Effects</h3>
-                <p>Not all magic mushroom strains are created equal. While strain effects can vary based on genetics, substrate, and growing conditions, certain cultivars have earned reputations for distinctive characteristics:</p>
-                
-                <div class="strain-table-wrap">
-                    <table class="strain-table">
-                        <thead><tr><th>Strain</th><th>Potency</th><th>Best For</th><th>Onset</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Golden Teacher</strong></td><td>Moderate (0.6–0.8%)</td><td>Beginners, spirituality</td><td>30–60 min</td></tr>
-                            <tr><td><strong>B+ / Big Mex</strong></td><td>Mild–Moderate</td><td>Social settings, warmth</td><td>30–45 min</td></tr>
-                            <tr><td><strong>Blue Meanies</strong></td><td>Very High</td><td>Visual experiences</td><td>20–40 min</td></tr>
-                            <tr><td><strong>Tidal Wave</strong></td><td>Very High (1.0–2.0%)</td><td>Creative exploration</td><td>30–60 min</td></tr>
-                            <tr><td><strong>Penis Envy</strong></td><td>Extreme (1.5–2.0%+)</td><td>Advanced psychonauts</td><td>30–60 min</td></tr>
-                            <tr><td><strong>Albino Avery</strong></td><td>High</td><td>Clean visuals, clarity</td><td>20–40 min</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p><strong>Penis Envy</strong> and its albino variants consistently test 1.5–2x higher in alkaloid content than standard cubensis strains, while <strong>Golden Teacher</strong> remains the gold standard for predictable, manageable experiences. Strains like <strong>Tidal Wave</strong> — a B+ × Penis Envy hybrid — have won Psilocybin Cups for their record-setting tryptamine concentrations.</p>
-
-                <h3>Microdosing vs. Macrodosing</h3>
-                <p><strong>Microdosing</strong> involves sub-perceptual doses (typically 50–150mg) taken on a schedule like the Stamets Stack or Fadiman Protocol. Users report enhanced focus, creativity, and emotional regulation without impairment. <strong>Macrodosing</strong> (1.5g–5g+) produces the classic psychedelic experience: visual distortions, time dilation, ego dissolution, and profound personal insights. Always research appropriate dosing for your specific strain — a 2g dose of Penis Envy can feel equivalent to 4g of Golden Teacher.</p>
-
-                <h3>Proper Storage for Maximum Potency</h3>
-                <p>Psilocybin degrades with exposure to heat, light, and oxygen. Store your dried mushrooms in an <strong>airtight container</strong> with desiccant packs, kept in a cool, dark place. When stored properly below 25°C (77°F) and away from UV light, dried psilocybin mushrooms maintain potency for 12–24 months. Never store in the freezer without vacuum sealing — condensation can promote mold.</p>
-
-                <h3>The 247AVL Plug Standard</h3>
-                <p>Every strain in our collection is cultivated under controlled laboratory conditions, harvested at peak alkaloid expression, and slow-dried to preserve potency. We offer <strong>bulk magic mushrooms</strong> from 30g personal packs up to 1kg wholesale quantities — with automatic tiered pricing that rewards larger orders. All shipments are vacuum-sealed, odor-proof, and dispatched in unmarked packaging.</p>
-
-                <p><strong>Keywords:</strong> buy magic mushrooms, psilocybin mushrooms for sale, magic mushroom strains, Psilocybe cubensis, psychedelic mushrooms online, golden teacher mushrooms, penis envy mushrooms, albino avery, mushroom microdosing, psilocybin therapy, tidal wave mushrooms, blue meanies, bulk magic mushrooms.</p>
-            </article>
+    <!-- HERO -->
+    <section class="avl-hero" id="top">
+        <div class="avl-hero-bg" aria-hidden="true"></div>
+        <div class="avl-spores" id="avlSporeContainer" aria-hidden="true"></div>
+        <div class="avl-hero-glass">
+            <div class="avl-hero-logo">
+                <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" aria-label="247 AVL Plug Logo">
+                    <defs>
+                        <filter id="avlBubble3D" x="-50%" y="-50%" width="200%" height="200%">
+                            <feOffset in="SourceAlpha" dx="4" dy="5" result="offsetShadow"/>
+                            <feFlood flood-color="#fbbf24" result="yellowFlood"/>
+                            <feComposite in="yellowFlood" in2="offsetShadow" operator="in" result="yellowShadow"/>
+                            <feMorphology in="SourceAlpha" result="thickOutline" operator="dilate" radius="3"/>
+                            <feFlood flood-color="#0f0f0f" result="blackFlood"/>
+                            <feComposite in="blackFlood" in2="thickOutline" operator="in" result="blackOutline"/>
+                            <feMerge>
+                                <feMergeNode in="yellowShadow"/>
+                                <feMergeNode in="blackOutline"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text x="200" y="105" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="72" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#avlBubble3D)" letter-spacing="-2">247 AVL</text>
+                    <text x="200" y="210" font-family="'Arial Rounded MT Bold','Trebuchet MS','Helvetica Rounded',sans-serif" font-size="90" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#avlBubble3D)" letter-spacing="6">PLUG</text>
+                </svg>
+            </div>
+            <h1 class="avl-hero-title">Buy Magic Mushrooms</h1>
+            <p class="avl-hero-subtitle">Premium Psilocybe cubensis strains. From Golden Teacher to Penis Envy — lab-cultivated, potency-verified, and delivered discreetly.</p>
+            <div class="avl-hero-badge">21 Premium Strains Available</div>
         </div>
     </section>
 
-    <!-- RELATED CATEGORIES -->
-    <section class="section main-container reveal" aria-labelledby="related-heading">
-        <div class="glass-card section-header">
-            <h2 id="related-heading">Explore More Categories</h2>
-            <p>Premium products across our entire catalog</p>
-        </div>
-        <div class="related-grid" role="list">
-            <a href="https://247avlplug.com/buy-thc-distillates/" class="related-card" role="listitem">
-                <div class="related-image-wrap">
-                    <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/THC%20Distillates%20For%20sale.jpeg?raw=true" alt="THC Distillates" class="related-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=THC+Distillates'">
-                </div>
-                <div class="related-info">
-                    <h3 class="related-name">THC Distillates</h3>
-                    <p class="related-desc">Delta 9, Delta 8 & Delta 10. Up to 98% pure.</p>
-                </div>
-            </a>
-            <a href="https://247avlplug.com/buy-ketamine/" class="related-card" role="listitem">
-                <div class="related-image-wrap">
-                    <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Ketamine%20for%20sale.jpeg?raw=true" alt="Buy Ketamine" class="related-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=Ketamine'">
-                </div>
-                <div class="related-info">
-                    <h3 class="related-name">Buy Ketamine</h3>
-                    <p class="related-desc">S-Isomer & R-Isomer. Nasal spray & crystal.</p>
-                </div>
-            </a>
-            <a href="https://247avlplug.com/buy-cocaine-online/" class="related-card" role="listitem">
-                <div class="related-image-wrap">
-                    <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Bolivian%20Cocaine.jpeg?raw=true" alt="Buy Cocaine" class="related-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=Cocaine'">
-                </div>
-                <div class="related-info">
-                    <h3 class="related-name">Buy Cocaine</h3>
-                    <p class="related-desc">Uncut Peruvian & Bolivian. Best prices per kg.</p>
-                </div>
-            </a>
-            <a href="https://247avlplug.com/buy-research-chemicals/" class="related-card" role="listitem">
-                <div class="related-image-wrap">
-                    <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Research%20Chemicals%20For%20sale.jpeg?raw=true" alt="Research Chemicals" class="related-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=Research+Chemicals'">
-                </div>
-                <div class="related-info">
-                    <h3 class="related-name">Research Chemicals</h3>
-                    <p class="related-desc">Lab-grade a-PVP, MDMA, 4-fluorococaine & more.</p>
-                </div>
-            </a>
-        </div>
-    </section>
-</main>
+    <main>
+        <!-- PRODUCTS -->
+        <section class="avl-section avl-main avl-reveal" aria-labelledby="products-heading">
+            <div class="avl-glass-card avl-section-header">
+                <h2 id="products-heading">Our Mushroom Collection</h2>
+                <p>Select your strain, choose your quantity, and add to cart. Bulk pricing auto-applied.</p>
+            </div>
+            <div class="avl-product-grid" id="avlProductGrid" role="list"></div>
+        </section>
 
-<!-- FOOTER -->
-<footer class="site-footer" id="contact">
-    <div class="footer-divider" aria-hidden="true"></div>
-    <nav class="footer-policies" aria-label="Legal policies">
-        <a href="https://247avlplug.com/privacy-policy/">Privacy Policy</a>
-        <a href="https://247avlplug.com/payment-refund-policy/">Payment & Refund Policy</a>
-        <a href="https://247avlplug.com/terms-and-conditions/">Terms & Conditions</a>
-        <a href="https://247avlplug.com/shipping-delivery/">Shipping & Delivery</a>
-    </nav>
-    <p class="footer-text">&copy; 2026 247AVL Plug. All rights reserved. Products sold for microscopy and research purposes only. Must be 21+ to purchase.</p>
-</footer>
+        <!-- SEO CONTENT -->
+        <section class="avl-section avl-main avl-reveal" aria-labelledby="guide-heading">
+            <div class="avl-glass-card" style="padding: 2.5rem 2rem;">
+                <article class="avl-seo">
+                    <h2 id="guide-heading">The Complete Guide to Psilocybin Mushrooms</h2>
+                    <p>Welcome to the most comprehensive collection of <strong>psilocybin mushrooms</strong> available online. At 247AVL Plug, we specialize in premium <strong>Psilocybe cubensis</strong> strains — from beginner-friendly classics like <strong>Golden Teacher</strong> to cup-tier powerhouses like <strong>Tidal Wave</strong> and <strong>Penis Envy</strong>.</p>
+                    
+                    <h3>What Are Magic Mushrooms?</h3>
+                    <p>Magic mushrooms are fungi containing <strong>psilocybin</strong> and <strong>psilocin</strong> — naturally occurring psychedelic compounds that interact with serotonin 5-HT2A receptors in the brain. <strong>Psilocybe cubensis</strong> remains the most widely cultivated and researched species due to its reliability and potency range.</p>
+                    
+                    <blockquote>"Psilocybe cubensis is the best-known psychedelic mushroom in the world because it's relatively easy to cultivate indoors." — <em>Beckley Foundation Research</em></blockquote>
+                    
+                    <h3>Understanding Strain Potency & Effects</h3>
+                    <div class="avl-table-wrap">
+                        <table class="avl-table">
+                            <thead><tr><th>Strain</th><th>Potency</th><th>Best For</th><th>Onset</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Golden Teacher</strong></td><td>Moderate (0.6–0.8%)</td><td>Beginners, spirituality</td><td>30–60 min</td></tr>
+                                <tr><td><strong>Blue Meanies</strong></td><td>Very High</td><td>Visual experiences</td><td>20–40 min</td></tr>
+                                <tr><td><strong>Tidal Wave</strong></td><td>Very High (1.0–2.0%)</td><td>Creative exploration</td><td>30–60 min</td></tr>
+                                <tr><td><strong>Penis Envy</strong></td><td>Extreme (1.5–2.0%+)</td><td>Advanced psychonauts</td><td>30–60 min</td></tr>
+                                <tr><td><strong>Albino Avery</strong></td><td>High</td><td>Clean visuals, clarity</td><td>20–40 min</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Microdosing vs. Macrodosing</h3>
+                    <p><strong>Microdosing</strong> involves sub-perceptual doses (50–150mg) taken on a schedule like the Stamets Stack. <strong>Macrodosing</strong> (1.5g–5g+) produces the classic psychedelic experience. Always research dosing for your specific strain — a 2g dose of Penis Envy can feel equivalent to 4g of Golden Teacher.</p>
+                    
+                    <h3>Proper Storage for Maximum Potency</h3>
+                    <p>Store dried mushrooms in an <strong>airtight container</strong> with desiccant packs, kept in a cool, dark place. Properly stored, dried psilocybin mushrooms maintain potency for 12–24 months.</p>
+                    
+                    <h3>The 247AVL Plug Standard</h3>
+                    <p>Every strain is cultivated under controlled laboratory conditions, harvested at peak alkaloid expression, and slow-dried to preserve potency. We offer <strong>bulk magic mushrooms</strong> from 30g personal packs up to 1kg wholesale with automatic tiered pricing.</p>
+                </article>
+            </div>
+        </section>
 
-<!-- FLOATING CART BAR -->
-<div class="cart-bar" id="cartBar">
-    <div class="cart-bar-inner">
-        <div class="cart-summary">
-            <div class="cart-icon" id="cartIconBtn" aria-label="View cart">🛒<span class="cart-count" id="cartCount">0</span></div>
-            <div class="cart-total-text">Total: <span id="cartTotalDisplay">$0.00</span></div>
-        </div>
-        <div class="cart-actions">
-            <button class="btn-checkout btn-viewcart" id="viewCartBtn">View Cart</button>
-            <button class="btn-checkout btn-whatsapp" id="quickWaBtn">WhatsApp</button>
-        </div>
-    </div>
-</div>
+        <!-- RELATED CATEGORIES -->
+        <section class="avl-section avl-main avl-reveal" aria-labelledby="related-heading">
+            <div class="avl-glass-card avl-section-header">
+                <h2 id="related-heading">Explore More Categories</h2>
+                <p>Premium products across our entire catalog</p>
+            </div>
+            <div class="avl-related-grid" role="list">
+                <a href="https://247avlplug.com/buy-thc-distillates/" class="avl-related-card" role="listitem">
+                    <div class="avl-related-img-wrap">
+                        <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/THC%20Distillates%20For%20sale.jpeg?raw=true" alt="THC Distillates" class="avl-related-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=THC+Distillates'">
+                    </div>
+                    <div class="avl-related-info">
+                        <h3 class="avl-related-name">THC Distillates</h3>
+                        <p class="avl-related-desc">Delta 9, Delta 8 & Delta 10. Up to 98% pure.</p>
+                    </div>
+                </a>
+                <a href="https://247avlplug.com/buy-ketamine/" class="avl-related-card" role="listitem">
+                    <div class="avl-related-img-wrap">
+                        <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Ketamine%20for%20sale.jpeg?raw=true" alt="Buy Ketamine" class="avl-related-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=Ketamine'">
+                    </div>
+                    <div class="avl-related-info">
+                        <h3 class="avl-related-name">Buy Ketamine</h3>
+                        <p class="avl-related-desc">S-Isomer & R-Isomer. Nasal spray & crystal.</p>
+                    </div>
+                </a>
+                <a href="https://247avlplug.com/buy-cocaine-online/" class="avl-related-card" role="listitem">
+                    <div class="avl-related-img-wrap">
+                        <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Buy%20Bolivian%20Cocaine.jpeg?raw=true" alt="Buy Cocaine" class="avl-related-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=Cocaine'">
+                    </div>
+                    <div class="avl-related-info">
+                        <h3 class="avl-related-name">Buy Cocaine</h3>
+                        <p class="avl-related-desc">Uncut Peruvian & Bolivian. Best prices per kg.</p>
+                    </div>
+                </a>
+                <a href="https://247avlplug.com/buy-research-chemicals/" class="avl-related-card" role="listitem">
+                    <div class="avl-related-img-wrap">
+                        <img src="https://github.com/respectedgenre1/247avlplug/blob/main/public/Research%20Chemicals%20For%20sale.jpeg?raw=true" alt="Research Chemicals" class="avl-related-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/ff6b00?text=Research+Chemicals'">
+                    </div>
+                    <div class="avl-related-info">
+                        <h3 class="avl-related-name">Research Chemicals</h3>
+                        <p class="avl-related-desc">Lab-grade a-PVP, MDMA, 4-fluorococaine & more.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
 
-<!-- CART SHEET -->
-<div class="cart-sheet" id="cartSheet">
-    <div class="cart-sheet-panel">
-        <div class="cart-sheet-header">
-            <h3>🍄 Your Order</h3>
-            <button class="cart-sheet-close" id="closeCartSheet">&times;</button>
-        </div>
-        <div id="cartItemsContainer"><div class="cart-empty">Your basket is empty. Select strains and quantities above.</div></div>
-        <div class="cart-footer" id="cartFooter" style="display:none;">
-            <div class="cart-grand-total"><span>Grand Total</span><span id="grandTotal">$0.00</span></div>
-            <div class="cart-checkout-row">
-                <button class="btn-checkout btn-whatsapp" id="waCheckout">📱 Order via WhatsApp</button>
-                <button class="btn-checkout btn-telegram" id="tgCheckout">✈️ Order via Telegram</button>
+    <!-- FOOTER -->
+    <footer class="avl-footer" id="contact">
+        <div class="avl-footer-divider" aria-hidden="true"></div>
+        <nav class="avl-footer-policies" aria-label="Legal policies">
+            <a href="https://247avlplug.com/privacy-policy/">Privacy Policy</a>
+            <a href="https://247avlplug.com/payment-refund-policy/">Payment & Refund Policy</a>
+            <a href="https://247avlplug.com/terms-and-conditions/">Terms & Conditions</a>
+            <a href="https://247avlplug.com/shipping-delivery/">Shipping & Delivery</a>
+        </nav>
+        <p class="avl-footer-text">&copy; 2026 247AVL Plug. All rights reserved. Products sold for microscopy and research purposes only. Must be 21+ to purchase.</p>
+    </footer>
+
+    <!-- FLOATING CART BAR -->
+    <div class="avl-cart-bar" id="avlCartBar">
+        <div class="avl-cart-bar-inner">
+            <div class="avl-cart-summary">
+                <div class="avl-cart-icon" id="avlCartIconBtn" aria-label="View cart">🛒<span class="avl-cart-count" id="avlCartCount">0</span></div>
+                <div class="avl-cart-total-text">Total: <span id="avlCartTotalDisplay">$0.00</span></div>
+            </div>
+            <div class="avl-cart-actions">
+                <button class="avl-btn-checkout avl-btn-viewcart" id="avlViewCartBtn">View Cart</button>
+                <button class="avl-btn-checkout avl-btn-whatsapp" id="avlQuickWaBtn">WhatsApp</button>
             </div>
         </div>
     </div>
-</div>
 
-<!-- INFO MODAL -->
-<div class="info-modal" id="infoModal">
-    <div class="info-modal-content">
-        <button class="info-modal-close" id="closeInfoModal">&times;</button>
-        <h3 id="infoModalTitle">Strain Name</h3>
-        <p id="infoModalDesc">Description...</p>
-        <div class="potency-line" id="infoModalPotency">Potency: Intermediate</div>
+    <!-- CART SHEET -->
+    <div class="avl-cart-sheet" id="avlCartSheet">
+        <div class="avl-cart-panel">
+            <div class="avl-cart-header">
+                <h3>🍄 Your Order</h3>
+                <button class="avl-cart-close" id="avlCloseCartSheet">&times;</button>
+            </div>
+            <div id="avlCartItemsContainer"><div class="avl-cart-empty">Your basket is empty. Select strains and quantities above.</div></div>
+            <div class="avl-cart-footer" id="avlCartFooter" style="display:none;">
+                <div class="avl-cart-grand"><span>Grand Total</span><span id="avlGrandTotal">$0.00</span></div>
+                <div class="avl-cart-checkout-row">
+                    <button class="avl-btn-checkout avl-btn-whatsapp" id="avlWaCheckout">📱 Order via WhatsApp</button>
+                    <button class="avl-btn-checkout avl-btn-telegram" id="avlTgCheckout">✈️ Order via Telegram</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+    <!-- INFO MODAL -->
+    <div class="avl-info-modal" id="avlInfoModal">
+        <div class="avl-info-modal-content">
+            <button class="avl-info-modal-close" id="avlCloseInfoModal">&times;</button>
+            <h3 id="avlInfoModalTitle">Strain Name</h3>
+            <p id="avlInfoModalDesc">Description...</p>
+            <div class="avl-info-potency" id="avlInfoModalPotency">Potency: Intermediate</div>
+        </div>
+    </div>
+
+</div><!-- /#avl-mushroom-store -->
 
 <script>
 // ═══════════════════════════════════════════════════════════════════════
 // PRODUCT DATA
 // ═══════════════════════════════════════════════════════════════════════
-const products = [
+const avlProducts = [
     { id:'albino-treasure-coast', name:'Albino Treasure Coast Magic Mushrooms', basePrice:170, potency:'Intermediate', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/IMG_8805-ALBINO-TREASURE-COAST-600x600.webp?raw=true', desc:'A leucistic variant of the classic Treasure Coast strain. Pale, ghostly caps with above-average potency. Known for fast colonization and consistent flushes. Delivers a balanced experience with visual enhancement and mental clarity.' },
     { id:'amazonian', name:'Amazonian Magic Mushrooms', basePrice:170, potency:'Intermediate', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Amazonian%20Magic%20Mushroom600x600.webp?raw=true', desc:'Sourced from the Amazon rainforest genetics. Tall, dense fruits with a powerful body high and intense visual distortions. A favorite among experienced users seeking deep immersion and sensory amplification.' },
     { id:'big-mex', name:'Big Mex Magic Mushrooms', basePrice:170, potency:'Beginner', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Big%20Mex%20Magic%20Mushrooms.webp?raw=true', desc:'A classic Mexican heritage strain offering gentle, spiritual experiences. Large caramel caps with thick stems. Perfect for beginners and ceremonial use — warm, euphoric, and socially engaging without overwhelming intensity.' },
-    { id:'blue-meanies', name:'Blue Meanies Magic Mushrooms', basePrice:170, potency:'Advanced', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/BLUE-MEANIE%20magic%20mushroom-600x600.webp?raw=true', desc:'This P. cubensis variant (not to be confused with Panaeolus cyanescens) is famous for extreme blue bruising and potent, euphoric effects. Fast onset with bright visuals, laughter, and emotional release. Dose conservatively.' },
+    { id:'blue-meanies', name:'Blue Meanies Magic Mushrooms', basePrice:170, potency:'Advanced', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/BLUE-MEANIE%20magic%20mushroom-600x600.webp?raw=true', desc:'This P. cubensis variant is famous for extreme blue bruising and potent, euphoric effects. Fast onset with bright visuals, laughter, and emotional release. Dose conservatively.' },
     { id:'blue-pulaski', name:'Blue Pulaski Magic Mushrooms', basePrice:170, potency:'Intermediate', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Blue%20Pulaski%20Magic%20Mushrooms.webp?raw=true', desc:'A rare hybrid combining robust genetics with stunning blue bruising. Offers balanced open-eye visuals and deep introspective potential. A connoisseur strain with reliable potency and beautiful morphology.' },
     { id:'bluey-vuitton', name:'Bluey Vuitton Magic Mushrooms', basePrice:170, potency:'Advanced', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Bluey%20Vuitton%20Magic%20Mushrooms.webp?raw=true', desc:'A premium Panama × Melmac PE-lineage cross. Lab-tested at high tryptamine levels with vivid open-eye visuals and rapid onset. Dense blue bruising signals serious psilocybin content. Dose 30–50% lower than standard cubensis.' },
     { id:'cambodian', name:'Cambodian Magic Mushrooms', basePrice:170, potency:'Beginner', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Cambodian%20Magic%20Mushrooms.webp?raw=true', desc:'Discovered near Cambodia\'s Angkor Wat temple. Known for an energetic, creative high and fast-acting properties. Forgiving potency makes it ideal for newcomers. Expect enhanced focus, light visuals, and social euphoria.' },
@@ -516,7 +595,7 @@ const products = [
     { id:'penis-envy', name:'Penis Envy Magic Mushrooms', basePrice:180, potency:'Advanced', image:'https://github.com/respectedgenre1/247avlplug/blob/main/public/mushrooms/Penis%20Envy.png?raw=true', desc:'The legendary strain. 1.5–2x standard cubensis potency with thick, dense stems and profound ego-dissolution experiences. Allegedly originating from Terence McKenna\'s Amazon collection. Treat with absolute respect.' }
 ];
 
-const qtyOptions = [
+const avlQtyOptions = [
     {g:30, discount:0, label:'30g'},
     {g:60, discount:0.02, label:'60g'},
     {g:100, discount:0.04, label:'100g'},
@@ -525,82 +604,80 @@ const qtyOptions = [
     {g:1000, discount:0.10, label:'1000g (1kg)'}
 ];
 
-function calculatePrice(base, grams, discount) {
+function avlCalculatePrice(base, grams, discount) {
     const unitPrice = base / 30;
     const raw = unitPrice * grams;
     return Math.round(raw * (1 - discount));
 }
 
-function formatPrice(num) {
+function avlFormatPrice(num) {
     return '$' + num.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
 
-const grid = document.getElementById('productGrid');
-products.forEach(p => {
+const avlGrid = document.getElementById('avlProductGrid');
+avlProducts.forEach(p => {
     const card = document.createElement('article');
-    card.className = 'product-card';
+    card.className = 'avl-product-card';
     card.setAttribute('role', 'listitem');
     card.setAttribute('data-id', p.id);
     
-    let selectHtml = '<select class="qty-select" onchange="updatePrice(this,\''+p.id+'\')">';
-    qtyOptions.forEach((q,i) => {
-        const price = calculatePrice(p.basePrice, q.g, q.discount);
-        selectHtml += `<option value="${q.g}" data-discount="${q.discount}" data-price="${price}" ${i===0?'selected':''}>${q.label} — ${formatPrice(price)}</option>`;
+    let selectHtml = '<select class="avl-qty-select" onchange="avlUpdatePrice(this,\''+p.id+'\')">';
+    avlQtyOptions.forEach((q,i) => {
+        const price = avlCalculatePrice(p.basePrice, q.g, q.discount);
+        selectHtml += `<option value="${q.g}" data-discount="${q.discount}" data-price="${price}" ${i===0?'selected':''}>${q.label} — ${avlFormatPrice(price)}</option>`;
     });
     selectHtml += '</select>';
     
-    const potencyClass = p.potency === 'Beginner' ? 'potency-beginner' : p.potency === 'Intermediate' ? 'potency-intermediate' : 'potency-advanced';
+    const potencyClass = p.potency === 'Beginner' ? 'avl-potency-beginner' : p.potency === 'Intermediate' ? 'avl-potency-intermediate' : 'avl-potency-advanced';
     
     card.innerHTML = `
-        <div class="product-image-wrap">
-            <span class="product-potency ${potencyClass}">${p.potency}</span>
-            <img src="${p.image}" alt="${p.name}" class="product-image" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/1a1a1a/ff6b00?text=${encodeURIComponent(p.name.split(' ').slice(0,2).join('+'))}'">
+        <div class="avl-product-image-wrap">
+            <span class="avl-potency ${potencyClass}">${p.potency}</span>
+            <img src="${p.image}" alt="${p.name}" class="avl-product-image" loading="lazy" onerror="this.src='https://via.placeholder.com/600x375/1a1a1a/ff6b00?text=${encodeURIComponent(p.name.split(' ').slice(0,2).join('+'))}'">
         </div>
-        <div class="product-info">
-            <h3 class="product-name">${p.name}</h3>
+        <div class="avl-product-info">
+            <h3 class="avl-product-name">${p.name}</h3>
             ${selectHtml}
-            <div class="product-actions">
-                <button class="btn-info" onclick="openInfo('${p.id}')" aria-label="Info about ${p.name}">ℹ</button>
-                <button class="btn-add" onclick="addToCart('${p.id}')" id="btn-${p.id}">
+            <div class="avl-product-actions">
+                <button class="avl-btn-info" onclick="avlOpenInfo('${p.id}')" aria-label="Info about ${p.name}">ℹ</button>
+                <button class="avl-btn-add" onclick="avlAddToCart('${p.id}')" id="avl-btn-${p.id}">
                     <span>🍄</span> Add to Basket
                 </button>
             </div>
         </div>
     `;
-    grid.appendChild(card);
+    avlGrid.appendChild(card);
 });
 
-function updatePrice(select, id) {
-    // Price updates automatically via option text
-}
+function avlUpdatePrice(select, id) {}
 
 // ═══════════════════════════════════════════════════════════════════════
 // CART SYSTEM
 // ═══════════════════════════════════════════════════════════════════════
-let cart = JSON.parse(localStorage.getItem('mushroomCart') || '[]');
+let avlCart = JSON.parse(localStorage.getItem('avlMushroomCart') || '[]');
 
-function saveCart() {
-    localStorage.setItem('mushroomCart', JSON.stringify(cart));
-    renderCart();
+function avlSaveCart() {
+    localStorage.setItem('avlMushroomCart', JSON.stringify(avlCart));
+    avlRenderCart();
 }
 
-function addToCart(id) {
-    const product = products.find(p => p.id === id);
+function avlAddToCart(id) {
+    const product = avlProducts.find(p => p.id === id);
     const card = document.querySelector(`[data-id="${id}"]`);
-    const select = card.querySelector('.qty-select');
+    const select = card.querySelector('.avl-qty-select');
     const opt = select.options[select.selectedIndex];
     const grams = parseInt(opt.value);
     const discount = parseFloat(opt.dataset.discount);
-    const price = calculatePrice(product.basePrice, grams, discount);
+    const price = avlCalculatePrice(product.basePrice, grams, discount);
     
-    const existing = cart.find(item => item.id === id && item.grams === grams);
+    const existing = avlCart.find(item => item.id === id && item.grams === grams);
     if (existing) {
         existing.qty += 1;
     } else {
-        cart.push({ id, name: product.name, grams, price, image: product.image, qty: 1 });
+        avlCart.push({ id, name: product.name, grams, price, image: product.image, qty: 1 });
     }
     
-    const btn = document.getElementById(`btn-${id}`);
+    const btn = document.getElementById(`avl-btn-${id}`);
     btn.innerHTML = '<span>✓</span> Added!';
     btn.classList.add('added');
     setTimeout(() => {
@@ -608,127 +685,118 @@ function addToCart(id) {
         btn.classList.remove('added');
     }, 1500);
     
-    saveCart();
-    document.getElementById('cartBar').classList.add('active');
+    avlSaveCart();
+    document.getElementById('avlCartBar').classList.add('active');
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    saveCart();
+function avlRemoveFromCart(index) {
+    avlCart.splice(index, 1);
+    avlSaveCart();
 }
 
-function renderCart() {
-    const count = cart.reduce((sum, item) => sum + item.qty, 0);
-    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+function avlRenderCart() {
+    const count = avlCart.reduce((sum, item) => sum + item.qty, 0);
+    const total = avlCart.reduce((sum, item) => sum + (item.price * item.qty), 0);
     
-    document.getElementById('cartCount').textContent = count;
-    document.getElementById('cartTotalDisplay').textContent = formatPrice(total);
-    document.getElementById('grandTotal').textContent = formatPrice(total);
+    document.getElementById('avlCartCount').textContent = count;
+    document.getElementById('avlCartTotalDisplay').textContent = avlFormatPrice(total);
+    document.getElementById('avlGrandTotal').textContent = avlFormatPrice(total);
     
-    const container = document.getElementById('cartItemsContainer');
-    const footer = document.getElementById('cartFooter');
+    const container = document.getElementById('avlCartItemsContainer');
+    const footer = document.getElementById('avlCartFooter');
     
-    if (cart.length === 0) {
-        container.innerHTML = '<div class="cart-empty">Your basket is empty. Select strains and quantities above.</div>';
+    if (avlCart.length === 0) {
+        container.innerHTML = '<div class="avl-cart-empty">Your basket is empty. Select strains and quantities above.</div>';
         footer.style.display = 'none';
-        document.getElementById('cartBar').classList.remove('active');
+        document.getElementById('avlCartBar').classList.remove('active');
         return;
     }
     
     footer.style.display = 'block';
-    document.getElementById('cartBar').classList.add('active');
+    document.getElementById('avlCartBar').classList.add('active');
     
-    container.innerHTML = cart.map((item, i) => `
-        <div class="cart-item">
+    container.innerHTML = avlCart.map((item, i) => `
+        <div class="avl-cart-item">
             <img src="${item.image}" alt="" onerror="this.style.display='none'">
-            <div class="cart-item-info">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-meta">${item.grams}g × ${item.qty}</div>
+            <div class="avl-cart-item-info">
+                <div class="avl-cart-item-name">${item.name}</div>
+                <div class="avl-cart-item-meta">${item.grams}g × ${item.qty}</div>
             </div>
-            <div class="cart-item-price">${formatPrice(item.price * item.qty)}</div>
-            <button class="cart-item-remove" onclick="removeFromCart(${i})" aria-label="Remove item">×</button>
+            <div class="avl-cart-item-price">${avlFormatPrice(item.price * item.qty)}</div>
+            <button class="avl-cart-item-remove" onclick="avlRemoveFromCart(${i})" aria-label="Remove item">×</button>
         </div>
     `).join('');
 }
 
-function generateOrderText() {
+function avlGenerateOrderText() {
     let text = `🍄 *NEW ORDER — 247AVL Plug*%0A%0A`;
-    cart.forEach(item => {
-        text += `• ${item.name}%0A  ${item.grams}g × ${item.qty} = *${formatPrice(item.price * item.qty)}*%0A%0A`;
+    avlCart.forEach(item => {
+        text += `• ${item.name}%0A  ${item.grams}g × ${item.qty} = *${avlFormatPrice(item.price * item.qty)}*%0A%0A`;
     });
-    text += `*Grand Total: ${formatPrice(cart.reduce((s,i)=>s+(i.price*i.qty),0))}*%0A%0APlease reply with your shipping details to complete the order.`;
+    text += `*Grand Total: ${avlFormatPrice(avlCart.reduce((s,i)=>s+(i.price*i.qty),0))}*%0A%0APlease reply with your shipping details to complete the order.`;
     return text;
 }
 
-document.getElementById('waCheckout').addEventListener('click', () => {
-    const text = generateOrderText();
-    window.open(`https://wa.me/?text=${text}`, '_blank');
+document.getElementById('avlWaCheckout').addEventListener('click', () => {
+    window.open(`https://wa.me/?text=${avlGenerateOrderText()}`, '_blank');
 });
-
-document.getElementById('quickWaBtn').addEventListener('click', () => {
-    if (cart.length === 0) return;
-    const text = generateOrderText();
-    window.open(`https://wa.me/?text=${text}`, '_blank');
+document.getElementById('avlQuickWaBtn').addEventListener('click', () => {
+    if (avlCart.length === 0) return;
+    window.open(`https://wa.me/?text=${avlGenerateOrderText()}`, '_blank');
 });
-
-document.getElementById('tgCheckout').addEventListener('click', () => {
-    const text = generateOrderText().replace(/%0A/g, '\n').replace(/\*/g, '');
+document.getElementById('avlTgCheckout').addEventListener('click', () => {
+    const text = avlGenerateOrderText().replace(/%0A/g, '\n').replace(/\*/g, '');
     window.open(`https://t.me/share/url?url=https://247avlplug.com/buy-magic-mushrooms/&text=${encodeURIComponent(text)}`, '_blank');
 });
-
-document.getElementById('cartIconBtn').addEventListener('click', () => {
-    document.getElementById('cartSheet').classList.add('active');
+document.getElementById('avlCartIconBtn').addEventListener('click', () => {
+    document.getElementById('avlCartSheet').classList.add('active');
 });
-document.getElementById('viewCartBtn').addEventListener('click', () => {
-    document.getElementById('cartSheet').classList.add('active');
+document.getElementById('avlViewCartBtn').addEventListener('click', () => {
+    document.getElementById('avlCartSheet').classList.add('active');
 });
-document.getElementById('closeCartSheet').addEventListener('click', () => {
-    document.getElementById('cartSheet').classList.remove('active');
+document.getElementById('avlCloseCartSheet').addEventListener('click', () => {
+    document.getElementById('avlCartSheet').classList.remove('active');
 });
-document.getElementById('cartSheet').addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) document.getElementById('cartSheet').classList.remove('active');
+document.getElementById('avlCartSheet').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) document.getElementById('avlCartSheet').classList.remove('active');
 });
 
 // ═══════════════════════════════════════════════════════════════════════
 // INFO MODAL
 // ═══════════════════════════════════════════════════════════════════════
-function openInfo(id) {
-    const p = products.find(x => x.id === id);
-    document.getElementById('infoModalTitle').textContent = p.name;
-    document.getElementById('infoModalDesc').textContent = p.desc;
-    document.getElementById('infoModalPotency').textContent = 'Potency Level: ' + p.potency;
-    document.getElementById('infoModal').classList.add('active');
+function avlOpenInfo(id) {
+    const p = avlProducts.find(x => x.id === id);
+    document.getElementById('avlInfoModalTitle').textContent = p.name;
+    document.getElementById('avlInfoModalDesc').textContent = p.desc;
+    document.getElementById('avlInfoModalPotency').textContent = 'Potency Level: ' + p.potency;
+    document.getElementById('avlInfoModal').classList.add('active');
 }
-document.getElementById('closeInfoModal').addEventListener('click', () => {
-    document.getElementById('infoModal').classList.remove('active');
+document.getElementById('avlCloseInfoModal').addEventListener('click', () => {
+    document.getElementById('avlInfoModal').classList.remove('active');
 });
-document.getElementById('infoModal').addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) document.getElementById('infoModal').classList.remove('active');
+document.getElementById('avlInfoModal').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) document.getElementById('avlInfoModal').classList.remove('active');
 });
 
 // ═══════════════════════════════════════════════════════════════════════
 // THEME TOGGLE
 // ═══════════════════════════════════════════════════════════════════════
 (function() {
-    const toggle = document.getElementById('themeToggle');
-    const metaTheme = document.getElementById('themeColorMeta');
+    const toggle = document.getElementById('avlThemeToggle');
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('avlTheme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme === 'light' || (!savedTheme && !systemPrefersDark)) {
         html.setAttribute('data-theme', 'light');
-        metaTheme.setAttribute('content', '#f5f5f7');
     }
     toggle.addEventListener('click', function() {
         const isLight = html.getAttribute('data-theme') === 'light';
         if (isLight) {
             html.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'dark');
-            metaTheme.setAttribute('content', '#0a0a0a');
+            localStorage.setItem('avlTheme', 'dark');
         } else {
             html.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            metaTheme.setAttribute('content', '#f5f5f7');
+            localStorage.setItem('avlTheme', 'light');
         }
     });
 })();
@@ -736,11 +804,11 @@ document.getElementById('infoModal').addEventListener('click', (e) => {
 // ═══════════════════════════════════════════════════════════════════════
 // SPORE PARTICLES
 // ═══════════════════════════════════════════════════════════════════════
-(function initSpores() {
-    const container = document.getElementById('sporeContainer');
+(function() {
+    const container = document.getElementById('avlSporeContainer');
     for (let i = 0; i < 25; i++) {
         const spore = document.createElement('div');
-        spore.className = 'spore';
+        spore.className = 'avl-spore';
         spore.style.left = Math.random() * 100 + '%';
         spore.style.animationDelay = Math.random() * 12 + 's';
         spore.style.animationDuration = (8 + Math.random() * 10) + 's';
@@ -753,13 +821,13 @@ document.getElementById('infoModal').addEventListener('click', (e) => {
 // ═══════════════════════════════════════════════════════════════════════
 // SCROLL REVEAL
 // ═══════════════════════════════════════════════════════════════════════
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+const avlRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); avlRevealObserver.unobserve(entry.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.avl-reveal').forEach(el => avlRevealObserver.observe(el));
 
-// Init cart
-renderCart();
+// Init
+avlRenderCart();
 </script>
 
 </body>
