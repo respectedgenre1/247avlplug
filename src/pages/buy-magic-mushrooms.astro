@@ -113,16 +113,13 @@
         /* ═══════════════════════════════════════════════════════════════════ */
         /* ║  PRODUCT GRID — FIXED BREAKPOINTS                                ║ */
         /* ═══════════════════════════════════════════════════════════════════ */
-        .main-container .product-grid { 
-            display: grid !important; 
-            grid-template-columns: repeat(4, 1fr) !important; 
-            gap: 1rem !important; 
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 1rem; 
         }
         @media (max-width: 768px) { 
-            .main-container .product-grid { 
-                grid-template-columns: repeat(2, 1fr) !important; 
-                gap: 0.875rem !important; 
-            } 
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.875rem; } 
         }
 
         /* ═══════════════════════════════════════════════════════════════════ */
@@ -139,8 +136,6 @@
             transition: var(--transition-smooth); 
             position: relative;
             min-width: 0;
-            width: 100%;
-            box-sizing: border-box;
         }
         .product-card:hover { 
             transform: translateY(-5px); 
@@ -156,7 +151,6 @@
             overflow: hidden; 
             background: #0f0f0f; 
             flex-shrink: 0;
-            max-width: 100%;
         }
         [data-theme="light"] .product-image-wrap { background: #e8e8e8; }
         
@@ -168,8 +162,6 @@
             object-fit: cover; 
             object-position: center;
             transition: transform 0.5s ease; 
-            max-width: 100%;
-            display: block;
         }
         .product-card:hover .product-image { transform: scale(1.08); }
         
@@ -666,7 +658,7 @@ products.forEach(p => {
     const potencyClass = p.potency === 'Beginner' ? 'potency-beginner' : p.potency === 'Intermediate' ? 'potency-intermediate' : 'potency-advanced';
     
     card.innerHTML = `
-        <div class="product-image-wrap" style="position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#0f0f0f;flex-shrink:0;max-width:100%;">
+        <div class="product-image-wrap" style="position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#0f0f0f;flex-shrink:0;">
             <span class="product-potency ${potencyClass}">${p.potency}</span>
             <img src="${p.image}" alt="${p.name}" class="product-image" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;max-width:100%;display:block;" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/ff6b00?text=${encodeURIComponent(p.name.split(' ').slice(0,2).join('+'))}'">
         </div>
@@ -862,27 +854,21 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 renderCart();
 
 // ═══════════════════════════════════════════════════════════════════════
-// PLATFORM OVERRIDE — Enforce grid layout (Cloudflare/GitHub builder safe)
+// PLATFORM OVERRIDE — Enforce grid layout after all scripts run
 // ═══════════════════════════════════════════════════════════════════════
 (function enforceGrid() {
-    const grid = document.getElementById('productGrid');
+    var grid = document.getElementById('productGrid');
     if (!grid) return;
-
-    // Force grid display via inline style (highest specificity)
     grid.style.display = 'grid';
     grid.style.gap = window.innerWidth <= 768 ? '0.875rem' : '1rem';
     grid.style.gridTemplateColumns = window.innerWidth <= 768 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)';
-
-    // Also force each card to behave
-    grid.querySelectorAll('.product-card').forEach(card => {
-        card.style.minWidth = '0';
-        card.style.width = '100%';
-        card.style.boxSizing = 'border-box';
-        card.style.overflow = 'hidden';
-    });
-
-    // Re-apply on resize
-    let resizeTimer;
+    var cards = grid.querySelectorAll('.product-card');
+    for (var i = 0; i < cards.length; i++) {
+        cards[i].style.minWidth = '0';
+        cards[i].style.width = '100%';
+        cards[i].style.boxSizing = 'border-box';
+    }
+    var resizeTimer;
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(enforceGrid, 150);
