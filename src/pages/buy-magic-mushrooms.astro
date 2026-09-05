@@ -788,15 +788,15 @@ function initApp() {
 
     // Event Listeners
     const waCheckoutBtn = document.getElementById('waCheckout');
-    if (waCheckoutBtn) waCheckoutBtn.addEventListener('click', () => window.open(`https://wa.me/?text=${generateOrderText()}`, '_blank'));
+    if (waCheckoutBtn) waCheckoutBtn.addEventListener('click', () => window.open(`https://wa.me/14313046433?text=${generateOrderText()}`, '_blank'));
 
     const quickWaBtn = document.getElementById('quickWaBtn');
-    if (quickWaBtn) quickWaBtn.addEventListener('click', () => { if (cart.length > 0) window.open(`https://wa.me/?text=${generateOrderText()}`, '_blank'); });
+    if (quickWaBtn) quickWaBtn.addEventListener('click', () => { if (cart.length > 0) window.open(`https://wa.me/14313046433?text=${generateOrderText()}`, '_blank'); });
 
     const tgCheckoutBtn = document.getElementById('tgCheckout');
     if (tgCheckoutBtn) tgCheckoutBtn.addEventListener('click', () => {
         const text = generateOrderText().replace(/%0A/g, '\n').replace(/\*/g, '');
-        window.open(`https://t.me/share/url?url=https://247avlplug.com/buy-magic-mushrooms/&text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://t.me/datplugg/url?url=https://247avlplug.com/buy-magic-mushrooms/&text=${encodeURIComponent(text)}`, '_blank');
     });
 
     const cartIconBtn = document.getElementById('cartIconBtn');
