@@ -1,10 +1,6 @@
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import cloudflare from '@astrojs/cloudflare';
-
 export default defineConfig({
   site: 'https://247avlplug.com',
-  output: 'server',
+  output: 'static',  // changed from 'server' to 'static'
   adapter: cloudflare(),
   integrations: [sitemap()],
 });
